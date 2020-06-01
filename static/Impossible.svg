@@ -1,7 +1,3 @@
-
-import { React } from 'react';
-
-const SVGImpossible = () => (
   <svg
     width="666.67"
     height="666.67"
@@ -3387,8 +3383,3 @@ const SVGImpossible = () => (
       </g>
     </g>
   </svg>
-);
-
-
-
-export default SVGImpossible

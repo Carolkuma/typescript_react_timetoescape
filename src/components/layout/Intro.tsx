@@ -1,8 +1,12 @@
-import { React } from 'react';
+import React from "react";
 import Button from '../Button';
-// import { Room } from '../../svg/Room';
 
-export const Intro = () => <section className="pt-20 md:pt-30">
+
+
+
+
+
+export const Intro = () => <section className="py-20 bg-gray-200">
     <div className="container mx-auto px-8 lg:flex">
         <div className="text-center lg:text-left lg:w-1/2">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
@@ -14,10 +18,9 @@ export const Intro = () => <section className="pt-20 md:pt-30">
             <p className="mt-8 md:mt-12">
                 <Button size="lg">Vstúpiť</Button>
             </p>
-            {/* <p className="mt-4 text-gray-600">Sed fermentum felis ut cursu</p> */}
         </div>
         <div className="lg:w-1/2">
-             {/* <Room /> */}
+            <img src="room.png" alt="room" async={true}/>
         </div>
     </div>
 </section>

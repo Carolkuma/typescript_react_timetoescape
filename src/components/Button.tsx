@@ -6,7 +6,15 @@ const sizes = {
   xl: `py-5 px-16 text-lg`
 };
 
-const Button = ({ children, className = '', size }) => {
+
+interface props {
+  children?: JSX.Element | JSX.Element[] | string,
+  className?: string,
+  size?: string, 
+}
+
+
+const Button = ({ children, className = '', size }: props) => {
   return (
     <button
       type="button"

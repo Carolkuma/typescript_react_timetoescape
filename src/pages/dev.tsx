@@ -11,6 +11,7 @@ import { Rooms } from '../components/layout/Rooms';
 import { Outro } from '../components/layout/Outro';
 import { Testimonials } from '../components/Testimonials';
 import { Faq } from '../components/layout/Faq';
+import { Contact } from '../components/layout/Contact/Contact';
 
 
 
@@ -32,6 +33,7 @@ export default () => (
 
     <Testimonials customerData={customerData} />
     <Faq />
+    <Contact/>
     <Outro />
   </Layout>
 );

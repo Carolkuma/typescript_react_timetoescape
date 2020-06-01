@@ -9,7 +9,7 @@ https://escaperoomtn.sk/
 
 
 ## roomky 
-tak ako je pridať obrázok a cta - done 
+tak ako je pridať obrázok a cta - done  ok 
 
 
 ### galeria a referencie 
@@ -18,8 +18,8 @@ galéria z instagramu
 
 ## cenník  
 
-Skupina 2 - 6
-8€ na osoba za vstup 
+Skupina 2 - 6 -- TODO
+8€ na osoba za vstup       
 
 ### faq 
 

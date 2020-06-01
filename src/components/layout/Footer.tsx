@@ -3,7 +3,7 @@ import React from 'react';
 const getCopyright = (startYear = 2020) => {
   const toYear = new Date().getFullYear()
   const copyrightDate = startYear === toYear ? `${startYear}` : `${startYear}- ${toYear}` 
-  return `© ${copyrightDate} `
+  return `© ${copyrightDate}`
 }
 
 
