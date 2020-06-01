@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: `/escape_room`,
   plugins: [
     {
       resolve: `gatsby-theme-codebushi`,
@@ -8,5 +7,13 @@ module.exports = {
       },
     },
     "gatsby-plugin-typescript",
+    {
+      resolve: `gatsby-plugin-hotjar-tracking`,
+      options: {
+        includeInDevelopment: false,
+        id: 1837182,
+        sv: 6,
+      },
+    },
   ],
 };
