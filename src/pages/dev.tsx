@@ -4,6 +4,7 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 
 import customerData from '../data/customer-data';
+import { Helmet } from "react-helmet";
 
 import { Intro } from '../components/layout/Intro';
 import { FocusGroup } from '../components/layout/focusgroup/FocusGroup';
@@ -23,9 +24,15 @@ import { Contact } from '../components/layout/Contact/Contact';
 
 
 
-
 export default () => (
   <Layout>
+    <Helmet
+      htmlAttributes={{
+        lang: 'sk-SK',
+      }}
+      title="timetoescape.sk"
+      defer={false}
+    />
     <Intro />
     <FocusGroup />
     <Rooms />
@@ -33,7 +40,7 @@ export default () => (
 
     <Testimonials customerData={customerData} />
     <Faq />
-    <Contact/>
+    <Contact />
     <Outro />
   </Layout>
 );

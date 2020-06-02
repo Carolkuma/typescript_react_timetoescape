@@ -3,7 +3,7 @@ import Button from '../Button'
 
 
 const OutroData = {
-    title: `Pripravený na dobrodružstvo ?`,
+  title: `Pripravený na dobrodružstvo ?`,
     description: ``,
     buttonText: `Vstúpiť ihneď`,
     buttonHref: ``,

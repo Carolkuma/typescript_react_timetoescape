@@ -29,7 +29,7 @@ export const Faq = () => {
     return (
       <section id="faq" className="mt-20">
         <div className="container mx-auto">
-          <LabelText className="text-gray-600 text-center">
+          <LabelText className="text-center">
             Často kladené otázky
           </LabelText>
           <Card className="mt-10">

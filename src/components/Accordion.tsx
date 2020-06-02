@@ -12,6 +12,11 @@ interface props {
 }
 
 
+const style = (isOpen: boolean) => {return  {
+  transition: 'height 0.5s',
+  maxHeight: isOpen ? '500px' : 0,
+}
+}
 
 
 export const Accordion = ({ question, answer, index, isOpen, toggle }: props) => (
@@ -27,11 +32,13 @@ export const Accordion = ({ question, answer, index, isOpen, toggle }: props) =>
                className="float-right h-full mt-1"
              />
            </div>
+    <div className="overflow-hidden" style={style(isOpen)}>
+
            <p
-             className={`text-gray-700 text-base px-6 py-3 ${!isOpen &&
-               "hidden"}`}
-           >
+             className={`text-gray-700 text-base px-6 py-3 `}
+              >
              {answer}
            </p>
+            </div>
          </div>
        ); 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const getColSpan = (reverseOrder: boolean) => `col-span-${reverseOrder ? 1 : 2}`
+const getColSpan = (reverseOrder: boolean) => `` // `col-span-1 lg:col-span-${reverseOrder ? 1 : 2}`
 
 interface props  {
   primarySlot: JSX.Element | JSX.Element[] | string,
@@ -11,10 +11,10 @@ interface props  {
 
 const SplitSection = ({ primarySlot, secondarySlot, reverseOrder }: props) => (
   <>
-    <div className={`${getColSpan(reverseOrder)} px-10 mt-20 self-center flex-1 `}>
+    <div className={`${getColSpan(reverseOrder)} row-span-1 px-10 self-center flex-1 `}>
       {reverseOrder ? secondarySlot : primarySlot}
     </div>
-    <div className={`${getColSpan(!reverseOrder)} px-10 mt-20 self-center flex-1`}>
+    <div className={`${getColSpan(!reverseOrder)} row-span-3 px-10 self-center flex-1 ${!reverseOrder && ''}`}>
       {!reverseOrder ? secondarySlot : primarySlot}
     </div>
   </>

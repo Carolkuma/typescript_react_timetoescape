@@ -8,7 +8,9 @@ import { CommingSoon } from '../components/CommingSoon';
 
 
 
-export default () => <Layout isRegistrationEnabled={false} showNav={false}>
+export default () => (
+  <Layout isRegistrationEnabled={false} showNav={false}>
     
-        <CommingSoon/>    
-</Layout>
+    <CommingSoon />
+  </Layout>
+);

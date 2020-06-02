@@ -19,18 +19,26 @@ const getReverseOrder = i => (i + 2 ) % 2 > 0
 export const Rooms = () => {
     return (
       <section id="rooms" className="mt-20 container mx-auto">
+        <div >
+
         <h2 className="text-3xl lg:text-5xl font-semibold text-center">
           Miestnosti
         </h2>
-        <div className="grid grid-cols-3">
+        </div>
+        <div className="grid grid-rows-3 grid-flow-col">
           {ROOMS.map(({ title, description }, index) => {
             return (
+              <>
+                <div className="col-span-3 lg:col-span-2 px-10">
+                  <h3 className="text-3xl font-semibold leading-tight">
+                    {title}
+                  </h3>
+              </div>
+                
               <SplitSection
                 primarySlot={
                   <>
-                    <h3 className="text-3xl font-semibold leading-tight">
-                      {title}
-                    </h3>
+
                     <p className="mt-8 text-xl font-light leading-relaxed">
                       {description}
                     </p>
@@ -43,6 +51,7 @@ export const Rooms = () => {
                 key={index}
                 reverseOrder={getReverseOrder(index)}
               />
+              </>
             );
           })}
         </div>

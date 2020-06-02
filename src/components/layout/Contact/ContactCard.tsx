@@ -12,12 +12,12 @@ interface props {
 }
 
 export const ContactCard = ({ icon, children, title }: props) => (
-         <Card className="p-10 grid grid-cols-3 gap-5">
-           <div className="text-4xl col-span-1">
+         <Card className="p-10 grid grid-cols-2 lg:grid-cols-3 gap-5">
+           <div className="text-4xl text-center lg:col-span-1">
              <FontAwesomeIcon icon={icon} />
            </div>
-           <div className="col-span-2">
-             <span className="uppercase tracking-wider text-gray-600">
+           <div className="lg:col-span-2">
+             <span className="uppercase tracking-wider">
                {title}
              </span>
              <br />

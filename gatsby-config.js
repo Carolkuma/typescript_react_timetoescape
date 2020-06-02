@@ -6,6 +6,7 @@ module.exports = {
         tailwindConfig: `tailwind.config.js`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     "gatsby-plugin-typescript",
     {
       resolve: `gatsby-plugin-hotjar-tracking`,

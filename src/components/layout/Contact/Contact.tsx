@@ -12,7 +12,7 @@ export const Contact = () => {
         <h2 className="text-3xl lg:text-5xl font-semibold text-center mb-20">
           Kontakt
         </h2>
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid grid-cols-1  lg:grid-cols-3 gap-10">
           <ContactCard icon={faClock} title="Otváracia doba">
             <span>Po - So 9:00 - 22:00</span>
           </ContactCard>
@@ -24,12 +24,12 @@ export const Contact = () => {
           </ContactCard>
         </div>
 
-        <Card className="grid grid-cols-3 mt-10 overflow-hidden">
-          <div className="col-span-2">
+        <Card className="grid grid-cols-1 lg:grid-cols-3 mt-10 overflow-hidden">
+          <div className="lg:col-span-2">
             <GMap coordinates={{ lat: 48.9429886, lng: 20.5683209 }}></GMap>
           </div>
-          <div className="col-span-1 p-10">
-            <div className="uppercase tracking-wider text-gray-600 mb-5">
+          <div className="lg:col-span-1 p-10">
+            <div className="uppercase tracking-wider  mb-5">
               Time to escape
             </div>
             <p>
@@ -39,7 +39,7 @@ export const Contact = () => {
             </p>
             {/* Informácie aj na facebooku Fotky aj na instagrame Objednávky
               Rezervovať termín si môžete využitím tlačidla "Objednať sa". */}
-            <div className="uppercase tracking-wider text-gray-600 my-5">
+            <div className="uppercase tracking-wider  my-5">
               Prevádzkovateľ
             </div>
             <p>
