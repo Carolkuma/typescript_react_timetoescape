@@ -26,7 +26,7 @@ interface props  {
 
 export const GMap = ({ zoom, link, label, coordinates }: props) => {
   return (
-    <Overlay>
+    <Overlay label={label} link={link}>
       <LoadScript
         id="script-loader"
         googleMapsApiKey={API_KEY}

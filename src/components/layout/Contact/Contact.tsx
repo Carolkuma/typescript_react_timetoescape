@@ -17,16 +17,16 @@ export const Contact = () => {
             <span>Po - So 9:00 - 22:00</span>
           </ContactCard>
           <ContactCard icon={faPhone} title="Telefónne číslo">
-            <span>+421 951 406 635</span>
+            <a href="tel:+421 951 406 635">+421 951 406 635</a>
           </ContactCard>
           <ContactCard icon={faEnvelope} title="Emailová adresa">
-            <span>kontakt@timetoescape.sk</span>
+            <a href="mailto:kontakt@timetoescape.sk">kontakt@timetoescape.sk</a>
           </ContactCard>
         </div>
 
         <Card className="grid grid-cols-1 lg:grid-cols-3 mt-10 overflow-hidden">
           <div className="lg:col-span-2">
-            <GMap coordinates={{ lat: 48.9429886, lng: 20.5683209 }}></GMap>
+            <GMap coordinates={{ lat: 48.9429886, lng: 20.5683209 }} label="Otvoriť v mapách"></GMap>
           </div>
           <div className="lg:col-span-1 p-10">
             <div className="uppercase tracking-wider  mb-5">

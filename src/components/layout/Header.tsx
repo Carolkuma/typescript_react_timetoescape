@@ -35,7 +35,7 @@ interface props {
 
 
 const Header = ({ isRegistrationEnabled, showNav}: props) => (
-  <header className={`sticky z-10 top-0 bg-black shadow text-orange-400 ${isRegistrationEnabled === false && showNav ===false && 'text-center'}`}>
+  <header className={`sticky z-20 top-0 bg-dark shadow text-orange-400 ${isRegistrationEnabled === false && showNav ===false && 'text-center'}`}>
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4">
       <div className="flex items-center text-2xl font-extrabold">
        

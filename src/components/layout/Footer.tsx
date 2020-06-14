@@ -7,7 +7,7 @@ const getCopyright = (startYear = 2020) => {
 }
 
 
-const Footer = () => <footer className="bg-black mx-auto py-5 text-center text-gray-100">
+const Footer = () => <footer className="bg-dark mx-auto py-5 text-center text-gray-100">
     {getCopyright()} Time to escape
   </footer>
 

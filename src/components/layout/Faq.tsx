@@ -8,16 +8,21 @@ import { Accordion } from '../Accordion';
 const FrequentlyAskedQuetions = [
     {
         question: `Kto môže hrať ?`,
-        answer: `Hrať može ktokoľvek. Skupina 2 - 6 hráčov.`,
+        answer: `Hra je určená pre 2-4 hráčov bez vekových obmedzení.`,
     },
     {
         question: `Ako sa obliecť ?`,
-        answer: `Hrať može ktokoľvek. Skupina 2 - 6 hráčov.`,
+        answer: `Odporúčame pohodlnú obuv a oblečenie.`,
     },
     {
-        question: `Kto môže hrať ?`,
-        answer: `Hrať može ktokoľvek. Skupina 2 - 6 hráčov.`,
-    }
+        question: `Kedy prísť ?`,
+        answer: `Odporáčame prísť 10 minút pred rezervovaným termínom.`,
+    },
+    {
+        question: `Koľko trvá hra ?`,
+        answer: `Prejdenie miestnosti by malo byť do 60 min.`,
+    },
+    
 ]
 
 

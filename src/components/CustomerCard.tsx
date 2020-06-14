@@ -1,7 +1,18 @@
 import React from 'react';
 import Card from './Card';
+export interface Customer {
+  customerImage: string,
+  customerName: string,
+  customerTitle: string,
+  title: string,
+  content: string,
+}
+interface props {
+  customer: Customer,
+}
 
-const CustomerCard = ({ customer }) => (
+
+export const CustomerCard = ({ customer }: props) => (
   <Card className="mb-8 p-12">
     <p className="text-xl font-semibold">{customer.title}</p>
     <p className="mt-6">{customer.content}</p>
@@ -19,4 +30,4 @@ const CustomerCard = ({ customer }) => (
   </Card>
 );
 
-export default CustomerCard;
+
