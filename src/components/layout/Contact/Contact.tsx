@@ -37,20 +37,8 @@ export const Contact = () => {
               <br />
               052 01 Spišská Nová Ves <br />
             </p>
-            {/* Informácie aj na facebooku Fotky aj na instagrame Objednávky
-              Rezervovať termín si môžete využitím tlačidla "Objednať sa". */}
-            <div className="uppercase tracking-wider  my-5">
-              Prevádzkovateľ
-            </div>
             <p>
-              Zapísaný: Okresný úrad Spišská Nová Ves, <br />
-              číslo živ.reg.:
-              <br />
-              052 01 Spišská Nová Ves <br />
               IČO: 50083635
-              <br />
-              DIČ:
-              <br />
             </p>
           </div>
         </Card>
