@@ -14,13 +14,14 @@ export const Contact = () => {
         </h2>
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-10">
           <ContactCard icon={faClock} title="Otváracia doba">
-            <span>Po - So 9:00 - 22:00</span>
+            <span>PO - PI 16:00 - 22:00</span><br/>
+            <span>SO - NE  9:00 - 22:00</span>
           </ContactCard>
           <ContactCard icon={faPhone} title="Telefónne číslo">
             <a href="tel:+421 951 406 635">+421 951 406 635</a>
           </ContactCard>
           <ContactCard icon={faEnvelope} title="Emailová adresa">
-            <a href="mailto:kontakt@timetoescape.sk">kontakt@timetoescape.sk</a>
+            <a href="mailto:rezervacia@timetoescape.sk">rezervacia@timetoescape.sk</a>
           </ContactCard>
         </div>
 

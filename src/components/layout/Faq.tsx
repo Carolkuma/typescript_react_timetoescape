@@ -5,10 +5,14 @@ import Card from '../Card'
 import { Accordion } from '../Accordion';
 
 
-const FrequentlyAskedQuetions = [
+const FrequentlyAskedQuetions = [  
     {
-        question: `Kto môže hrať ?`,
-        answer: `Hra je určená pre 2-4 hráčov bez vekových obmedzení.`,
+      question: `Kto môže hrať ?`,
+      answer: `Hra je určená pre hráčov bez vekového limitu. Deti do veku 12 rokov s doprovodom dospelej osoby.`,
+    },
+    {
+      question: `Koľko ľudí môže hrať ?`,
+      answer: `Hra je určená pre 2-4 hráčov.`,
     },
     {
         question: `Ako sa obliecť ?`,
@@ -16,11 +20,11 @@ const FrequentlyAskedQuetions = [
     },
     {
         question: `Kedy prísť ?`,
-        answer: `Odporáčame prísť 10 minút pred rezervovaným termínom.`,
+        answer: `Odporúčame prísť 10 minút pred rezervovaným termínom.`,
     },
     {
         question: `Koľko trvá hra ?`,
-        answer: `Prejdenie miestnosti by malo byť do 60 min.`,
+        answer: `Časový limit na únik z miestnosti je 70 min.`,
     },
     
 ]
