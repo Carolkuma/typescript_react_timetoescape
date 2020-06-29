@@ -11,12 +11,14 @@ interface props {
   children?: JSX.Element | JSX.Element[] | string,
   className?: string,
   size?: string, 
+  href?: string,
 }
 
 
-const Button = ({ children, className = '', size }: props) => {
+const Button = ({ children, className = '', size, href }: props) => {
   return (
-    <button
+    <a
+      href={href}
       type="button"
       className={`
         ${sizes[size] || sizes.default}
@@ -28,7 +30,7 @@ const Button = ({ children, className = '', size }: props) => {
     `}
     >
       {children}
-    </button>
+    </a>
   );
 };
 

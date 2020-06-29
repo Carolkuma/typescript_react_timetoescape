@@ -47,7 +47,7 @@ export const Contact = () => {
               číslo živ.reg.:
               <br />
               052 01 Spišská Nová Ves <br />
-              IČO:
+              IČO: 50083635
               <br />
               DIČ:
               <br />

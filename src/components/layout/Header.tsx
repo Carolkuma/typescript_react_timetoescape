@@ -58,7 +58,7 @@ const Header = ({ isRegistrationEnabled, showNav}: props) => (
 
        {
         isRegistrationEnabled && <div className="hidden md:block">
-          <Button className="text-sm">Rezervácia</Button>
+          <Button href="https://time-to-escape-escape-room.reservio.com/" className="text-sm">Rezervácia</Button>
         </div>
        }
      

@@ -10,7 +10,7 @@ const ROOMS = [{
   description: `Vyberal si vždy nesplniteľné misie? Aj napriek tomu si uspel ?
                 Na začiatku tejto miestnosti si v úplne novej situácii.Niečo
                 nevyšlo a je len na tebe aby si so svojím teamom zachránil svet.`,
-  href: '',
+  href: 'https://time-to-escape-escape-room.reservio.com/',
 }]
 
 
@@ -26,7 +26,7 @@ export const Rooms = () => {
         </h2>
         </div>
         <div className="grid grid-rows-3 grid-flow-col">
-          {ROOMS.map(({ title, description }, index) => {
+          {ROOMS.map(({ title, description, href }, index) => {
             return (
               <>
                 <div className="col-span-3 lg:col-span-2 px-10">
@@ -42,7 +42,7 @@ export const Rooms = () => {
                     <p className="mt-8 text-xl font-light leading-relaxed">
                       {description}
                     </p>
-                    <Button className="mt-8">Vstúpiť</Button>
+                    <Button href={href} className="mt-8">Vstúpiť</Button>
                   </>
                 }
                 secondarySlot={

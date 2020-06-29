@@ -19,7 +19,7 @@ export const Outro = () => (
              {
                 OutroData.description !== '' && <p className="mt-5 text-xl font-light">{OutroData.description}</p>
              }
-               <Button className="mt-5"  size="xl">
+      <Button className="mt-5" href="https://time-to-escape-escape-room.reservio.com/"  size="xl">
                  {OutroData.buttonText}
                </Button>
            </div>
