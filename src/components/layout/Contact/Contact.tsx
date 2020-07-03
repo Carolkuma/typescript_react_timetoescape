@@ -38,9 +38,9 @@ export const Contact = () => {
               <br />
               052 01 Spišská Nová Ves <br />
             </p>
-            <p>
+            {/* <p>
               IČO: 50083635
-            </p>
+            </p> */}
           </div>
         </Card>
       </section>
