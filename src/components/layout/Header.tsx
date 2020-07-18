@@ -1,7 +1,8 @@
-import React from 'react';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import LogoIcon from '../../svg/LogoIcon';
-import Button from '../Button';
+import React, { useState } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import LogoIcon from "../../svg/LogoIcon";
+import Button from "../Button";
+import { NavigationButton } from "../NavigationButton";
 
 const Links = [
   {
@@ -26,49 +27,88 @@ const Links = [
   },
 ];
 
-
 interface props {
-  isRegistrationEnabled?: boolean,
-  showNav?: boolean,
-  children?: JSX.Element | JSX.Element[] | string,
+  isRegistrationEnabled?: boolean;
+  showNav?: boolean;
+  children?: JSX.Element | JSX.Element[] | string;
 }
 
+const style = {
+  borderColor: "rgba(246, 173, 85, 0.3)",
+};
 
-const Header = ({ isRegistrationEnabled, showNav}: props) => (
-  <header className={`sticky z-20 top-0 bg-dark shadow text-orange-400 ${isRegistrationEnabled === false && showNav ===false && 'text-center'}`}>
-    <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4">
-      <div className="flex items-center text-2xl font-extrabold">
-       
-        <AnchorLink className="w-12 mr-3" href={'/'}>  
-           <LogoIcon /> 
-        </AnchorLink>
-      </div>
+const headerStyles = (isOpen: boolean) => {
+  return {
+    maxHeight: `${isOpen ? "20rem" : "4rem"}`,
+    transition: "max-height 0.3s ease-in-out",
+  };
+};
 
-       {
-        showNav && <div className="flex mt-4 sm:mt-0">
-          {
-            Links.map(link =>
-              <AnchorLink className="px-4 tex-bold" href={link.href}>
-                {link.label}
-              </AnchorLink>
-            )
-          }
+const Header = ({ isRegistrationEnabled, showNav }: props) => {
+  const [isOpen, setOpen] = useState(false);
+
+  const hiddenclass = isOpen ? `h-auto` : `h-0 lg:h-auto`;
+
+  return (
+    <header
+      style={headerStyles(isOpen)}
+      className={`overflow-hidden sticky z-20 top-0 bg-dark shadow text-orange-400`}
+    >
+      <nav className="container mx-auto flex items-center justify-between flex-wrap p-3">
+        <div className="flex items-center flex-shrink-0 text-white">
+          <AnchorLink
+            className="lg:w-200 anchor"
+            href={"/"}
+            alt="timetoescape.sk"
+            aria-label="Navigate to home"
+          >
+            <LogoIcon />
+          </AnchorLink>
         </div>
-       }
 
-       {
-        isRegistrationEnabled && <div className="hidden md:block">
-          <Button href="https://time-to-escape-escape-room.reservio.com/" className="text-sm">Rezervácia</Button>
+        <NavigationButton
+          className="block lg:hidden pl-3 py-2"
+          isOpen={isOpen}
+          onClick={() => setOpen(!isOpen)}
+        />
+
+        <div
+          className={`mt-4 lg:mt-0 w-full block lg:block flex-grow lg:flex lg:items-center lg:w-auto`}
+        >
+          {showNav && Links.length !== 0 && (
+            <div className="text-sm lg:flex-grow text-center">
+              {Links.map((link, key) => (
+                <AnchorLink
+                  key={key}
+                  style={style}
+                  className="block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto"
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </AnchorLink>
+              ))}
+            </div>
+          )}
         </div>
-       }
-     
-    </div>
-  </header>
-);
+        {isRegistrationEnabled && (
+          <div className={`lg:block relative mx-auto my-5  lg:my-0`}>
+            <Button
+              href="https://time-to-escape-escape-room.reservio.com/booking"
+              className="text-sm"
+            >
+              Rezervácia
+            </Button>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+};
 
 Header.defaultProps = {
   isRegistrationEnabled: true,
   showNav: true,
-}
+};
 
 export default Header;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const LogoIcon = () => <svg id="svg1064" width="200" height="50" version="1.1" viewBox="0 0 52.917 13.229" xmlns="http://www.w3.org/2000/svg">
+const LogoIcon = () => <svg id="svg1064" width="145" height="39" version="1.1" viewBox="0 0 52.917 13.229" xmlns="http://www.w3.org/2000/svg">
   <g id="layer1" transform="translate(0 -283.77)">
     <g id="g2510" transform="matrix(1.6032 0 0 1.5895 -16.646 -136.95)" fill="#f6ad55">
       <g id="g1020" transform="matrix(.32436 0 0 .32436 -8.7713 248.19)" stroke-miterlimit="22.926">

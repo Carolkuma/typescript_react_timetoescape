@@ -12,26 +12,36 @@ interface props {
   className?: string,
   size?: string, 
   href?: string,
+  element?: ButtonElement
 }
 
+export enum ButtonElement {
+  LINK,
+  BUTTON
+}
 
-const Button = ({ children, className = '', size, href }: props) => {
-  return (
-    <a
-      href={href}
-      type="button"
-      className={`
+const Button = ({ children, className = '', size, href, element = ButtonElement.LINK }: props) => {
+  const classNames: string  = `
         ${sizes[size] || sizes.default}
         ${className}
         bg-orange-400
         hover:bg-orange-600
         text-gray-800
+        hover:text-gray-200
         uppercase
-    `}
-    >
-      {children}
-    </a>
-  );
+        button
+    `
+
+  if (element === ButtonElement.BUTTON) {
+    return<button className={classNames}>
+           {children}
+    </button>;
+  }
+    return (
+      <a href={href} className={classNames}>
+        {children}
+      </a>
+    );
 };
 
 export default Button;

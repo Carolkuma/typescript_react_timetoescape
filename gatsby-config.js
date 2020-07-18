@@ -8,6 +8,7 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-typescript",
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-hotjar-tracking`,
       options: {
@@ -16,5 +17,11 @@ module.exports = {
         sv: 6,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-facebook-pixel`,
+    //   options: {
+    //     pixelId: '1676263582538529',
+    //   },
+    // },
   ],
 };

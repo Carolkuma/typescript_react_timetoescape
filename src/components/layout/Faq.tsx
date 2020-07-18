@@ -41,7 +41,7 @@ export const Faq = () => {
           <LabelText className="text-center">
             Často kladené otázky
           </LabelText>
-          <Card className="mt-10">
+          <Card className="mt-10 lg:w-2/3 mx-auto">
             {FrequentlyAskedQuetions.map((props, index) => (
               <Accordion
                 key={index}

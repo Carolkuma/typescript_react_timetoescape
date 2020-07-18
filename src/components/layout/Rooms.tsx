@@ -10,7 +10,7 @@ const ROOMS = [{
   description: `Vyberal si vždy nesplniteľné misie? Aj napriek tomu si uspel ?
                 Na začiatku tejto miestnosti si v úplne novej situácii.Niečo
                 nevyšlo a je len na tebe aby si so svojím teamom zachránil svet.`,
-  href: 'https://time-to-escape-escape-room.reservio.com/',
+  href: 'https://time-to-escape-escape-room.reservio.com/booking',
 }]
 
 
@@ -29,28 +29,36 @@ export const Rooms = () => {
           {ROOMS.map(({ title, description, href }, index) => {
             return (
               <>
-                <div className="col-span-3 lg:col-span-2 px-10">
+                <div
+                  key={`${index}-title`}
+                  className="col-span-3 lg:col-span-2 px-10"
+                >
                   <h3 className="text-3xl font-semibold leading-tight">
                     {title}
                   </h3>
-              </div>
-                
-              <SplitSection
-                primarySlot={
-                  <>
+                </div>
 
-                    <p className="mt-8 text-xl font-light leading-relaxed">
-                      {description}
-                    </p>
-                    <Button href={href} className="mt-8">Vstúpiť</Button>
-                  </>
-                }
-                secondarySlot={
-                  <img src="/Impossible.svg"></img>
-                }
-                key={index}
-                reverseOrder={getReverseOrder(index)}
-              />
+                <SplitSection
+                  key={`${index}-section`}
+                  primarySlot={
+                    <>
+                      <p className="mt-8 text-xl font-light leading-relaxed">
+                        {description}
+                      </p>
+                      <Button href={href} className="mt-8">
+                        Vstúpiť
+                      </Button>
+                    </>
+                  }
+                  secondarySlot={
+                    <img
+                      src="/Impossible.svg"
+                      alt="Misson impossible escape room"
+                    ></img>
+                  }
+                  key={index}
+                  reverseOrder={getReverseOrder(index)}
+                />
               </>
             );
           })}

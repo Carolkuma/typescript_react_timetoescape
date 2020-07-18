@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "../Button";
+import Button, { ButtonElement } from "../Button";
+import { isMobile } from 'react-device-detect';
 
 interface props {
   link: string,
@@ -9,21 +10,32 @@ interface props {
 
 
 const styles = {
-  height: '25rem',
+  height: '15em',
   width: '100%',
   background: 'rgba(33, 33, 33, 0.5)',
   transition: 'opacity ease 0.5s',
+  zIndex: 2
 }
 
 
  export const Overlay = ({ children, link, label }: props) => (
-   <a href={link} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-     <div className="flex relative">
-       <div className="absolute flex z-10 content-center justify-center items-center opacity-0 hover:opacity-100" style={styles}>
-                <Button>{label}</Button>
-             </div>
-
-             {children}
-           </div>
-         </a>
-       )
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cursor-pointer"
+          >
+            <div className="flex relative">
+              {isMobile === false ? (<><div
+                className="md:absolute flex z-500 content-center justify-center items-center opacity-100 md:opacity-0 hover:opacity-100"
+                style={styles}
+              >
+                <Button element={ButtonElement.BUTTON}>{label}</Button>
+              </div>
+              {children}</>) 
+                :  <Button element={ButtonElement.BUTTON}>{label}</Button>
+              }
+            </div>
+          </a>
+        );
+       

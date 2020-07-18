@@ -15,13 +15,18 @@ const OutroData = {
 export const Outro = () => (
          <section className="py-20 bg-gray-200 rounded-lg text-center">
            <div className="container mx-auto">
-             <h3 className="text-5xl font-semibold">{OutroData.title}</h3>
+             
+                <h3 className="text-5xl font-semibold">{OutroData.title}</h3>
+            
              {
                 OutroData.description !== '' && <p className="mt-5 text-xl font-light">{OutroData.description}</p>
              }
-      <Button className="mt-5" href="https://time-to-escape-escape-room.reservio.com/"  size="xl">
+                <div className="mt-10">
+
+                <Button  href="https://time-to-escape-escape-room.reservio.com/booking"  size="xl">
                  {OutroData.buttonText}
                </Button>
+                </div>
            </div>
          </section>
        );
