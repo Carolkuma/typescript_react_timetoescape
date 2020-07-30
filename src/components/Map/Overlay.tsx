@@ -10,9 +10,8 @@ interface props {
 
 
 const styles = {
-  height: '15em',
+  height: '100%',
   width: '100%',
-  background: 'rgba(33, 33, 33, 0.5)',
   transition: 'opacity ease 0.5s',
   zIndex: 2
 }
@@ -26,15 +25,21 @@ const styles = {
             className="cursor-pointer"
           >
             <div className="flex relative">
-              {isMobile === false ? (<><div
-                className="md:absolute flex z-500 content-center justify-center items-center opacity-100 md:opacity-0 hover:opacity-100"
-                style={styles}
-              >
-                <Button element={ButtonElement.BUTTON}>{label}</Button>
-              </div>
-              {children}</>) 
-                :  <Button element={ButtonElement.BUTTON}>{label}</Button>
-              }
+              {isMobile === false ? (
+                <>
+                  <div
+                    className="md:absolute  md:bg-opacity-75 md:bg-dark flex z-500 content-center justify-center items-center opacity-100 md:opacity-0 hover:opacity-100"
+                    style={styles}
+                  >
+                    <Button element={ButtonElement.DIV}>{label}</Button>
+                  </div>
+                  {children}
+                </>
+              ) : (
+                <Button element={ButtonElement.DIV} className="mx-auto">
+                  {label}
+                </Button>
+              )}
             </div>
           </a>
         );

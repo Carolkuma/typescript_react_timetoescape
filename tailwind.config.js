@@ -30,5 +30,9 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: []
+  plugins: [],
+  corePlugins: {
+    transformOrigin: false,
+    clear: false,
+  }
 };

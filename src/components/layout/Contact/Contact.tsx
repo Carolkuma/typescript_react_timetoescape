@@ -12,8 +12,8 @@ const navigateToGoogleLink =
 
 export const Contact = () => {
     return (
-      <section id="contact" className="py-20 container mx-auto">
-        <h2 className="text-3xl lg:text-5xl font-semibold text-center mb-20">
+      <section id="contact" className="mt-20 pb-20 container mx-auto">
+        <h2 className="text-3xl lg:text-4xl font-semibold text-center mb-20">
           Kontakt
         </h2>
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-10">
@@ -23,7 +23,7 @@ export const Contact = () => {
             <span>SO - NE 9:00 - 22:00</span>
           </ContactCard>
           <ContactCard icon={faPhone} title="Telefónne číslo">
-            <a href="tel:+421 951 406 635">+421 951 406 635</a>
+            <a href="tel:+421951406635">+421 951 406 635</a>
           </ContactCard>
           <ContactCard icon={faEnvelope} title="Emailová adresa">
             <a href="mailto:rezervacia@timetoescape.sk">
@@ -32,9 +32,9 @@ export const Contact = () => {
           </ContactCard>
         </div>
 
-        <Card className="flex flex-row md:flex-row-reverse mt-10 overflow-hidden">
-          <div className="flex-col w-full lg:w-1/3 p-10">
-            <div className="uppercase tracking-wider  mb-5">Time to escape</div>
+        <Card className="md:flex md:flex-row md:flex-row-reverse mt-10 overflow-hidden">
+          <div className="w-full text-center md:text-left lg:w-1/3 p-10">
+            <div className="uppercase tracking-wider font-bold mb-5">Time to escape</div>
             <p className="mb-5">
               Zimná 196,
               <br />

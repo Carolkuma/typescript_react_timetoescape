@@ -3,6 +3,9 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import LogoIcon from "../../svg/LogoIcon";
 import Button from "../Button";
 import { NavigationButton } from "../NavigationButton";
+import { isMobile } from 'react-device-detect';
+
+
 
 const Links = [
   {
@@ -47,7 +50,7 @@ const headerStyles = (isOpen: boolean) => {
 const Header = ({ isRegistrationEnabled, showNav }: props) => {
   const [isOpen, setOpen] = useState(false);
 
-  const hiddenclass = isOpen ? `h-auto` : `h-0 lg:h-auto`;
+  const offset = !isMobile ? 100 : 350
 
   return (
     <header
@@ -57,9 +60,9 @@ const Header = ({ isRegistrationEnabled, showNav }: props) => {
       <nav className="container mx-auto flex items-center justify-between flex-wrap p-3">
         <div className="flex items-center flex-shrink-0 text-white">
           <AnchorLink
+            offset={offset}
             className="lg:w-200 anchor"
-            href={"/"}
-            alt="timetoescape.sk"
+            href={"#intro"}
             aria-label="Navigate to home"
           >
             <LogoIcon />
@@ -79,6 +82,7 @@ const Header = ({ isRegistrationEnabled, showNav }: props) => {
             <div className="text-sm lg:flex-grow text-center">
               {Links.map((link, key) => (
                 <AnchorLink
+                  offset={offset}
                   key={key}
                   style={style}
                   className="block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto"

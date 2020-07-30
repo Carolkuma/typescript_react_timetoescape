@@ -39,7 +39,7 @@ export class LeafletMap extends Component<props>  {
 
     const position: L.LatLngExpression = [lat, lng];
     const insertMap  = enterCount > 0 && !isMobile 
-    debugger
+
     return <div style={style} className="hidden md:block">{ insertMap ? (
       <>
           <Map

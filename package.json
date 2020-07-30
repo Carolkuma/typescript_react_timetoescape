@@ -32,6 +32,7 @@
     "leaflet": "^1.6.0",
     "react": "^16.12.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-cookie-consent": "^5.1.2",
     "react-device-detect": "^1.13.1",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.0.0",

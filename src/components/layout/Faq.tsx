@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import LabelText from '../LabelText'
 import Card from '../Card'
 
 import { Accordion } from '../Accordion';
@@ -26,21 +25,18 @@ const FrequentlyAskedQuetions = [
         question: `Koľko trvá hra ?`,
         answer: `Časový limit na únik z miestnosti je 70 min.`,
     },
-    
 ]
 
 
 
-export const Faq = () => {
-
-   
+export const Faq = () => {  
     const [openIndex, setOpenIndex] = useState(0);
     return (
       <section id="faq" className="mt-20">
         <div className="container mx-auto">
-          <LabelText className="text-center">
+          <h2 className="uppercase tracking-wider text-center">
             Často kladené otázky
-          </LabelText>
+          </h2>
           <Card className="mt-10 lg:w-2/3 mx-auto">
             {FrequentlyAskedQuetions.map((props, index) => (
               <Accordion

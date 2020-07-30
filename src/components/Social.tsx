@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-svg-icons'
+import { faFacebookSquare, faInstagramSquare, faTripadvisor } from '@fortawesome/free-brands-svg-icons'
 
 
 const style = {
@@ -16,6 +16,11 @@ const socialIcons = [
     icon: faInstagramSquare,
     link: "https://www.facebook.com/Time-To-Escape-112481290497040/",
     alt: "Nasledujte nás na Instagrame",
+  },
+  {
+    icon: faTripadvisor,
+    link: "https://www.facebook.com/Time-To-Escape-112481290497040/",
+    alt: "Tripadvisor",
   },
 ];
 
