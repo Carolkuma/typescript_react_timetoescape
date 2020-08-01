@@ -12,6 +12,7 @@ interface props {
   className?: string,
   size?: string, 
   href?: string,
+  target?: string,
   element?: ButtonElement
 }
 
@@ -32,7 +33,7 @@ const Button = ({ children, className = '', size, href, element = ButtonElement.
         ease-in-out
         hover:bg-orange-600
         text-gray-800
-        hover:text-gray-200
+        hover:text-gray-900
         uppercase
         button
         tracking-wider

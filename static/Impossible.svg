@@ -6,9 +6,6 @@
     xmlns="http://www.w3.org/2000/svg"
   >
     <defs>
-      <clipPath id="clipPath18">
-        <path d="m0 500h500v-500h-500z" />
-      </clipPath>
       <clipPath id="clipPath30">
         <path d="m0 500h500v-500h-500z" />
       </clipPath>

@@ -6,16 +6,12 @@ import loadable from "@loadable/component";
 
 const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
 
-const getBgStyle = {
-  backgroundColor: "rgba(237, 242, 247, 0.60)"
-}
-
 const videoEnabled = true
 
 export const Intro = () => {             
          return (
            <section id="intro" className="relative bg-gray-400">
-             <div className="relative z-10" style={getBgStyle}>
+             <div className="relative z-10 alt-bg" >
                <div className="container mx-auto px-8 flex  py-20 z-10">
                  <div className="text-center flex-1">
                    <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">

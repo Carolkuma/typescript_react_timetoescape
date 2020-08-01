@@ -17,7 +17,7 @@ const style = {
  };
 
 const BackgroundVideo = () => (
-  !isMobile && false ? <div className="absolute top-0 z-0 overflow-hidden w-full" style={style}>
+  !isMobile   ? <div className="absolute top-0 z-0 overflow-hidden w-full" style={style}>
     <VideoCover videoOptions={videoOptions} remeasureOnWindowResize />
   </div>
   : null

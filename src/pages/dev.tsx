@@ -16,21 +16,14 @@ import { Contact } from '../components/layout/Contact/Contact';
 
 
 
-// const pageModSettings = {
-//   isRegistrationEnabled: false,
-//   isComingSoonEnabled: false,
-//   isMaintenance: false
-// }
-
-
-
 export default () => (
   <Layout>
     <Helmet
       htmlAttributes={{
-        lang: 'sk-SK',
+        lang: "sk-SK",
       }}
-      title="timetoescape.sk"
+      title="Escape room - Spišská Nová Ves | Mission Imposible | timetoescape.sk"
+      description="Napínavá a zábavná úniková hra Escape Room priamo v Spiškej Novej Vsi."
       defer={false}
     />
     <Intro />

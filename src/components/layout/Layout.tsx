@@ -43,7 +43,7 @@ const Layout = ({ children, isRegistrationEnabled, showNav }: props) => {
           showNav={showNav}
           isRegistrationEnabled={isRegistrationEnabled}
         />
-        <main className="text-gray-900">{children}</main>
+        <main>{children}</main>
       </div>
       <Footer />
       <Helmet>

@@ -19,7 +19,7 @@ const style = (isOpen: boolean) => {return  {
 }
 
 const transitionStyle = {
-    transition: "all .6s",
+    transition: "all .6s", 
   };
 
 
@@ -32,7 +32,7 @@ export const Accordion = ({
        }: props) => (
          <div className="w-full leading-normal">
            <div
-             className={`text-gray-900 font-bold text-xl border-gray-200 cursor-pointer ${isOpen &&
+             className={`font-bold text-xl border-gray-200 cursor-pointer ${isOpen &&
                "border-b-2"}  px-6 py-3 ${index !== 0 && "border-t-2"}`}
              onClick={toggle}
            >
