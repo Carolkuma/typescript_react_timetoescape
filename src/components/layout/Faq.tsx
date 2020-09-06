@@ -4,30 +4,32 @@ import Card from '../Card'
 import { Accordion } from '../Accordion';
 
 
-const FrequentlyAskedQuetions = [  
-    {
-      question: `Kto môže hrať ?`,
-      answer: `Hra je určená pre hráčov bez vekového limitu. Deti do veku 12 rokov s doprovodom dospelej osoby.`,
-    },
-    {
-      question: `Koľko ľudí môže hrať ?`,
-      answer: `Hra je určená pre 2-4 hráčov.`,
-    },
-    {
-        question: `Ako sa obliecť ?`,
-        answer: `Odporúčame pohodlnú obuv a oblečenie.`,
-    },
-    {
-        question: `Kedy prísť ?`,
-        answer: `Odporúčame prísť 10 minút pred rezervovaným termínom.`,
-    },
-    {
-        question: `Koľko trvá hra ?`,
-        answer: `Časový limit na únik z miestnosti je 70 min.`,
-    },
-]
-
-
+const FrequentlyAskedQuetions = [
+  {
+    question: `Kto môže hrať ?`,
+    answer: `Hra je určená pre hráčov bez vekového limitu. Deti do veku 12 rokov s doprovodom dospelej osoby.`,
+  },
+  {
+    question: `Koľko ľudí môže hrať ?`,
+    answer: `Hra je určená pre 2-4 hráčov.`,
+  },
+  {
+    question: `Ako sa obliecť ?`,
+    answer: `Odporúčame pohodlnú obuv a oblečenie.`,
+  },
+  {
+    question: `Kedy prísť ?`,
+    answer: `Odporúčame prísť 10 minút pred rezervovaným termínom.`,
+  },
+  {
+    question: `Koľko trvá hra ?`,
+    answer: `Časový limit na únik z miestnosti je 70 min.`,
+  },
+  {
+    question: `Cena ?`,
+    answer: `Cena 15€/osoba.`,
+  },
+];
 
 export const Faq = () => {  
     const [openIndex, setOpenIndex] = useState(0);

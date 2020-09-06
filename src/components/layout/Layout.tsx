@@ -2,15 +2,19 @@ import React from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import loadable from "@loadable/component"
-const FacebookPixel = loadable(() => import( '../FacebookPixel'))
-const CustomerChat = loadable(() => import("../CustomerChat"))
+
+// const FacebookPixel = loadable(() => import( '../FacebookPixel'))
+// const CustomerChat = loadable(() => import("../CustomerChat"))
 import { Helmet } from 'react-helmet';
 import CookieConsent from "react-cookie-consent";
-import { withPrefix } from "gatsby";
+import { withPrefix } from "gatsby"
+import FacebookPixel from '../FacebookPixel';
+import CustomerChat from '../CustomerChat';
 
 
 
 interface props {
+  isHome: boolean,
   isRegistrationEnabled?: boolean,
   showNav?: boolean,
   children: JSX.Element | JSX.Element[] | string,
@@ -31,15 +35,21 @@ const cookieStyle = {
 
 
 
-const Layout = ({ children, isRegistrationEnabled, showNav }: props) => {
+const Layout = ({
+  children,
+  isRegistrationEnabled,
+  showNav,
+  isHome,
+}: props) => {
   return (
     <>
       <Helmet>
         <meta name="theme-color" content="#212121"></meta>
-        <link rel="manifest" href={withPrefix("/manifest.json")}/>
+        <link rel="manifest" href={withPrefix("/manifest.json")} />
       </Helmet>
       <div className="content">
         <Header
+          isHome={isHome}
           showNav={showNav}
           isRegistrationEnabled={isRegistrationEnabled}
         />
@@ -60,7 +70,7 @@ const Layout = ({ children, isRegistrationEnabled, showNav }: props) => {
         buttonText="Rozumiem"
         declineButtonText="Decline"
         contentClasses="w-full "
-        containerClasses="z-50 fixed w-full flex items-center bg-dark text-white text-sm font-bold px-4 py-3 "
+        containerClasses="z-50 fixed w-full flex items-center bg-dark text-white text-sm font-bold px-4 py-3 print:hidden"
         cookieName="gatsby-gdpr-google-analytics"
         buttonClasses="py-3 px-5
         float-right
@@ -83,5 +93,9 @@ const Layout = ({ children, isRegistrationEnabled, showNav }: props) => {
     </>
   );
 };
+
+Layout.defaultProps = {
+  isHome: false,
+}
 
 export default Layout;

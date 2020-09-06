@@ -22,7 +22,14 @@ export enum ButtonElement {
   DIV
 }
 
-const Button = ({ children, className = '', size, href, element = ButtonElement.LINK }: props) => {
+const Button = ({
+  children,
+  className = "",
+  size,
+  href,
+  element = ButtonElement.LINK,
+  target,
+}: props) => {
   const classNames: string = `
         ${sizes[size] || sizes.default}
         ${className}
@@ -37,21 +44,20 @@ const Button = ({ children, className = '', size, href, element = ButtonElement.
         uppercase
         button
         tracking-wider
+        print:hidden
     `;
 
   if (element === ButtonElement.BUTTON) {
-    return<button className={classNames}>
-           {children}
-    </button>;
+    return <button className={classNames}>{children}</button>;
   }
   if (element === ButtonElement.DIV) {
     return <div className={classNames}>{children}</div>;
   }
-    return (
-      <a href={href} className={classNames}>
-        {children}
-      </a>
-    );
+  return (
+    <a href={href} className={classNames} target={target}>
+      {children}
+    </a>
+  );
 };
 
 export default Button;

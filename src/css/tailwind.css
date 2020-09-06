@@ -31,7 +31,9 @@ a.anchor:hover {
 }
 
 
-
+/* .container {
+  content-visibility: auto;
+}  */
 
 .icon-bar {
 width: 25px;
@@ -91,6 +93,20 @@ body {
 }
 
 
+.ol-rules {
+  list-style: decimal;
+  list-style-position: outside;
+}
+.ol-rules li::marker {
+  min-width: 1rem;
+  text-align: right;
+}
+
+.ol-rules li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem; 
+  margin-left: 2rem;
+}
 @media (prefers-color-scheme: dark) {
     body {
         background-color: rgb(33, 33, 33);

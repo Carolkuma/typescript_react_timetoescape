@@ -26,7 +26,12 @@ module.exports = {
         //   '800': '#ee7203',
         //   '900': '#ee7203',
         // }
+      },
+      screens: {
+        'print': {'raw': 'print'},
+        // => @media print { ... }
       }
+    
     }
   },
   variants: {},

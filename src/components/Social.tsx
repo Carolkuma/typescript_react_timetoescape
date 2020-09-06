@@ -19,7 +19,7 @@ const socialIcons = [
   },
   {
     icon: faTripadvisor,
-    link: "https://www.facebook.com/Time-To-Escape-112481290497040/",
+    link:"https://www.tripadvisor.sk/Attraction_Review-g274942-d21071930-Reviews-Time_To_Escape_Escape_Room-Spisska_Nova_Ves_Kosice_Region.html?m=19905",
     alt: "Tripadvisor",
   },
 ];

@@ -1,7 +1,10 @@
+import React from "react";
+
 const createMarkup = () => {
   return {
     __html: `<!-- Facebook Pixel Code -->
 <script defer>
+debugger
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};

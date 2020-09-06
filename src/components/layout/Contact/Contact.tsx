@@ -36,7 +36,7 @@ export const Contact = () => {
           <div className="w-full text-center md:text-left lg:w-1/3 p-10">
             <div className="uppercase tracking-wider font-bold mb-5">Time to escape</div>
             <p className="mb-5">
-              Zimná 196,
+              Zimná 61,
               <br />
               052 01 Spišská Nová Ves <br />
             </p>

@@ -9,7 +9,7 @@ const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
 const videoEnabled = true
 
 export const Intro = () => {             
-         return (
+           return (
            <section id="intro" className="relative bg-gray-400">
              <div className="relative z-10 alt-bg" >
                <div className="container mx-auto px-8 flex  py-20 z-10">
