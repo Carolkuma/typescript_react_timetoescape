@@ -9,7 +9,7 @@ declare module 'react' {
 
 const ROOMS = [
   {
-    title: "Mission Imposible",
+    title: "Mission (Im)possible",
     description: `Aký je to pocit, byť v tíme špiónov ktorých odhalila zločinecká organizácia ktorú mali sledovať? Byť spútaný v neznámom priestore a byť poslednou šancou na odvrátenie katastrofy? Dokážeš so svojím tímom vyriešiť všetky nástrahy včas aby si zachránil mnoho životov?`,
     href: "https://time-to-escape-escape-room.reservio.com/booking",
   },
