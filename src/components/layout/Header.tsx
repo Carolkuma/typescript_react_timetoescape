@@ -21,7 +21,7 @@ const Links = [
   //   href: '',
   // },
   {
-    label: "Faq",
+    label: "Časté otázky",
     href: "#faq",
   },
   {
