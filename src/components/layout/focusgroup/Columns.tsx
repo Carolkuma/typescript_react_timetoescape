@@ -50,18 +50,18 @@ interface props {
 
 
 export const Columns = () => (
-  <div className="flex flex-col lg:flex-row lg:-mx-3 lg:mt-20 text-center">
-           {reasons.map(({ heading, description , icon }, index) => (
+         <div className="flex flex-col lg:flex-row lg:-mx-3 lg:mt-20 text-center">
+           {reasons.map(({ heading, description, icon }, index) => (
              <div className="flex-1 px-5" key={index}>
                <Card className="p-5 h-full mt-10 lg:mt-0">
                  <div className="text-6xl text-center mb-3">
-                 <FontAwesomeIcon icon={icon} fixedWidth />
-                </div>
-                 <p className="font-semibold text-xl">{heading}</p>
+                   <FontAwesomeIcon icon={icon} fixedWidth />
+                 </div>
+                 <p className="text-2xl alt-font text-xl">{heading}</p>
                  <p className="mt-5 mb-3">{description}</p>
                </Card>
              </div>
            ))}
          </div>
-       )
+       );
 

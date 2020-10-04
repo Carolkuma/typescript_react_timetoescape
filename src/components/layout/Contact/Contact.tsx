@@ -13,7 +13,7 @@ const navigateToGoogleLink =
 export const Contact = () => {
     return (
       <section id="contact" className="mt-20 pb-20 container mx-auto">
-        <h2 className="text-3xl lg:text-4xl font-semibold text-center mb-20">
+        <h2 className="text-3xl lg:text-4xl alt-font text-center mb-20">
           Kontakt
         </h2>
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-10">

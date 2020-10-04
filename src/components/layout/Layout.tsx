@@ -46,6 +46,7 @@ const Layout = ({
       <Helmet>
         <meta name="theme-color" content="#212121"></meta>
         <link rel="manifest" href={withPrefix("/manifest.json")} />
+        <link href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Teko:wght@500&display=swap' rel="stylesheet"></link>
       </Helmet>
       <div className="content">
         <Header

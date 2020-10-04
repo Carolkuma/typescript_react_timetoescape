@@ -36,7 +36,7 @@ export const Faq = () => {
     return (
       <section id="faq" className="mt-20">
         <div className="container mx-auto">
-          <h2 className="uppercase tracking-wider text-center">
+          <h2 className="uppercase text-xl tracking-wider text-center alt-font">
             Často kladené otázky
           </h2>
           <Card className="mt-10 lg:w-2/3 mx-auto">

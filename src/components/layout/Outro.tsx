@@ -8,11 +8,16 @@ const OutroData = {
     buttonText: `Rezervácia`,
     buttonHref: ``,
 }
-
+const style = {
+  backgroundImage: 'url(./bg/footer.jpg)'
+}
 export const Outro = () => (
-         <section className="py-20 bg-gray-200 rounded-lg text-center">
+         <section
+           className="py-20 bg-gray-200 text-center bg-styles"
+           style={style}
+         >
            <div className="container mx-auto">
-             <h3 className="text-3xl  md:text-4xl font-semibold">
+             <h3 className="text-3xl  md:text-4xl alt-font text-gray-100">
                {OutroData.title}
              </h3>
 

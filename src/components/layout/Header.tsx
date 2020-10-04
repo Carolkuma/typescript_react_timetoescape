@@ -55,7 +55,7 @@ const Header = ({ isRegistrationEnabled, showNav, isHome }: props) => {
   return (
     <header
       style={headerStyles(isOpen)}
-      className={`overflow-hidden sticky z-20 top-0 bg-dark shadow text-orange-400 border-b border-gray-200 print:bg-white`}
+      className={`overflow-hidden sticky z-20 top-0 bg-dark shadow text-orange-400 border-b border-gray-800 print:bg-white`}
     >
       <nav className="container mx-auto flex flex-row-reverse lg:flex-row items-center justify-between flex-wrap p-3">
         <div className="flex items-center flex-shrink-0 text-white">

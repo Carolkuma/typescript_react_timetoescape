@@ -1,5 +1,23 @@
 @tailwind base;
 
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.alt-font {
+  font-family: 'Teko', sans-serif;
+  font-weight: 400;
+}
+
+.bg-styles {
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: none;
+    background-size: cover;
+}
+
+
 /* a {
   @apply text-black;
 } */

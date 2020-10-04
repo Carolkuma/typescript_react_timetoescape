@@ -9,7 +9,7 @@ const style = {
 };
 
  const videoOptions = {
-   src: withPrefix("/cover.mp4"),
+   src: withPrefix("/intro.mp4"),
    autoPlay: true,
    muted: true,
    loop: true,
