@@ -1,6 +1,12 @@
 @tailwind base;
 
 
+
+.intro-bg {
+  background: rgba(33,33,33,.80);
+  background: radial-gradient(circle, rgba(33,33,33,.80) 25%, rgba(33,33,33,0) 100%);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
 }
