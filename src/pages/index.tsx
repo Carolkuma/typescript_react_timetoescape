@@ -39,7 +39,7 @@ export default () => (
     <Rooms />
     {/* TODO: gallery */}
 
-    {/* <Testimonials customerData={customerData} /> */}
+    <Testimonials customerData={customerData} />
     <Faq />
     <Contact />
     <Outro />

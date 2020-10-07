@@ -13,9 +13,13 @@ interface props {
 
 
 export const CustomerCard = ({ customer }: props) => (
-  <Card className="mb-8 p-12">
+  <Card className="mb-8 p-10">
+    {
+      /*
     <p className="text-xl font-semibold">{customer.title}</p>
-    <p className="mt-6">{customer.content}</p>
+      */
+  }
+    <q className="mt-6">{customer.content}</q>
     <div className="flex items-center mt-8">
       <img
         className="w-12 h-12 mr-4 rounded-full"
