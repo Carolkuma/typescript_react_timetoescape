@@ -7,12 +7,10 @@ import { isMobile } from 'react-device-detect';
 import { Helmet } from 'react-helmet';
 
 const style = {
-    height: "15.3rem",
+    height: "15.35rem",
     width: "100%",
     zIndex: 1,
 }
-
-
 
 interface props {
   enterCount: number,
