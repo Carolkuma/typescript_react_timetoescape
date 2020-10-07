@@ -14,7 +14,7 @@ interface props {
 
 const style = (isOpen: boolean) => {return  {
   transition: 'max-height .6s',
-  maxHeight: isOpen ? '6rem' : 0,
+  maxHeight: isOpen ? '10rem' : 0,
 }
 }
 
@@ -32,17 +32,18 @@ export const Accordion = ({
        }: props) => (
          <div className="w-full leading-normal">
            <div
-             className={`font-bold text-xl border-gray-200 cursor-pointer ${isOpen &&
+             className={`alt-font text-2xl border-gray-200 cursor-pointer ${isOpen &&
                "border-b-2"}  px-6 py-3 ${index !== 0 && "border-t-2"}`}
              onClick={toggle}
            >
+             
+             {question}
              <FontAwesomeIcon
-               rotation={isOpen ? 180 : 90}
+               rotation={isOpen ? undefined : 180}
                icon={faChevronUp}
-               className="h-full mt-1 mr-6"
+               className="h-full text-xl mt-2 text-xl float-right"
                style={transitionStyle}
              />
-             {question}
            </div>
            <div className="overflow-hidden" style={style(isOpen)}>
              <p className={`text-gray-700 text-base px-6 py-3 `}>{answer}</p>
