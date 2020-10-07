@@ -12,7 +12,7 @@ const navigateToGoogleLink =
 
 export const Contact = () => {
     return (
-      <section id="contact" className="mt-20 pb-20 container mx-auto">
+      <section id="contact" className="mt-20 pb-20 md:pb-0 container mx-auto">
         <h2 className="text-3xl lg:text-4xl alt-font text-center mb-20">
           Kontakt
         </h2>
@@ -32,7 +32,7 @@ export const Contact = () => {
           </ContactCard>
         </div>
 
-        <Card className="md:flex md:flex-row md:flex-row-reverse mt-10 overflow-hidden">
+        <Card className="px-5 md:px-0 md:flex md:flex-row md:flex-row-reverse mt-10 md:-mb-32 overflow-hidden bg-white relative z-10">
           <div className="w-full text-center md:text-left lg:w-1/3 p-10">
             <div className="uppercase tracking-wider font-bold mb-5">Time to escape</div>
             <p className="mb-5">

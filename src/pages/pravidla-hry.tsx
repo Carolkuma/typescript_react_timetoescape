@@ -31,8 +31,8 @@ const getItemClass = (index: number, length: number) =>
 export default () => (
   <Layout>
     <section className="my-10">
-      <article className="container px-3 mx-auto md:text-lg text-justify">
-        <h1 className="mb-10 text-3xl font-bold">{GAME_RULES.title}</h1>
+      <article className="container px-3 mx-auto md:text-lg">
+        <h1 className="mb-10 text-4xl alt-font">{GAME_RULES.title}</h1>
         <ol type="1" className="ol-rules mb-10">
           {GAME_RULES.rules.map((v, i, a) => (
             <li className={getItemClass(i, a.length)} key={i}>

@@ -7,13 +7,10 @@ import { isMobile } from 'react-device-detect';
 import { Helmet } from 'react-helmet';
 
 const style = {
-    height: "15em",
+    height: "15.35rem",
     width: "100%",
     zIndex: 1,
-
 }
-
-
 
 interface props {
   enterCount: number,
@@ -27,7 +24,7 @@ interface props {
 }
 
 const icon = new L.Icon({
-  iconUrl: withPrefix("/marker-icon.png"),
+  iconUrl: withPrefix("/marker-icon.svg"),
 });
 
 export class LeafletMap extends Component<props>  {
@@ -48,6 +45,7 @@ export class LeafletMap extends Component<props>  {
             zoomControl={false}
             dragging={false}
             boxZoom={false}
+            style={{height: "100%"}}
           >
             <TileLayer
               attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
