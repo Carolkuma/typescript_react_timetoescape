@@ -2,8 +2,8 @@ import React from 'react';
 
 const sizes = {
   default: `py-3 px-5`,
-  lg: `py-4 px-12`,
-  xl: `py-5 px-16 text-lg`
+  lg: `py-3 px-5 md:py-4 md:px-12`,
+  xl: `py-3 px-5 md:py-5 md:px-16 md:text-lg`
 };
 
 
@@ -34,8 +34,12 @@ const Button = ({
         ${sizes[size] || sizes.default}
         ${className}
         bg-orange-400
+        text-center
         transition-all
-        inline
+        w-full 
+        md:w-auto 
+        block 
+        md:inline
         duration-200 
         ease-in-out
         hover:bg-orange-600

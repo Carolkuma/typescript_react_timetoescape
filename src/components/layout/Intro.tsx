@@ -6,13 +6,13 @@ import loadable from "@loadable/component";
 
 const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
 
-const videoEnabled = false
+const videoEnabled = true
 
 export const Intro = () => {             
            return (
              <section id="intro" className="relative">
                <div className="relative z-10 bg-dark bg-opacity-75 text-gray-100">
-                 <div className="container mx-auto px-8 flex  py-20 z-10">
+                 <div className="container mx-auto px-5 md:px-8 flex  py-20 z-10">
                    <div className="text-center flex-1">
                      <h1 className="text-4xl lg:text-5xl xl:text-6xl leading-none alt-font">
                        Nezabudnuteľný zážitok
