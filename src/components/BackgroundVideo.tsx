@@ -6,6 +6,9 @@ import { isMobile } from "react-device-detect";
 
 const style = {
   height: "100%",
+  backgroundImage: `url('${withPrefix('/intro.jpg')}')`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
 };
 
  const videoOptions = {
@@ -16,11 +19,11 @@ const style = {
    playsInline: true,
  };
 
-const BackgroundVideo = () => (
-  !isMobile   ? <div className="absolute top-0 z-0 overflow-hidden w-full" style={style}>
-    <VideoCover videoOptions={videoOptions} remeasureOnWindowResize />
-  </div>
-  : null
-);
+const BackgroundVideo = () =>
+ <div className="absolute top-0 z-0 bg-dark overflow-hidden w-full" style={style}>
+     {!isMobile   ?  <VideoCover videoOptions={videoOptions} remeasureOnWindowResize />
+     : null}
+ </div>
+
 
 export default BackgroundVideo
