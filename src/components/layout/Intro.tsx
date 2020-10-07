@@ -6,7 +6,7 @@ import loadable from "@loadable/component";
 
 const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
 
-const videoEnabled = true
+const videoEnabled = false
 
 export const Intro = () => {             
            return (

@@ -13,7 +13,7 @@ const style = {
 }
 export const Outro = () => (
          <section
-           className="py-20 bg-gray-200 text-center bg-styles"
+           className="py-20 md:pt-48 bg-gray-200 text-center bg-styles"
            style={style}
          >
            <div className="container mx-auto">
