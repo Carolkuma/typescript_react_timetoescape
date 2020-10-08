@@ -136,6 +136,9 @@ body {
         background-color: rgb(33, 33, 33);
         color: rgb(237, 242, 247)
     }
+    .bg-white {
+      background-color: rgb(33, 33, 33);
+    }
     .alt-bg {
       background-color: rgba(30, 34, 37, 0.6)
     }
