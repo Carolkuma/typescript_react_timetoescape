@@ -16,7 +16,6 @@ const createMarkup = () => {
     <!-- Load Facebook SDK for JavaScript -->
       <div id="fb-root"></div>
       <script>
-        debugger
         window.fbAsyncInit = function() {
           FB.init({
             xfbml            : true,
