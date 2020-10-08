@@ -17,11 +17,6 @@ export const Contact = () => {
           Kontakt
         </h2>
         <div className="grid grid-cols-1  lg:grid-cols-3 gap-10">
-          <ContactCard icon={faClock} title="Otváracia doba">
-            <span>PO - PI 16:00 - 22:00</span>
-            <br />
-            <span>SO - NE 9:00 - 22:00</span>
-          </ContactCard>
           <ContactCard icon={faPhone} title="Telefónne číslo">
             <a href="tel:+421951406635">+421 951 406 635</a>
           </ContactCard>
@@ -29,6 +24,11 @@ export const Contact = () => {
             <a href="mailto:rezervacia@timetoescape.sk">
               rezervacia@timetoescape.sk
             </a>
+          </ContactCard>
+          <ContactCard icon={faClock} title="Otváracia doba">
+            <span>PO - PI 16:00 - 22:00</span>
+            <br />
+            <span>SO - NE 9:00 - 22:00</span>
           </ContactCard>
         </div>
 
