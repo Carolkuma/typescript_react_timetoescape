@@ -26,7 +26,7 @@ const socialIcons = [
 ];
 
 
-export const Social = () =>
+export const Social = () => socialIcons.length > 0 ? 
          socialIcons.map(({ link, icon, alt }, key) => (
            <a
              href={link}
@@ -40,4 +40,4 @@ export const Social = () =>
            >
              <FontAwesomeIcon icon={icon} fixedWidth />
            </a>
-         ));
+         )) : null

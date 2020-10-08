@@ -6,21 +6,32 @@ import { isMobile } from "react-device-detect";
 
 const style = {
   height: "100%",
+  backgroundImage: `url('${withPrefix('/intro.jpg')}')`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
 };
 
- const videoOptions = {
-   src: withPrefix("/intro.mp4"),
+ const videoOptions = (lowResolution: boolean) => { return {
+   src: lowResolution ? withPrefix("/intro_mobile.mp4") : withPrefix("/intro.mp4"),
    autoPlay: true,
    muted: true,
    loop: true,
    playsInline: true,
- };
+ }}
 
-const BackgroundVideo = () => (
-  !isMobile   ? <div className="absolute top-0 z-0 overflow-hidden w-full" style={style}>
-    <VideoCover videoOptions={videoOptions} remeasureOnWindowResize />
-  </div>
-  : null
-);
+ let preloadVideo = true;
+ const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+ if (connection) {
+   if (connection.effectiveType === 'slow-2g') {
+     preloadVideo = false;
+   }
+ }
+
+
+const BackgroundVideo = () =>
+ <div className="absolute top-0 z-0 bg-dark overflow-hidden w-full" style={style}>
+    {preloadVideo ? <VideoCover videoOptions={videoOptions(isMobile)} remeasureOnWindowResize /> : null }
+ </div>
+
 
 export default BackgroundVideo
