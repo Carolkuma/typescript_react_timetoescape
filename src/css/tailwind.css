@@ -36,9 +36,15 @@ a:hover {
 @tailwind utilities;
 
 @media only screen and (min-width: 769px) {
-.card-shadow {
-  box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  .card-shadow {
+    box-shadow: 0 10px 28px rgba(0,0,0,.08);
+  }
 }
+
+@media only screen and (min-width: 769px) and (prefers-color-scheme: dark) {
+  .card-shadow {
+    box-shadow: 0 10px 28px rgba(255,255,255,.08);
+  }
 }
 .content {
   min-height: calc(100vh - 4rem);
@@ -136,6 +142,9 @@ body {
         background-color: rgb(33, 33, 33);
         color: rgb(237, 242, 247)
     }
+    .bg-white {
+      background-color: rgb(33, 33, 33);
+    }
     .alt-bg {
       background-color: rgba(30, 34, 37, 0.6)
     }
@@ -149,13 +158,9 @@ body {
       background-color: rgb(89 95 104)
     }
     .border-gray-200 {
-      border-color: #595f68;
-    }
-    .card-shadow {
-      box-shadow:  8px 8px 23px #d4d4d4, 
-             -8px -8px 23px #ffffff;
+      border-color: #2e3238;
     }
     .shadow {
-    box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 253, 255, 0.06);
-}
+      box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 253, 255, 0.06);
+    }
 }
