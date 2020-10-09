@@ -10,7 +10,7 @@ export default [
     source: 1,
   },
   {
-    rating: 3.5,
+    rating: 5,
     scale: 5,
     content:
       'Podľa môjho skromného názoru najlepšia escape roomka v hre 💪🏻',
