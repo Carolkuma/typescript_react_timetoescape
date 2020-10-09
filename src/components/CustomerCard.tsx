@@ -20,10 +20,11 @@ interface props {
 
 const formatDate = (date: string): string => lightFormat(new Date(date), 'dd.MM.yyyy')
 
-export const CustomerCard = ({ customer }: props) => (
-  <Card className="flex flex-1 flex-col mb-8 p-10 mx-5">
-    <div className="flex mb-8">
+const showTextRating = (rating: number, scale: number): string => `${rating}/${scale}`
 
+export const CustomerCard = ({ customer }: props) => (
+  <Card className="flex flex-1 flex-col mb-8 p-5 md:p-10 md:mx-5">
+    <div className="flex mb-8">
       <StarRatings
         rating={customer.rating}
         starDimension="1.5rem"
@@ -34,7 +35,7 @@ export const CustomerCard = ({ customer }: props) => (
         name="hodnotenie"
       />
       <div className="float-right flex-1 text-right">
-        {customer.rating}/{customer.scale}
+        {showTextRating(customer.rating, customer.scale)}
       </div>
     </div>
     <div className="flex-grow">
