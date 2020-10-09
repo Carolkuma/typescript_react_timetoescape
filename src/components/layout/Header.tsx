@@ -12,10 +12,10 @@ const Links = [
     label: "Miestnosti",
     href: "#rooms",
   },
-  // {
-  //   label: "Referencie",
-  //   href: "#testimonials",
-  // },
+  {
+    label: "Referencie",
+    href: "#testimonials",
+  },
   // {
   //   label: 'Cenník',
   //   href: '',
