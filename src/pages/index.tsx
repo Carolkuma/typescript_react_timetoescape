@@ -3,7 +3,7 @@ import React from 'react';
 
 import Layout from '../components/layout/Layout';
 
-import customerData from '../data/customer-data';
+
 import { Helmet } from "react-helmet";
 
 import { Intro } from '../components/layout/Intro';
@@ -39,7 +39,7 @@ export default () => (
     <Rooms />
     {/* TODO: gallery */}
 
-    <Testimonials customerData={customerData} />
+    <Testimonials/>
     <Faq />
     <Contact />
     <Outro />

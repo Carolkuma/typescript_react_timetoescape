@@ -1,28 +1,24 @@
 import React from "react";
 import Button from '../Button'
 
+import * as data  from '../../../content/home/rooms.json'
+
 declare module 'react' {
      interface HTMLProps<T> {
         async?:boolean;
     }    
 }
 
-const ROOMS = [
-  {
-    title: "Mission (Im)possible",
-    description: `Aký je to pocit, byť v tíme špiónov ktorých odhalila zločinecká organizácia ktorú mali sledovať? Byť spútaný v neznámom priestore a byť poslednou šancou na odvrátenie katastrofy? Dokážeš so svojím tímom vyriešiť všetky nástrahy včas aby si zachránil mnoho životov?`,
-    href: "https://time-to-escape-escape-room.reservio.com/booking",
-  },
-];
+
 
 export const Rooms = () => {
     return (
       <section id="rooms" className="mt-20 container mx-auto">
         <h2 className="text-3xl lg:text-4xl alt-font text-center">
-          Miestnosti
+        {data.title}
         </h2>
         <div className="">
-          {ROOMS.map(({ title, description, href }, index) => {
+          {data.rooms.map(({ title, description, href, image }, index) => {
             
             return (
                 <div
@@ -33,8 +29,8 @@ export const Rooms = () => {
                 >
                   <div className="w-full md:1/2 lg:w-1/3 self-center p-5">
                     <img
-                      src="/impossible.jpg"
-                      alt="Misson impossible escape room"
+                      src={image.src}
+                      alt={image.alt}
                       className="w-1/2 mx-auto md:w-auto"
                       loading="lazy"
                     />
