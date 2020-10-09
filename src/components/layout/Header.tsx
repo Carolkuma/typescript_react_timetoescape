@@ -43,7 +43,7 @@ const style = {
 
 const headerStyles = (isOpen: boolean) => {
   return {
-    maxHeight: `${isOpen ? "20rem" : "4rem"}`,
+    maxHeight: `${isOpen ? "100vh" : "4rem"}`,
     transition: "max-height 0.3s ease-in-out",
   };
 };
