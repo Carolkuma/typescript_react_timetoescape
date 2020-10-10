@@ -7,7 +7,7 @@ import Layout from '../components/layout/Layout';
 import { Helmet } from "react-helmet";
 
 import { Intro } from '../components/layout/Intro';
-import { FocusGroup } from '../components/layout/focusgroup/FocusGroup';
+import { ReasonsToEnter } from '../components/layout/ReasonsToEnter/ReasonsToEnter';
 import { Rooms } from '../components/layout/Rooms';
 import { Outro } from '../components/layout/Outro';
 import { Testimonials } from '../components/Testimonials';
@@ -34,7 +34,7 @@ export default () => (
       
     </Helmet>
     <Intro />
-    <FocusGroup />
+    <ReasonsToEnter />
     <AboutEscapeRoom/>
     <Rooms />
     {/* TODO: gallery */}

@@ -1,0 +1,31 @@
+{
+    "title": "Pre koho je escape room určená ?",
+    "reasons": [
+        {
+            "title": "Teambuilding",
+            "description":
+              "Akonáhle sa začne odpočítavanie, je to všetko o spolupráci a komunikácií.",
+            "icon": "faBuilding"
+          },
+          {
+            "title": "Priateľov a rodinu",
+            "description":
+              "Ak vaši priatelia nemajú čas, príďte s rodinou! Či tak alebo onak, určite sa zasmejete a zistíte, kto je v čom lepší.",
+            "icon": "faUserFriends"
+          },
+          {
+            "title": "Turistov",
+            "description":
+              "Spiš má pekné miesta k videniu, ale ak hľadáte niečo neobvyklé ESCAPE ROOM je tu.",
+            "icon": "faRoute"
+          },
+          {
+            "title": "Oslavy",
+            "description":
+              "Narodeniny, stretávky zo školy, návšteva…alebo možno je to len piatok. My sme vždy hľadali dôvod oslavovať.",
+            "icon": "faGift"
+          }
+    ]
+}
+
+
