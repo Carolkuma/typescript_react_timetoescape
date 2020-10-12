@@ -21,6 +21,9 @@
         "title": "Time to escape",
         "mail": "Zimná 61, \n 052 01 Spišská Nová Ves"
     },
-    "map": "",
-    "googleMapsLink": "https://www.google.com/maps/place/Zimn%C3%A1+196,+052+01+Spi%C5%A1sk%C3%A1+Nov%C3%A1+Ves/@48.9430553,20.5655161,17z/data=!3m1!4b1!4m5!3m4!1s0x473e4ed643f75155:0x8044b62f996bb4bc!8m2!3d48.9430553!4d20.5677048"
+    "map": {
+        "googleMapsLink": "https://www.google.com/maps/dir//Zimn%C3%A1+61,+052+01+Spi%C5%A1sk%C3%A1+Nov%C3%A1+Ves/@48.9435593,20.5657326,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x473e4ed5e476c707:0xb713222ec79e3853!2m2!1d20.5668228!2d48.9438095",
+        "coordinates": { "lat": 48.94326, "lng": 20.56778 },
+        "label": "Otvoriť v mapách"
+    }
 }

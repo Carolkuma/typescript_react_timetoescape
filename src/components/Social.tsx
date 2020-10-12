@@ -8,8 +8,7 @@ const style = {
     marginLeft: '-8px' 
 }
  
-export const Social = () => sites.length > 0 ? 
-        sites.map(({ link, icon, alt }, key) => (
+export const Social = () => sites.map(({ link, icon, alt }, key) => (
            <a
              href={link}
              key={key}
@@ -22,4 +21,4 @@ export const Social = () => sites.length > 0 ?
            >
              <FontAwesomeIcon icon={getIcon(icon)} fixedWidth />
            </a>
-         )) : null
+         ))

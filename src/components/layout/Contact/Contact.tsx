@@ -1,11 +1,9 @@
 import React from 'react'
 import Card from '../../Card'
-import { GMap } from "../../Map/Map";
-import { faClock, faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
-import { ContactCard } from './ContactCard';
-import { Social } from '../../Social';
-import { title, address, googleMapsLink, info } from '../../../../content/home/contact.json'
+import { GMap } from "../../Map/Map"
+import { ContactCard } from './ContactCard'
+import { Social } from '../../Social'
+import { title, address, map, info } from '../../../../content/home/contact.json'
 import { getIcon } from '../../getIcon';
 
 
@@ -42,9 +40,9 @@ export const Contact = () => {
           </div>
           <div className="flex-auto lg:flex-1  ">
             <GMap
-              coordinates={{ lat: 48.94326, lng: 20.56778 }}
-              label="Otvoriť v mapách"
-              link={googleMapsLink}
+              coordinates={map.coordinates}
+              label={map.label}
+              link={map.googleMapsLink}
             ></GMap>
           </div>
         </Card>
