@@ -1,27 +1,12 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { footer as FOOTER_NAVIGATION } from '../../../content/home/common/navigation.json'
 
 const getCopyright = (startYear = 2020) => {
   const toYear = new Date().getFullYear()
   const copyrightDate = startYear === toYear ? `${startYear}` : `${startYear}- ${toYear}` 
   return `© ${copyrightDate}`
 }
-
-
-
-
-const FOOTER_NAVIGATION = [
-  {
-    link: "/pravidla-hry/",
-    label: "Pravidlá hry",
-  },
-  {
-    link: "/privacy-policy/",
-    label: "Ochrana osobných údajov",
-  },
-];
-
-
 
 const Footer = () => (
   <footer className="bg-dark text-gray-100 print:bg-white print:text-gray-500">
@@ -38,6 +23,6 @@ const Footer = () => (
       <span className="flex-grow md:text-left mb-5 md:py-5">{getCopyright()} Time to escape</span>
     </div>
   </footer>
-);
+)
 
 export default Footer;

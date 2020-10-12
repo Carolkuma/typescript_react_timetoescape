@@ -3,28 +3,15 @@ import React from 'react';
 import Card from '../../Card';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faRoute,
-  faUserFriends, 
-  faGift,
-  IconDefinition,
-} from "@fortawesome/free-solid-svg-icons";
-import { faBuilding, } from "@fortawesome/free-regular-svg-icons"
+import { getIcon } from '../../getIcon';
 
 export interface ReasonToEnter {
   title: string,
   description: string,
   icon: string,
 }
-enum ICONS {
-  faRoute,
-  faUserFriends,
-  faGift,
-  faBuilding,
-}
 
 
-const getIcon = (icon: string): IconDefinition => faBuilding
 
 interface props {
   reasons: ReasonToEnter[]

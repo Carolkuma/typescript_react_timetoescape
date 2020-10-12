@@ -1,4 +1,5 @@
 import React from 'react'
+import { BookingButton } from '../BookingButton';
 import Button from '../Button'
 
 
@@ -27,13 +28,7 @@ export const Outro = () => (
                </p>
              )}
              <div className="mt-10">
-               <Button
-                 href="https://time-to-escape-escape-room.reservio.com/booking"
-                 target="_blank"
-                 size="xl"
-               >
-                 {OutroData.buttonText}
-               </Button>
+               <BookingButton size="xl"/>
              </div>
            </div>
          </section>

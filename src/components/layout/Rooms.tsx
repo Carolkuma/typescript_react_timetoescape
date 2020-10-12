@@ -2,6 +2,7 @@ import React from "react";
 import Button from '../Button'
 
 import * as data  from '../../../content/home/rooms.json'
+import { BookingButton } from "../BookingButton";
 
 declare module 'react' {
      interface HTMLProps<T> {
@@ -38,9 +39,7 @@ export const Rooms = () => {
                   <div className="w-full md:1/2 lg:w-2/3 self-center p-5">
                     <h3 className="text-3xl alt-font">{title}</h3>
                     <p className="mt-6 mb-10 md:text-lg">{description}</p>
-                    <Button href={href} target="_blank"  className="w-full">
-                      Rezervácia
-                    </Button>
+                    <BookingButton/>
                   </div>
                 </div>
             );
