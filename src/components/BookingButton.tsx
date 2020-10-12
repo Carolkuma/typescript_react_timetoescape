@@ -12,6 +12,7 @@ const BookingButton = ({size}: props) => isBookingEnabled ? <Button
     href={link}
     className="text-sm"
     target="_blank"
+    rel="noopener"
     size={size}
   >
     {label}

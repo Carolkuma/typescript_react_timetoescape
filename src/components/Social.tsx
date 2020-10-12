@@ -13,7 +13,7 @@ export const Social = () => sites.map(({ link, icon, alt }, key) => (
              href={link}
              key={key}
              target="_blank"
-             rel="noopener noreferrer"
+             rel="noopener"
              className="text-4xl mr-5"
              style={style}
              aria-label={alt}
