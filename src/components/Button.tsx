@@ -26,6 +26,7 @@ export enum ButtonElement {
 const Button = ({
   children,
   className = "",
+  rel,
   size,
   href,
   element = ButtonElement.LINK,

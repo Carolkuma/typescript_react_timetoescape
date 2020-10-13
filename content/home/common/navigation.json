@@ -1,6 +1,11 @@
 {
     "header": [
         {
+            "label": "Koronavírus",
+            "href": "#rooms",
+            "color": "red"
+        },
+        {
             "label": "Miestnosti",
             "href": "#rooms"
         },
