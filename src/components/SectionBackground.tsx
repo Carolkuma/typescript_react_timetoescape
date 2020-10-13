@@ -18,8 +18,20 @@ interface ImageQueryResult {
   node: Node
 }
 
+interface QueryResult {
+  edges: ImageQueryResult[]
+}
 
-const findImage = ({edges}: ImageQueryResult[], relativePath: string) => edges.find(({node}: ImageQueryResult) => node.relativePath === relativePath)
+
+
+const findImage = ({edges}: QueryResult, relativePath: string) => {
+  const image = edges.find(({node}: ImageQueryResult) => node.relativePath === relativePath)
+
+  if (!image) {
+    throw new Error(`Cannot find image ${relativePath}`)
+  }
+  return image  
+}
 
 const SectionBackground = ({ className, children, imageSrc }: props) => {
   const { mobileImages, desktopImages } = useStaticQuery(
@@ -44,7 +56,7 @@ const SectionBackground = ({ className, children, imageSrc }: props) => {
               extension
               relativePath
               childImageSharp {
-                fluid(maxWidth: 490, quality: 100) {
+                fluid(quality: 100, maxWidth: 4160) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
