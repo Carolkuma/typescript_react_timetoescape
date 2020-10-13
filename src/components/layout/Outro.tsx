@@ -10,6 +10,7 @@ const style = {
 export const Outro = () => (
         <SectionBackground
            className="py-20 md:pt-48 bg-gray-200 text-center bg-styles bg-dark"
+           imageSrc="footer.jpg"
          >
            <div className="container mx-auto px-5">
              <h3 className="text-3xl  md:text-4xl alt-font text-gray-100">

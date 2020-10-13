@@ -6,24 +6,49 @@ import BackgroundImage from 'gatsby-background-image'
 interface props  {
   className?: string, 
   children?: JSX.Element | JSX.Element[],
+  imageSrc: string,
 }
 
-const SectionBackground = ({ className, children }: props) => {
-  const { mobileImage, desktopImage } = useStaticQuery(
+interface Node {
+  relativePath: string,
+}
+
+
+interface ImageQueryResult {
+  node: Node
+}
+
+
+const findImage = ({edges}: ImageQueryResult[], relativePath: string) => edges.find(({node}: ImageQueryResult) => node.relativePath === relativePath)
+
+const SectionBackground = ({ className, children, imageSrc }: props) => {
+  const { mobileImages, desktopImages } = useStaticQuery(
     graphql`
       query {
-        mobileImage: file(relativePath: { eq: "footer.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 490, quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+        mobileImages: allFile(filter:{ extension: { regex: "/jpeg|jpg|png|gif/"}}) {
+          edges {
+            node { 
+              extension
+              relativePath
+              childImageSharp {
+                fluid(maxWidth: 490, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            } 
           }
         }
-        desktopImage: file(relativePath: { eq: "footer.jpg" }) {
-          childImageSharp {
-            fluid(quality: 100, maxWidth: 4160) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
+        desktopImages: allFile(filter:{ extension: { regex: "/jpeg|jpg|png|gif/"}}) {
+          edges {
+            node { 
+              extension
+              relativePath
+              childImageSharp {
+                fluid(maxWidth: 490, quality: 100) {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            } 
           }
         }
       }
@@ -31,10 +56,14 @@ const SectionBackground = ({ className, children }: props) => {
   )
   // Set up the array of image data and `media` keys.
   // You can have as many entries as you'd like.
+  
+  const mobileImage = findImage(mobileImages, imageSrc)
+  const desctopImage = findImage(desktopImages, imageSrc)
+  
   const sources = [
-    mobileImage.childImageSharp.fluid,
+    mobileImage.node.childImageSharp.fluid,
     {
-      ...desktopImage.childImageSharp.fluid,
+      ...desctopImage.node.childImageSharp.fluid,
       media: `(min-width: 491px)`,
     },
   ]
@@ -50,21 +79,5 @@ const SectionBackground = ({ className, children }: props) => {
     </BackgroundImage>
   )
 }
-
-// const StyledInnerWrapper = styled.div`
-//   margin-top: 10%;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// `
-
-// const StyledArtDirectedBackground = styled(ArtDirectedBackground)`
-//   width: 100%;
-//   min-height: 100vh;
-//   /* You should set a background-size as the default value is "cover"! */
-//   background-size: auto;
-//   /* So we won't have the default "lightgray" background-color. */
-//   background-color: transparent;
-// `
 
 export default SectionBackground
