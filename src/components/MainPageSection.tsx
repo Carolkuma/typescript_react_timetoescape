@@ -6,9 +6,10 @@ interface props {
     className?: string,
     children?: JSX.Element | JSX.Element[],
     imageSrc: string,
+    VideoBg: JSX.Element
 }
 
-export const MainPageSection = ({id, children, imageSrc, className}: props) => <SectionBackground
+export const MainPageSection = ({id, children, imageSrc, className, VideoBg}: props) => <SectionBackground
 className={`text-gray-100 bg-styles bg-dark`}
 imageSrc={imageSrc} 
 tag={'section'} id={id}
@@ -18,4 +19,5 @@ tag={'section'} id={id}
     {children}
     </div>
     </div>
+    {VideoBg}
     </SectionBackground>

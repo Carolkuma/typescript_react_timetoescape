@@ -7,10 +7,10 @@ import { MainPageSection } from "../MainPageSection";
 
 const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
 
-const videoEnabled = false
+const videoEnabled = true
 export const Intro = () => {             
            return (
-             <MainPageSection id="intro" imageSrc={'intro.jpg'}>
+             <MainPageSection id="intro" imageSrc={'intro.jpg'} VideoBg={videoEnabled && <BackgroundVideo />}>
                    <div className="text-center flex-1">
                      <h1 className="text-4xl lg:text-5xl xl:text-6xl leading-none alt-font">
                        Nezabudnuteľný zážitok
@@ -24,9 +24,6 @@ export const Intro = () => {
                        </Button>
                      </AnchorLink>
                    </div>
-                 
-               
-               {videoEnabled && <BackgroundVideo />}
              </MainPageSection>
            );
        
