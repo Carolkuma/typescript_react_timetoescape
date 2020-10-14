@@ -10,9 +10,7 @@ const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
 const videoEnabled = false
 export const Intro = () => {             
            return (
-             <MainPageSection id="intro" className="relative bg-dark intro-bg" imageSrc={'intro.jpg'}>
-               
-                 
+             <MainPageSection id="intro" imageSrc={'intro.jpg'}>
                    <div className="text-center flex-1">
                      <h1 className="text-4xl lg:text-5xl xl:text-6xl leading-none alt-font">
                        Nezabudnuteľný zážitok

@@ -9,10 +9,13 @@ interface props {
 }
 
 export const MainPageSection = ({id, children, imageSrc, className}: props) => <SectionBackground
-className={`py-20 text-gray-100 bg-styles bg-dark ${className}`}
-imageSrc={imageSrc} tag={'section'} id={id}
+className={`text-gray-100 bg-styles bg-dark`}
+imageSrc={imageSrc} 
+tag={'section'} id={id}
 >
+<div className={`py-20 relative z-10 intro-bg text-gray-100 ${className}`}>
 <div className="container mx-auto px-3">
     {children}
+    </div>
     </div>
     </SectionBackground>

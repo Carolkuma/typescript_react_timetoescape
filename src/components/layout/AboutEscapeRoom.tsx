@@ -7,7 +7,6 @@ import { MainPageSection } from "../MainPageSection";
 export const AboutEscapeRoom = () => (
          <MainPageSection
            id={id}
-           className="py-20 text-gray-100 bg-styles"
            imageSrc={backgroundImage}
          >
            <div className="container mx-auto px-3">
