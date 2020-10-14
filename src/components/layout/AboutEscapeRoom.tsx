@@ -1,15 +1,14 @@
 import React from "react";
 
-import {title, content} from '../../../content/home/about.json'
-const style = {
-  backgroundImage: "url(./bg/about.jpg)",
-};
+import {title, id, description, backgroundImage} from '../../../content/home/about.json'
+import { MainPageSection } from "../MainPageSection";
+
 
 export const AboutEscapeRoom = () => (
-         <section
-           id="about"
+         <MainPageSection
+           id={id}
            className="py-20 text-gray-100 bg-styles"
-           style={style}
+           imageSrc={backgroundImage}
          >
            <div className="container mx-auto px-3">
              <h2 className="text-3xl lg:text-4xl alt-font text-center">
@@ -17,10 +16,10 @@ export const AboutEscapeRoom = () => (
              </h2>
              <div className="mt-10 text-center lg:w-2/3 mx-auto text-justify">
                <p className="md:text-lg ">
-                 {content}
+                 {description}
                </p>
              </div>
            </div>
-         </section>
+         </MainPageSection>
        );
 

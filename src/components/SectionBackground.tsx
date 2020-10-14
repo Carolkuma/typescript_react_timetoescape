@@ -4,9 +4,11 @@ import React from 'react'
 import BackgroundImage from 'gatsby-background-image'
 
 interface props  {
-  className?: string, 
+  className?: string | undefined, 
   children?: JSX.Element | JSX.Element[],
   imageSrc: string,
+  tag: string,
+  id: string,
 }
 
 interface Node {
@@ -33,7 +35,7 @@ const findImage = ({edges}: QueryResult, relativePath: string) => {
   return image  
 }
 
-const SectionBackground = ({ className, children, imageSrc }: props) => {
+const SectionBackground = ({ className, children, imageSrc, tag, id }: props) => {
   const { mobileImages, desktopImages } = useStaticQuery(
     graphql`
       query {
@@ -82,8 +84,8 @@ const SectionBackground = ({ className, children, imageSrc }: props) => {
 
   return (
     <BackgroundImage
-      Tag={`section`}
-      id={`media-test`}
+      Tag={tag}
+      id={id}
       className={className}
       fluid={sources}
     >
@@ -91,5 +93,12 @@ const SectionBackground = ({ className, children, imageSrc }: props) => {
     </BackgroundImage>
   )
 }
+
+SectionBackground.defaultProps = {
+  tag: 'div',
+  id: '',
+  className: undefined,
+}
+
 
 export default SectionBackground

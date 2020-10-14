@@ -1,19 +1,12 @@
 import React from 'react'
 import { BookingButton } from '../BookingButton';
-import { title, description  } from '../../../content/home/outro.json' 
-import SectionBackground from '../SectionBackground';
-
-const style = {
-  backgroundImage: 'url(./bg/footer.jpg)'
-}
+import { title, description, backgroundImage  } from '../../../content/home/outro.json' 
+import { MainPageSection } from '../MainPageSection';
 
 export const Outro = () => (
-        <SectionBackground
-           className="py-20 md:pt-48 bg-gray-200 text-center bg-styles bg-dark"
-           imageSrc="footer.jpg"
-         >
-           <div className="container mx-auto px-5">
-             <h3 className="text-3xl  md:text-4xl alt-font text-gray-100">
+        <MainPageSection imageSrc={backgroundImage} className="md:pt-48 text-center">
+            <>
+             <h3 className="text-3xl  md:text-4xl alt-font ">
                {title}
              </h3>
              {description !== "" && (
@@ -21,9 +14,7 @@ export const Outro = () => (
                  {description}
                </p>
              )}
-             <div className="mt-10">
-               <BookingButton size="xl"/>
-             </div>
-           </div>
-          </SectionBackground>
+             </>
+              <BookingButton size="xl" className="mt-10"/>
+          </MainPageSection>
        )

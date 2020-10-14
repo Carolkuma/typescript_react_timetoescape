@@ -6,11 +6,12 @@ import { isBookingEnabled, label, link} from '../../content/home/common/booking.
 interface props {
     size?: string,
     label?: string,
+    className?: string,
 }
 
-const BookingButton = ({size}: props) => isBookingEnabled ? <Button
+const BookingButton = ({size, className}: props) => isBookingEnabled ? <Button
     href={link}
-    className="text-sm"
+    className={`text-sm ${className}`}
     target="_blank"
     rel="noopener"
     size={size}

@@ -3,15 +3,16 @@ import Button, { ButtonElement } from '../Button';
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import loadable from "@loadable/component";
+import { MainPageSection } from "../MainPageSection";
 
 const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
 
 const videoEnabled = false
 export const Intro = () => {             
            return (
-             <section id="intro" className="relative bg-dark">
-               <div className="relative z-10 intro-bg text-gray-100">
-                 <div className="container mx-auto px-5 md:px-8 flex  py-20 z-10">
+             <MainPageSection id="intro" className="relative bg-dark intro-bg" imageSrc={'intro.jpg'}>
+               
+                 
                    <div className="text-center flex-1">
                      <h1 className="text-4xl lg:text-5xl xl:text-6xl leading-none alt-font">
                        Nezabudnuteľný zážitok
@@ -25,10 +26,10 @@ export const Intro = () => {
                        </Button>
                      </AnchorLink>
                    </div>
-                 </div>
-               </div>
+                 
+               
                {videoEnabled && <BackgroundVideo />}
-             </section>
+             </MainPageSection>
            );
        
             }
