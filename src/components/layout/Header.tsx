@@ -1,37 +1,14 @@
 import React, { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import LogoIcon from "../../svg/LogoIcon";
-import Button from "../Button";
 import { NavigationButton } from "../NavigationButton";
 import { isMobile } from 'react-device-detect';
-import { Link, withPrefix } from 'gatsby';
+import { Link } from 'gatsby';
+import { BookingButton } from "../BookingButton";
+import {header} from '../../../content/home/common/navigation.json'
 
-
-const Links = [
-  {
-    label: "Miestnosti",
-    href: "#rooms",
-  },
-  {
-    label: "Referencie",
-    href: "#testimonials",
-  },
-  // {
-  //   label: 'Cenník',
-  //   href: '',
-  // },
-  {
-    label: "Časté otázky",
-    href: "#faq",
-  },
-  {
-    label: "Kontakt",
-    href: "#contact",
-  },
-];
 
 interface props {
-  isRegistrationEnabled?: boolean;
   showNav?: boolean,
   children?: JSX.Element | JSX.Element[] | string,
   isHome: boolean,
@@ -48,7 +25,11 @@ const headerStyles = (isOpen: boolean) => {
   };
 };
 
-const Header = ({ isRegistrationEnabled, showNav, isHome }: props) => {
+
+const getLinkClass = (className: string): string => `block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto text-white ${className}`
+
+
+const Header = ({showNav, isHome }: props) => {
   const [isOpen, setOpen] = useState(false);
   const offset = !isMobile ? 100 : 350
 
@@ -84,15 +65,15 @@ const Header = ({ isRegistrationEnabled, showNav, isHome }: props) => {
         <div
           className={`mt-4 lg:mt-0 w-full block lg:block flex-grow lg:flex lg:items-center lg:w-auto`}
         >
-          {showNav && Links.length !== 0 && (
+          {showNav && header.length !== 0 && (
             <div className="text-sm lg:flex-grow text-center print:hidden">
-              {Links.map((link, key) =>
+              {header.map((link, key) =>
                 isHome ? (
                   <AnchorLink
                     offset={offset}
                     key={key}
                     style={style}
-                    className="block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto"
+                    className={getLinkClass(link.className)}
                     href={link.href}
                     onClick={() => setOpen(false)}
                   >
@@ -103,7 +84,7 @@ const Header = ({ isRegistrationEnabled, showNav, isHome }: props) => {
                     to={`/${link.href}`}
                     key={key}
                     style={style}
-                    className="block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto"
+                    className={getLinkClass(link.className)}
                     onClick={() => setOpen(false)}
                   >
                     {link.label}
@@ -113,19 +94,11 @@ const Header = ({ isRegistrationEnabled, showNav, isHome }: props) => {
             </div>
           )}
         </div>
-        {isRegistrationEnabled && (
           <div
             className={`lg:block relative mx-auto my-5  lg:my-0`}
           >
-            <Button
-              href="https://time-to-escape-escape-room.reservio.com/booking"
-              className="text-sm"
-              target="_blank"
-            >
-              Rezervácia
-            </Button>
+            <BookingButton/>
           </div>
-        )}
       </nav>
     </header>
   );

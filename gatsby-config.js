@@ -1,3 +1,5 @@
+const path = require(`path`)
+
 module.exports = {
   siteMetadata: {
     title:
@@ -53,5 +55,22 @@ module.exports = {
     //     pixelId: '1676263582538529',
     //   },
     // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/content/images/bg`,
+      },
+    },
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Droid Sans', 'Droid Serif']
+        }
+      }
+    }
   ],
 };

@@ -3,33 +3,35 @@ import Button, { ButtonElement } from '../Button';
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 import loadable from "@loadable/component";
+import { MainPageSection } from "../MainPageSection";
 
-const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
+const BackgroundVideo = loadable(() => import("../BackgroundVideo"))
+
+
+import {title, description, buttonlabel, backgroundImage} from '../../../content/home/intro.json'
+import { header } from '../../../content/home/common/navigation.json'
+
+const firstAnchor = header[0].href
+
 
 const videoEnabled = true
-
 export const Intro = () => {             
            return (
-             <section id="intro" className="relative bg-dark">
-               <div className="relative z-10 intro-bg text-gray-100">
-                 <div className="container mx-auto px-5 md:px-8 flex  py-20 z-10">
+             <MainPageSection id="intro" imageSrc={backgroundImage} VideoBg={videoEnabled && <BackgroundVideo />}>
                    <div className="text-center flex-1">
                      <h1 className="text-4xl lg:text-5xl xl:text-6xl leading-none alt-font">
-                       Nezabudnuteľný zážitok
+                       {title}
                      </h1>
                      <p className="text-xl lg:text-2xl mt-6 font-light mb-8 md:mb-12">
-                       Zaži dobrodružstvo, spolupracuj a unikni.
+                       {description}
                      </p>
-                     <AnchorLink href="#features">
+                     <AnchorLink href={firstAnchor}>
                        <Button size="lg" element={ButtonElement.DIV}>
-                         Vstúpiť
+                         {buttonlabel}
                        </Button>
                      </AnchorLink>
                    </div>
-                 </div>
-               </div>
-               {videoEnabled && <BackgroundVideo />}
-             </section>
+             </MainPageSection>
            );
        
             }

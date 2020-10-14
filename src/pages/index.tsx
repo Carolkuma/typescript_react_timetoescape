@@ -3,11 +3,11 @@ import React from 'react';
 
 import Layout from '../components/layout/Layout';
 
-import customerData from '../data/customer-data';
+
 import { Helmet } from "react-helmet";
 
 import { Intro } from '../components/layout/Intro';
-import { FocusGroup } from '../components/layout/focusgroup/FocusGroup';
+import { ReasonsToEnter } from '../components/layout/ReasonsToEnter/ReasonsToEnter';
 import { Rooms } from '../components/layout/Rooms';
 import { Outro } from '../components/layout/Outro';
 import { Testimonials } from '../components/Testimonials';
@@ -15,6 +15,7 @@ import { Faq } from '../components/layout/Faq';
 import { Contact } from '../components/layout/Contact/Contact';
 import { Location } from '@reach/router';
 import { AboutEscapeRoom } from '../components/layout/AboutEscapeRoom';
+import { Notice } from '../components/Notice';
 
 
 export default () => (
@@ -33,13 +34,15 @@ export default () => (
       />
       
     </Helmet>
+
     <Intro />
-    <FocusGroup />
+    <Notice/>
+    <ReasonsToEnter />
     <AboutEscapeRoom/>
     <Rooms />
     {/* TODO: gallery */}
 
-    <Testimonials customerData={customerData} />
+    <Testimonials/>
     <Faq />
     <Contact />
     <Outro />

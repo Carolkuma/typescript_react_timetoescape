@@ -53,9 +53,7 @@ a:hover {
   height: 2rem;
 }
 
-a.anchor {
-  color:white;
-}
+
 a.anchor:hover {
   @apply text-orange-500;
 }

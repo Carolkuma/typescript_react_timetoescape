@@ -10,7 +10,8 @@ const sizes = {
 interface props {
   children?: JSX.Element | JSX.Element[] | string,
   className?: string,
-  size?: string, 
+  size?: string,
+  rel?: string, 
   href?: string,
   target?: string,
   element?: ButtonElement
@@ -25,6 +26,7 @@ export enum ButtonElement {
 const Button = ({
   children,
   className = "",
+  rel,
   size,
   href,
   element = ButtonElement.LINK,
@@ -58,7 +60,7 @@ const Button = ({
     return <div className={classNames}>{children}</div>;
   }
   return (
-    <a href={href} className={classNames} target={target}>
+    <a href={href} rel={rel} className={classNames} target={target}>
       {children}
     </a>
   );
