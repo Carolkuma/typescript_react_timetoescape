@@ -15,6 +15,7 @@ import { Faq } from '../components/layout/Faq';
 import { Contact } from '../components/layout/Contact/Contact';
 import { Location } from '@reach/router';
 import { AboutEscapeRoom } from '../components/layout/AboutEscapeRoom';
+import { Notice } from '../components/Notice';
 
 
 export default () => (
@@ -33,7 +34,9 @@ export default () => (
       />
       
     </Helmet>
+
     <Intro />
+    <Notice/>
     <ReasonsToEnter />
     <AboutEscapeRoom/>
     <Rooms />

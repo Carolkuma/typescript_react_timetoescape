@@ -3,7 +3,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import LogoIcon from "../../svg/LogoIcon";
 import { NavigationButton } from "../NavigationButton";
 import { isMobile } from 'react-device-detect';
-import { Link, withPrefix } from 'gatsby';
+import { Link } from 'gatsby';
 import { BookingButton } from "../BookingButton";
 import {header} from '../../../content/home/common/navigation.json'
 
@@ -24,6 +24,10 @@ const headerStyles = (isOpen: boolean) => {
     transition: "max-height 0.3s ease-in-out",
   };
 };
+
+
+const getLinkClass = (className: string): string => `block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto text-white ${className}`
+
 
 const Header = ({showNav, isHome }: props) => {
   const [isOpen, setOpen] = useState(false);
@@ -69,7 +73,7 @@ const Header = ({showNav, isHome }: props) => {
                     offset={offset}
                     key={key}
                     style={style}
-                    className="block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto"
+                    className={getLinkClass(link.className)}
                     href={link.href}
                     onClick={() => setOpen(false)}
                   >
@@ -80,7 +84,7 @@ const Header = ({showNav, isHome }: props) => {
                     to={`/${link.href}`}
                     key={key}
                     style={style}
-                    className="block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto"
+                    className={getLinkClass(link.className)}
                     onClick={() => setOpen(false)}
                   >
                     {link.label}

@@ -33,6 +33,7 @@
     "gatsby-plugin-sharp": "^2.6.42",
     "gatsby-plugin-sitemap": "^2.4.11",
     "gatsby-plugin-typescript": "^2.4.3",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.3.34",
     "gatsby-theme-codebushi": "1.0.0",
     "gatsby-transformer-sharp": "^2.5.17",
