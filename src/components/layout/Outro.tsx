@@ -15,6 +15,8 @@ export const Outro = () => (
                </p>
              )}
              </>
-              <BookingButton size="xl" className="mt-10"/>
+              <div className="mt-10">
+              <BookingButton size="xl"/>
+             </div>
           </MainPageSection>
        )
