@@ -14,7 +14,7 @@ export const Notice = () => <section id="koronavirus" className="my-20 container
         <h2 className="text-3xl lg:text-4xl alt-font text-center px-3">{title}</h2>
         <div className="mt-10 text-center lg:w-2/3 mx-auto text-justify">
                <p className="md:text-lg ">
-               Naša úniková hra ostáva aj po zavedení núdzového stavu a prijatí opatrení RÚVZ stále <b className="text-orange-400">OTVORENÁ!</b> Samozrejme za sprísnených hygienických podmienok. Priestory sú pravidelne dezinfikované a nepretržite vetrané.
+               Naša úniková hra ostáva aj po zavedení núdzového stavu a prijatí opatrení RÚVZ stále <b className="text-orange-600">OTVORENÁ!</b> Samozrejme za sprísnených hygienických podmienok. Priestory sú pravidelne dezinfikované a nepretržite vetrané.
                </p>
                <ol type="1" className="ol-rules mt-10 md:text-lg">
                {rules.map((v, i, a) => (

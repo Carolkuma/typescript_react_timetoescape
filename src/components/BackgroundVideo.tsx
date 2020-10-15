@@ -6,10 +6,7 @@ import { isMobile } from "react-device-detect";
 
 const style = {
   height: "100%",
-  backgroundImage: `url('${withPrefix('/intro.jpg')}')`,
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-};
+}
 
  const videoOptions = (lowResolution: boolean) => { return {
    src: lowResolution ? withPrefix("/intro_mobile.mp4") : withPrefix("/intro.mp4"),
