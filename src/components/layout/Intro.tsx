@@ -14,22 +14,13 @@ import { header } from '../../../content/home/common/navigation.json'
 const firstAnchor = header[0].href
 
 
- let videoEnabled = true;
- const connection =
-   navigator.connection ||
-   navigator.mozConnection ||
-   navigator.webkitConnection;
- if (connection) {
-   if (connection.effectiveType === "slow-2g") {
-     videoEnabled = false;
-   }
- }
+
 export const Intro = () => {             
            return (
              <MainPageSection
                id="intro"
                imageSrc={backgroundImage}
-               videoEnabled={videoEnabled}
+               videoEnabled={true}
              >
                <div className="text-center flex-1">
                  <h1 className="text-4xl lg:text-5xl xl:text-6xl leading-none alt-font">

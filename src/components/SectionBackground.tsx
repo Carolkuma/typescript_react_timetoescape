@@ -26,7 +26,7 @@ interface QueryResult {
 
 
 
-const findImage = ({edges}: QueryResult, relativePath: string) => {
+export const findImage = ({edges}: QueryResult, relativePath: string) => {
   const image = edges.find(({node}: ImageQueryResult) => node.relativePath === relativePath)
 
   if (!image) {
@@ -70,7 +70,6 @@ const SectionBackground = ({ className, children, imageSrc, tag, id }: props) =>
   )
   // Set up the array of image data and `media` keys.
   // You can have as many entries as you'd like.
-  
   const mobileImage = findImage(mobileImages, imageSrc)
   const desctopImage = findImage(desktopImages, imageSrc)
   
