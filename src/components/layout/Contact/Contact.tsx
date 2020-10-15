@@ -21,7 +21,7 @@ export const Contact = () => {
           {
 
             info.map((info, key) => {
-              return <ContactCard icon={getIcon(info.icon)} title={info.title}>
+              return <ContactCard key={key} icon={getIcon(info.icon)} title={info.title}>
                     <div dangerouslySetInnerHTML={createMarkup(info.content)}></div>
               </ContactCard>
             })

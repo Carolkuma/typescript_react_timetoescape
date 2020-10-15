@@ -8,27 +8,45 @@ const style = {
   height: "100%",
 }
 
- const videoOptions = (lowResolution: boolean) => { return {
-   src: lowResolution ? withPrefix("/intro_mobile.mp4") : withPrefix("/intro.mp4"),
+const getVideoPath = (
+  path: string,
+  ext: string,
+  lowResolutionExt = ''
+): string => withPrefix(`${path}${lowResolutionExt}${ext}`)
+
+ const videoOptions = {
    autoPlay: true,
    muted: true,
    loop: true,
    playsInline: true,
- }}
-
- let preloadVideo = true;
- const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
- if (connection) {
-   if (connection.effectiveType === 'slow-2g') {
-     preloadVideo = false;
-   }
  }
 
 
-const BackgroundVideo = () =>
- <div className="absolute top-0 z-0 bg-dark overflow-hidden w-full" style={style}>
-    {preloadVideo ? <VideoCover videoOptions={videoOptions(isMobile)} remeasureOnWindowResize /> : null }
- </div>
+
+
+const BackgroundVideo = () => (
+  <div
+    className="absolute top-0 z-0 bg-dark overflow-hidden w-full"
+    style={style}
+  >
+      <VideoCover
+        videoOptions={{
+          ...videoOptions,
+          children: [
+            <source
+              key={1}
+              src={getVideoPath("intro", ".webm", isMobile ? "_mobile" : "")}
+            />,
+            <source
+              key={2}
+              src={getVideoPath("intro", ".mp4", isMobile ? "_mobile" : "")}
+            />,
+          ],
+        }}
+        remeasureOnWindowResize
+      />
+  </div>
+);
 
 
 export default BackgroundVideo
