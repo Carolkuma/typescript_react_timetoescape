@@ -69,7 +69,7 @@ module.exports = {
       options: {
         silent: true,
         fallback: false,
-        inlineFonts: true,
+        inlineFonts: false,
       },
     },
   ],
