@@ -1,6 +1,10 @@
 {
     "title": "Opatrenia prijaté v súlade s aktuálnymi nariadeniami v boji proti šíreniu koronavírusu",
-    "description": "Naša úniková hra ostáva aj po zavedení núdzového stavu a prijatí opatrení RÚVZ stále OTVORENÁ!. Samozrejme za sprísnených hygienických podmienok. Priestory sú pravidelne dezinfikované a nepretržite vetrané."
-    
+    "description": "Naša úniková hra ostáva aj po zavedení núdzového stavu a prijatí opatrení RÚVZ stále OTVORENÁ!. Samozrejme za sprísnených hygienických podmienok. Priestory sú pravidelne dezinfikované a nepretržite vetrané.",
+    "rules": [
+        "Vstup na prevádzku je povolený len s rúškom na tvári (alebo jeho náhradou) zakrývajúcim ústa a nos.",
+        "Pri vstupe je povinná dezinfekcia rúk, pripraveným dezinfekčným prostriedkom na recepcii.",
+        "Od 13.10.2020 platí obmedzená kapacita max. 5 hráčov v jednej hre."
+    ]
     
 }
