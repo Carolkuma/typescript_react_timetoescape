@@ -20,7 +20,7 @@ export const Intro = () => {
              <MainPageSection
                id="intro"
                imageSrc={backgroundImage}
-               videoEnabled={true}
+               videoEnabled={false}
              >
                <div className="text-center flex-1">
                  <h1 className="text-4xl lg:text-5xl xl:text-6xl leading-none alt-font">

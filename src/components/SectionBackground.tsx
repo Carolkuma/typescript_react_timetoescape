@@ -26,13 +26,13 @@ interface QueryResult {
 
 
 
-export const findImage = ({edges}: QueryResult, relativePath: string) => {
-  const image = edges.find(({node}: ImageQueryResult) => node.relativePath === relativePath)
-
-  if (!image) {
+export const findImages = ({edges}: QueryResult, relativePath: string) => {
+  const images = edges.filter(({node}: ImageQueryResult) => node.relativePath.includes(relativePath))
+  
+  if (images.length <= 0) {
     throw new Error(`Cannot find image ${relativePath}`)
   }
-  return image  
+  return images  
 }
 
 const SectionBackground = ({ className, children, imageSrc, tag, id }: props) => {
@@ -70,8 +70,8 @@ const SectionBackground = ({ className, children, imageSrc, tag, id }: props) =>
   )
   // Set up the array of image data and `media` keys.
   // You can have as many entries as you'd like.
-  const mobileImage = findImage(mobileImages, imageSrc)
-  const desctopImage = findImage(desktopImages, imageSrc)
+  const mobileImage = findImages(mobileImages, imageSrc)[0]
+  const desctopImage = findImages(desktopImages, imageSrc)[0]
   
   const sources = [
     mobileImage.node.childImageSharp.fluid,

@@ -6,7 +6,7 @@ interface props {
 
 const Card = ({ className, children }: props) => (
   <div
-    className={`md:rounded-lg md:border border-solid border-gray-200 card-shadow ${className}`}
+    className={`md:rounded-lg md:border border-solid border-gray-200 card-shadow overflow-hidden ${className}`}
   >
     {children}
   </div>

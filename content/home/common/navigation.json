@@ -10,6 +10,10 @@
             "href": "#rooms"
         },
         {
+            "label": "Galéria",
+            "href": "#gallery"
+        },
+        {
             "label": "Referencie",
             "href": "#testimonials"
         },

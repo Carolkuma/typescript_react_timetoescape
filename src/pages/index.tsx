@@ -16,6 +16,7 @@ import { Contact } from '../components/layout/Contact/Contact';
 import { Location } from '@reach/router';
 import { AboutEscapeRoom } from '../components/layout/AboutEscapeRoom';
 import { Notice } from '../components/Notice';
+import { Gallery } from '../components/Gallery';
 
 
 export default () => (
@@ -41,7 +42,7 @@ export default () => (
     <AboutEscapeRoom/>
     <Rooms />
     {/* TODO: gallery */}
-
+    <Gallery/>
     <Testimonials/>
     <Faq />
     <Contact />
