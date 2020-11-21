@@ -15,6 +15,7 @@ import { Faq } from '../components/layout/Faq';
 import { Contact } from '../components/layout/Contact/Contact';
 import { AboutEscapeRoom } from '../components/layout/AboutEscapeRoom';
 import { Notice } from '../components/Notice';
+import { Gallery } from '../components/Gallery';
 
 
 export default () => (
@@ -40,7 +41,7 @@ export default () => (
     <AboutEscapeRoom/>
     <Rooms />
     {/* TODO: gallery */}
-
+    <Gallery/>
     <Testimonials/>
     <Faq />
     <Contact />

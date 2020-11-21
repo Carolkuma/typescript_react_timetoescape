@@ -35,20 +35,28 @@ export const MainPageSection = ({
                  {<BackgroundVideo />}
              </section>
            );
-         }
-
-         return (
-           <SectionBackground
+         } else if (imageSrc !== '') {
+           return (
+             <SectionBackground
              className={`text-gray-100 bg-styles bg-dark`}
              imageSrc={imageSrc}
              tag={"section"}
              id={id}
-           >
-             {InsideContent}
-           </SectionBackground>
-         );
+             >
+                      {InsideContent}
+                    </SectionBackground>
+                  );
+          }
+
+          return (
+            <section className={`my-20 container mx-auto px-3`} id={id}>
+              {children}
+            </section>
+          );
        };
 
 MainPageSection.defaultProps = {
-    VideoBg: false,
+    videoEnabled: false,
+    imageSrc: '',
+    id: null,
 }

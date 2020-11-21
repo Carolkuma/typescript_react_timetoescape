@@ -4,7 +4,8 @@ import * as data  from '../../../content/home/rooms.json'
 import { BookingButton } from "../BookingButton";
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby";
-import { findImage } from "../SectionBackground";
+import { findImages } from "../SectionBackground";
+import { MainPageSection } from "../MainPageSection";
 declare module 'react' {
      interface HTMLProps<T> {
         async?:boolean;
@@ -35,13 +36,13 @@ export const Rooms = () => {
 
     
     return (
-      <section id="rooms" className="mt-20 container mx-auto">
+      <MainPageSection id="rooms">
         <h2 className="text-3xl lg:text-4xl alt-font text-center">
-        {data.title}
+          {data.title}
         </h2>
         <div className="">
           {data.rooms.map(({ title, description, href, image }, index) => {
-            const optImage = findImage(images, image.src);
+            const optImage = findImages(images, image.src)[0];
             return (
               <div
                 className={`text-center md:text-left md:flex ${
@@ -65,5 +66,5 @@ export const Rooms = () => {
             );
           })}
         </div>
-      </section>
-    )}
+      </MainPageSection>
+    );}
