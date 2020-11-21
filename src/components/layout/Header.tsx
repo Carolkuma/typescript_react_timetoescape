@@ -44,19 +44,11 @@ const Header = ({showNav, isHome }: props) => {
   // });
   
   const [scrollTopPercentage, setScrollTopPercentage] = useState(0);
-
-  const setIsOpen = (value: boolean) => {
-    // const newState = Object.assign(state)
-    // newState.isOpen = value
-    // setState(newState)
-  }
+  const [isOpen, setIsOpen] = useState(false)
+  
 
 
-  // const setScrollTopPercentage = (value: number) => {
-  //   const newState = Object.assign(state)
-  //   newState.scrollTopPercentage = value
-  //   setState(newState)
-  // }
+
 
 
   const offset = !isMobile ? 100 : 350
@@ -66,12 +58,6 @@ const Header = ({showNav, isHome }: props) => {
     setScrollTopPercentage(percentage)
   }
 
-  const state = {
-    isOpen: false
-  }
-
-  let ref: null | void = null
-  
   useEffect(() => {
 
     const listener = throttle(checkScrollTop, 15).bind(this);
@@ -82,12 +68,12 @@ const Header = ({showNav, isHome }: props) => {
   }, []);
 
 
-  const scrolledClass = scrollTopPercentage > 0 ? `border-b` : `bg-opacity-50`;
+  const scrolledClass = scrollTopPercentage > 0 || isOpen ? `border-b` : `bg-opacity-50`;
  
 
   return (
     <header
-      style={headerStyles(state.isOpen)}
+      style={headerStyles(isOpen)}
       className={`overflow-hidden fixed w-full z-20 top-0 bg-dark shadow text-orange-400 border-gray-800 print:bg-white ${scrolledClass}`}
     >
       <nav className="container mx-auto flex flex-row-reverse lg:flex-row items-center justify-between flex-wrap p-3">
@@ -110,8 +96,8 @@ const Header = ({showNav, isHome }: props) => {
 
         <NavigationButton
           className="block lg:hidden pl-3 py-2"
-          isOpen={state.isOpen}
-          onClick={() => setIsOpen(!state.isOpen)}
+          isOpen={isOpen}
+          onClick={() => setIsOpen(!isOpen)}
         />
 
         <div
