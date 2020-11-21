@@ -1,16 +1,11 @@
 import React from "react";
 
-const rules = [
-    'Vstup na prevádzku je povolený len s rúškom na tvári (alebo jeho náhradou) zakrývajúcim ústa a nos.',
-    'Pri vstupe je povinná dezinfekcia rúk, pripraveným dezinfekčným prostriedkom na recepcii.',
-    'Od 13.10.2020 platí obmedzená kapacita max. 5 hráčov v jednej hre.',
-]
+import {title , description, rules} from '../../content/home/notice.json'
+import { MainPageSection } from './MainPageSection';
+
 const getItemClass = (index: number, length: number) =>
   `${"ml-8 pl-2"}  ${index !== length - 1 ? "mb-2" : ""}`;
 
-
-import {title , description} from '../../content/home/notice.json'
-import { MainPageSection } from './MainPageSection';
 export const Notice = () => (
          <MainPageSection id="koronavirus">
            <h2 className="text-3xl lg:text-4xl alt-font text-center px-3">
@@ -33,13 +28,3 @@ export const Notice = () => (
            </div>
          </MainPageSection>
        );
-
- 
-
-
-
-
-
-
-
-

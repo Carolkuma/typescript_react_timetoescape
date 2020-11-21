@@ -13,7 +13,6 @@ import { Outro } from '../components/layout/Outro';
 import { Testimonials } from '../components/Testimonials';
 import { Faq } from '../components/layout/Faq';
 import { Contact } from '../components/layout/Contact/Contact';
-import { Location } from '@reach/router';
 import { AboutEscapeRoom } from '../components/layout/AboutEscapeRoom';
 import { Notice } from '../components/Notice';
 import { Gallery } from '../components/Gallery';
