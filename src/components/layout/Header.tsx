@@ -33,13 +33,13 @@ const getLinkClass = (className: string | undefined): string => `block border-s
 
 const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
   const getPercentage = () => {
-    const isSSR = typeof window !== "undefined"
+    const isSSR = typeof window === "undefined"
 
     if (isSSR) {
       return 0
     }
 
-    if (window.pageXOffset === (document.body.clientHeight -window.innerHeight )) {
+    if (typeof window !== "undefined" && window.pageXOffset === (document.body.clientHeight -window.innerHeight )) {
       return 100
     }
       const per =
