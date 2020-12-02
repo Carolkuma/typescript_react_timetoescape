@@ -13,15 +13,13 @@ import { header } from '../../../content/home/common/navigation.json'
 
 const firstAnchor = header[0].href
 
-
-
 export const Intro = () => {             
            return (
              <MainPageSection
                id="intro"
                imageSrc={backgroundImage}
                videoEnabled={false}
-               className="py-40 content-visibility"
+               className="py-40"
                hasDividerOnBottom
              >
                <div className="text-center flex-1">
