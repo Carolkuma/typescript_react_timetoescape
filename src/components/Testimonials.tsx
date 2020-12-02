@@ -6,7 +6,7 @@ import * as data  from '../../content/home/reviews.json'
 
 
 
-export const Testimonials = () => <section id="testimonials" className="mt-20">
+export const Testimonials = () => <section id="testimonials" className="pt-20">
     <div className="container mx-auto">
         <LabelText className="text-center text-xl alt-font">{data.title}</LabelText>
         <div className="mt-10 flex flex-col lg:flex-row">

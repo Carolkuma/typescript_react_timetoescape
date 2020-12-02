@@ -13,8 +13,8 @@ const createMarkup = (content: string) => {
 
 export const Contact = () => {
     return (
-      <section id="contact" className="mt-20 pb-20 md:pb-0 container mx-auto">
-        <h2 className="text-3xl lg:text-4xl alt-font text-center mb-20">
+      <section id="contact" className="pt-10 pb-20 md:pb-0 container mx-auto">
+        <h2 className="text-3xl lg:text-4xl alt-font text-center mb-10">
           {title}
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10">

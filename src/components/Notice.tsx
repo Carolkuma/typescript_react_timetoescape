@@ -7,7 +7,7 @@ const getItemClass = (index: number, length: number) =>
   `${"ml-8 pl-2"}  ${index !== length - 1 ? "mb-2" : ""}`;
 
 export const Notice = () => (
-         <MainPageSection id="koronavirus">
+         <MainPageSection id="koronavirus" className="py-10 content-visibility">
            <h2 className="text-3xl lg:text-4xl alt-font text-center px-3">
              {title}
            </h2>

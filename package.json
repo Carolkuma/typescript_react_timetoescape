@@ -52,6 +52,7 @@
     "react-in-viewport": "^1.0.0-alpha.14",
     "react-leaflet": "^2.7.0",
     "react-star-ratings": "^2.3.0",
+    "react-use-dimensions": "^1.2.1",
     "react-video-cover": "^1.2.2"
   },
   "devDependencies": {

@@ -20,8 +20,9 @@ export const Intro = () => {
              <MainPageSection
                id="intro"
                imageSrc={backgroundImage}
-               videoEnabled={true}
-               className="py-40"
+               videoEnabled={false}
+               className="py-40 content-visibility"
+               hasDividerOnBottom
              >
                <div className="text-center flex-1">
                  <h1 className="text-4xl lg:text-5xl xl:text-6xl leading-none alt-font">

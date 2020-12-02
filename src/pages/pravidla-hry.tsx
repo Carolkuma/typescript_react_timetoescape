@@ -30,22 +30,21 @@ const getItemClass = (index: number, length: number) =>
   `${"ml-8 pl-2"}  ${index !== length - 1 ? "mb-2" : ""}`;
 
 export default () => (
-  <Layout>
+  <Layout changeBgOpacity={true}>
     <section>
       <article>
         <ArticleHeadline>
           <h1 className="mb-10 text-4xl alt-font">{GAME_RULES.title}</h1>
         </ArticleHeadline>
         <div className="container px-3 mx-auto md:text-lg py-10">
-
-        <ol type="1" className="ol-rules mb-10">
-          {GAME_RULES.rules.map((v, i, a) => (
-            <li className={getItemClass(i, a.length)} key={i}>
-              {v}
-            </li>
-          ))}
-        </ol>
-        <p>Ak máte akékoľvek ďalšie otázky, neváhajte nás kontaktovať.</p>
+          <ol type="1" className="ol-rules mb-10">
+            {GAME_RULES.rules.map((v, i, a) => (
+              <li className={getItemClass(i, a.length)} key={i}>
+                {v}
+              </li>
+            ))}
+          </ol>
+          <p>Ak máte akékoľvek ďalšie otázky, neváhajte nás kontaktovať.</p>
         </div>
       </article>
     </section>

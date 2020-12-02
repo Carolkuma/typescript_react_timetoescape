@@ -36,7 +36,7 @@ export const Rooms = () => {
 
     
     return (
-      <MainPageSection id="rooms">
+      <MainPageSection id="rooms" className="py-10">
         <h2 className="text-3xl lg:text-4xl alt-font text-center">
           {data.title}
         </h2>

@@ -11,6 +11,7 @@ import {throttle} from 'lodash'
 interface props {
   showNav?: boolean,
   children?: JSX.Element | JSX.Element[] | string,
+  changeBgOpacity?: boolean,
   isHome: boolean,
 }
 
@@ -30,51 +31,45 @@ const roundToEven = (n:number): number => 2 * Math.round(n / 2);
 
 const getLinkClass = (className: string | undefined): string => `block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto text-white ${className}`
 
-const Header = ({showNav, isHome }: props) => {
-  
+const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
   const getPercentage = () => {
-    const per = (window.pageYOffset / (document.body.clientHeight - window.innerHeight)) * 100 
-    return roundToEven(Math.round(per)); 
+    if (window.pageXOffset === (document.body.clientHeight -window.innerHeight )) {
+      return 100
+    }
+      const per =
+        (window.pageYOffset /
+          (document.body.clientHeight - window.innerHeight)) *
+        100;
+    return roundToEven(Math.round(per));
+  };
 
-  }
-  
-  // const [state, setState] = useState({
-  //   isOpen: false,
-  //   scrollTopPercentage: getPercentage(),
-  // });
-  
-  const [scrollTopPercentage, setScrollTopPercentage] = useState(0);
-  const [isOpen, setIsOpen] = useState(false)
-  
+  const [scrollTopPercentage, setScrollTopPercentage] = useState(getPercentage());
+  const [isOpen, setIsOpen] = useState(false);
 
-
-
-
-
-  const offset = !isMobile ? 100 : 350
+  const offset = !isMobile ? 100 : 350;
 
   const checkScrollTop = () => {
-    const percentage = getPercentage()
-    setScrollTopPercentage(percentage)
-  }
+    const percentage = getPercentage();
+    setScrollTopPercentage(percentage);
+  };
 
   useEffect(() => {
-
     const listener = throttle(checkScrollTop, 15).bind(this);
     window.addEventListener("scroll", listener);
-    return (() => {
+    return () => {
       window.removeEventListener("scroll", listener);
-    })
+    };
   }, []);
 
-
-  const scrolledClass = scrollTopPercentage > 0 || isOpen ? `border-b` : `bg-opacity-50`;
- 
+  const scrolledClass =
+    scrollTopPercentage > 0 || isOpen || !changeBgOpacity
+      ? `border-b`
+      : `bg-opacity-50`;
 
   return (
     <header
       style={headerStyles(isOpen)}
-      className={`overflow-hidden fixed w-full z-20 top-0 bg-dark shadow text-orange-400 border-gray-800 print:bg-white ${scrolledClass}`}
+      className={`overflow-hidden fixed w-full z-20 top-0 bg-dark shadow text-orange-400 border-gray-800 print:bg-white ${scrolledClass} content-visibility`}
     >
       <nav className="container mx-auto flex flex-row-reverse lg:flex-row items-center justify-between flex-wrap p-3">
         <div className="flex items-center flex-shrink-0 text-white">
@@ -151,6 +146,7 @@ const Header = ({showNav, isHome }: props) => {
 Header.defaultProps = {
   isRegistrationEnabled: true,
   showNav: true,
+  changeBgOpacity: false,
 };
 
 export default Header;

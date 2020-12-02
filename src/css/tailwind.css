@@ -1,7 +1,10 @@
 @tailwind base;
 
 
-
+:root {
+  --color-bg: #fff;
+  
+}
 .intro-bg {
   background: rgba(33,33,33,.80);
   background: radial-gradient(circle, rgba(33,33,33,.80) 25%, rgba(33,33,33,0) 100%);
@@ -52,7 +55,7 @@ a:hover {
   }
 }
 .content {
-  min-height: calc(100vh - 4rem);
+  min-height: calc(100vh - 5.25rem);
 }
 .footer {
   height: 2rem;
@@ -140,6 +143,14 @@ body {
   padding-left: 0.5rem; 
   margin-left: 2rem;
 }
+
+.flip {
+  transform: scaleY(-1) scaleX(-1) translateY(1px);
+}
+.content-visibility {
+  content-visibility: auto;
+}
+
 @media (prefers-color-scheme: dark) {
     body {
         background-color: rgb(33, 33, 33);
