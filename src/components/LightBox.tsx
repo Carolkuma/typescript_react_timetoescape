@@ -78,11 +78,11 @@ const Lightbox = (props: Props) => {
 
   
     return (
-      <div className="mt-10 flex flex-col lg:flex-row">
+      <div className="mt-10 flex flex-row">
         {sources.map((img, i) => (
           <Card
             key={i}
-            className="flex flex-auto flex-col mb-8 md:mx-5"
+            className="flex flex-auto w-full flex-col mx-5 mb-8"
           >
             <Img fluid={img} />
           </Card>

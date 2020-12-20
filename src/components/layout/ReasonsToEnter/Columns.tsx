@@ -1,6 +1,7 @@
 
-import React, { MemoExoticComponent } from 'react';
+import React from 'react';
 import Card from '../../Card';
+import Undraw from "react-undraw";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { getIcon } from '../../getIcon';
@@ -15,33 +16,11 @@ export interface ReasonToEnter {
   icon: string,
 }
 
-
-  enum DRAWINGS {
-    TeamSpirit = 'TeamSpirit',
-  }
-  
-  type AvaiabledDrawings = {
-    [key in DRAWINGS]: MemoExoticComponent<() => JSX.Element>;
-  }
-  
-  const avaiableDrawings: AvaiabledDrawings = {
-    TeamSpirit,
-   // Travelling,
-  }
-
-
-
 interface props {
   reasons: ReasonToEnter[]
 }
 
 
-const GetSVG = ({icon}) => {
-   if (avaiableDrawings[icon]) {
-     return avaiableDrawings[icon];
-   }
-   return () => null
-}
 
 
 export const Columns = ({ reasons }: props) => (
@@ -49,11 +28,8 @@ export const Columns = ({ reasons }: props) => (
            {reasons.map(({ title, description, icon }, index) => (
              <div className="flex-1 px-5" key={index}>
                <Card className="p-5 h-full mt-10 lg:mt-0">
-                 <div className="text-6xl text-center mb-3">
-                   {/* <TeamSpirit/>
-                   <Travelling/> */}
-                   <Children/>
-                   {/* <FontAwesomeIcon icon={getIcon(icon)} fixedWidth /> */}
+                 <div className="text-6xl text-center mb-5">
+                   <Undraw name={icon} height={'130'}/>
                  </div>
                  <p className="text-2xl alt-font text-xl">{title}</p>
                  <p className="mt-5 mb-3">{description}</p>

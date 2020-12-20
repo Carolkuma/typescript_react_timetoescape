@@ -75,7 +75,7 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
   return (
     <header
       style={headerStyles(isOpen)}
-      className={`overflow-hidden fixed w-full z-20 top-0 bg-dark shadow text-orange-400 border-gray-800 print:bg-white ${scrolledClass}`}
+      className={`overflow-hidden fixed w-full z-20 top-0 bg-dark shadow text-orange-400 border-gray-800 print:bg-white ${scrolledClass} content-visibility`}
     >
       <nav className="container mx-auto flex flex-row-reverse lg:flex-row items-center justify-between flex-wrap p-3">
         <div className="flex items-center flex-shrink-0 text-white">

@@ -6,12 +6,13 @@
   "license": "MIT",
   "scripts": {
     "clean": "gatsby clean",
-    "start": "gatsby develop",
-    "develop": "gatsby develop",
-    "build": "gatsby build",
+    "start": "yarn develop",
+    "develop": "yarn undraw && gatsby develop",
+    "build": "yarn undraw && gatsby build",
     "type-check": "tsc --noEmit",
     "deploy": "gh-pages -d public",
     "storybook": "start-storybook -p 6006",
+    "undraw": "node ./node_modules/.bin/react-undraw-cli",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -52,6 +53,7 @@
     "react-in-viewport": "^1.0.0-alpha.14",
     "react-leaflet": "^2.7.0",
     "react-star-ratings": "^2.3.0",
+    "react-undraw": "^2.0.2",
     "react-use-dimensions": "^1.2.1",
     "react-video-cover": "^1.2.2"
   },
