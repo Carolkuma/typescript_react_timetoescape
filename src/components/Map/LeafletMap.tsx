@@ -27,6 +27,11 @@ const icon = new L.Icon({
   iconUrl: withPrefix("/marker-icon.svg"),
 });
 
+
+const atribution =
+  '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+const url = "https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png";
+
 export class LeafletMap extends Component<props>  {
     
     render() {
@@ -37,35 +42,42 @@ export class LeafletMap extends Component<props>  {
     const position: L.LatLngExpression = [lat, lng];
     const insertMap  = enterCount > 0 && !isMobile 
 
-    return <div style={style} className="hidden md:block">{ insertMap ? (
-      <>
-          <Map
-            center={position}
-            zoom={zoom}
-            zoomControl={false}
-            dragging={false}
-            boxZoom={false}
-            style={{height: "100%"}}
-          >
-            <TileLayer
-              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={position} icon={icon} />
-          </Map>
-       
-        <Helmet>
-          <link
-            rel="stylesheet"
-            href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-            integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-            crossOrigin=""
-          />
-        </Helmet>
-      </>
-    ) : null}
-     </div>
+    return (
+      <div style={style} className="hidden md:block">
+        {insertMap ? (
+          <>
+            <Map
+              center={position}
+              zoom={zoom}
+              zoomControl={false}
+              dragging={false}
+              boxZoom={false}
+              style={{ height: "100%" }}
+            >
+              <TileLayer
+                attribution={atribution}
+                url={url}
+              />
+              <Marker position={position} icon={icon} />
+            </Map>
+
+            <Helmet>
+              <link
+                rel="stylesheet"
+                href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+                integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+                crossOrigin=""
+              />
+            </Helmet>
+          </>
+        ) : null}
+      </div>
+    );
     }
 }
+
+
+
+
 
 export default handleViewport(LeafletMap);

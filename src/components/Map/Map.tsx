@@ -25,7 +25,7 @@ export const GMap = ({ zoom, link, label, coordinates }: props) => {
 };
 
 GMap.defaultProps = {
-  zoom: 17,
+  zoom: 16,
 };
 
 

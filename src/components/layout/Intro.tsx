@@ -4,10 +4,6 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 import { MainPageSection } from "../MainPageSection";
-
-
-
-
 import {title, description, buttonlabel, backgroundImage} from '../../../content/home/intro.json'
 import { header } from '../../../content/home/common/navigation.json'
 
@@ -18,7 +14,7 @@ export const Intro = () => {
              <MainPageSection
                id="intro"
                imageSrc={backgroundImage}
-               videoEnabled={true}
+               videoEnabled={false}
                className="py-40"
                hasDividerOnBottom
              >
