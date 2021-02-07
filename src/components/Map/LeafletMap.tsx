@@ -28,9 +28,8 @@ const icon = new L.Icon({
 });
 
 
-const atribution =
-  '&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-const url = "https://tiles.stadiamaps.com/tiles/osm_bright/{z}/{x}/{y}{r}.png";
+const attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+const url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 
 export class LeafletMap extends Component<props>  {
     
@@ -55,7 +54,7 @@ export class LeafletMap extends Component<props>  {
               style={{ height: "100%" }}
             >
               <TileLayer
-                attribution={atribution}
+                attribution={attribution}
                 url={url}
               />
               <Marker position={position} icon={icon} />
