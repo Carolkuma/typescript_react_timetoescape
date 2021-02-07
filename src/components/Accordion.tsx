@@ -13,7 +13,7 @@ interface props {
 
 
 const style = (isOpen: boolean) => {return  {
-  transition: 'max-height .6s',
+  transition: 'max-height .5s ease-in-out',
   maxHeight: isOpen ? '10rem' : 0,
 }
 }

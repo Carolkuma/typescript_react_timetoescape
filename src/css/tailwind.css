@@ -1,10 +1,17 @@
 @tailwind base;
 
 
-
+:root {
+  --color-bg: #fff;
+}
 .intro-bg {
   background: rgba(33,33,33,.80);
   background: radial-gradient(circle, rgba(33,33,33,.80) 25%, rgba(33,33,33,0) 100%);
+}
+
+.article-bg {
+  background: rgb(33,33,33);
+  background: linear-gradient(180deg, rgba(33,33,33,0.9304096638655462) 0%, rgba(33,33,33,0) 35%, rgba(33,33,33,1) 100%);
 }
 
 body {
@@ -24,9 +31,9 @@ body {
 }
 
 
-/* a {
-  @apply text-black;
-} */
+a {
+  transition: color .4s ease-in-out;
+} 
 a:hover {
   @apply text-orange-600;
 } 
@@ -47,7 +54,7 @@ a:hover {
   }
 }
 .content {
-  min-height: calc(100vh - 4rem);
+  min-height: calc(100vh - 5.25rem);
 }
 .footer {
   height: 2rem;
@@ -135,7 +142,18 @@ body {
   padding-left: 0.5rem; 
   margin-left: 2rem;
 }
+
+.flip {
+  transform: scaleY(-1) scaleX(-1) translateY(1px);
+}
+.content-visibility {
+  content-visibility: auto;
+}
+
 @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: rgb(33,33,33);
+    }
     body {
         background-color: rgb(33, 33, 33);
         color: rgb(237, 242, 247)
@@ -161,4 +179,13 @@ body {
     .shadow {
       box-shadow: 0 1px 3px 0 rgba(255, 255, 255, 0.1), 0 1px 2px 0 rgba(255, 253, 255, 0.06);
     }
+}
+
+.leaflet-tile-pane {
+  filter: invert(1) hue-rotate(303deg);
+}
+
+.leaflet-container .leaflet-control-attribution {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  color: #ccc;
 }

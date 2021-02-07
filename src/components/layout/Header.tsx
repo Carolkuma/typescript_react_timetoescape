@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import LogoIcon from "../../svg/LogoIcon";
 import { NavigationButton } from "../NavigationButton";
@@ -6,11 +6,12 @@ import { isMobile } from 'react-device-detect';
 import { Link } from 'gatsby';
 import { BookingButton } from "../BookingButton";
 import {header} from '../../../content/home/common/navigation.json'
-
+import {throttle} from 'lodash'
 
 interface props {
   showNav?: boolean,
   children?: JSX.Element | JSX.Element[] | string,
+  changeBgOpacity?: boolean,
   isHome: boolean,
 }
 
@@ -20,23 +21,61 @@ const style = {
 
 const headerStyles = (isOpen: boolean) => {
   return {
-    maxHeight: `${isOpen ? "100vh" : "4rem"}`,
-    transition: "max-height 0.3s ease-in-out",
+    maxHeight: `${isOpen ? "100vh" : "5rem"}`,
+    transition: "max-height 0.3s ease-in-out, background-color 0.6s ease-in-out ",
   };
 };
 
 
-const getLinkClass = (className: string): string => `block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto text-white ${className}`
+const roundToEven = (n:number): number => 2 * Math.round(n / 2);
 
+const getLinkClass = (className: string | undefined): string => `block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto text-white ${className}`
 
-const Header = ({showNav, isHome }: props) => {
-  const [isOpen, setOpen] = useState(false);
-  const offset = !isMobile ? 100 : 350
+const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
+  const getPercentage = () => {
+    const isSSR = typeof window === "undefined"
+
+    if (isSSR) {
+      return 0
+    }
+
+    if (typeof window !== "undefined" && window.pageXOffset === (document.body.clientHeight -window.innerHeight )) {
+      return 100
+    }
+      const per =
+        (window.pageYOffset /
+          (document.body.clientHeight - window.innerHeight)) *
+        100;
+    return roundToEven(Math.round(per));
+  };
+
+  const [scrollTopPercentage, setScrollTopPercentage] = useState(getPercentage());
+  const [isOpen, setIsOpen] = useState(false);
+
+  const offset = !isMobile ? 100 : 350;
+
+  const checkScrollTop = () => {
+    const percentage = getPercentage();
+    setScrollTopPercentage(percentage);
+  };
+
+  useEffect(() => {
+    const listener = throttle(checkScrollTop, 15).bind(this);
+    window.addEventListener("scroll", listener);
+    return () => {
+      window.removeEventListener("scroll", listener);
+    };
+  }, []);
+
+  const scrolledClass =
+    scrollTopPercentage > 0 || isOpen || !changeBgOpacity
+      ? `border-b`
+      : `bg-opacity-50`;
 
   return (
     <header
       style={headerStyles(isOpen)}
-      className={`overflow-hidden sticky z-20 top-0 bg-dark shadow text-orange-400 border-b border-gray-800 print:bg-white`}
+      className={`overflow-hidden fixed w-full z-20 top-0 bg-dark shadow text-orange-400 border-gray-800 print:bg-white ${scrolledClass} content-visibility`}
     >
       <nav className="container mx-auto flex flex-row-reverse lg:flex-row items-center justify-between flex-wrap p-3">
         <div className="flex items-center flex-shrink-0 text-white">
@@ -59,7 +98,7 @@ const Header = ({showNav, isHome }: props) => {
         <NavigationButton
           className="block lg:hidden pl-3 py-2"
           isOpen={isOpen}
-          onClick={() => setOpen(!isOpen)}
+          onClick={() => setIsOpen(!isOpen)}
         />
 
         <div
@@ -75,7 +114,7 @@ const Header = ({showNav, isHome }: props) => {
                     style={style}
                     className={getLinkClass(link.className)}
                     href={link.href}
-                    onClick={() => setOpen(false)}
+                    onClick={() => setIsOpen(false)}
                   >
                     {link.label}
                   </AnchorLink>
@@ -85,7 +124,7 @@ const Header = ({showNav, isHome }: props) => {
                     key={key}
                     style={style}
                     className={getLinkClass(link.className)}
-                    onClick={() => setOpen(false)}
+                    onClick={() => setIsOpen(false)}
                   >
                     {link.label}
                   </Link>
@@ -94,12 +133,18 @@ const Header = ({showNav, isHome }: props) => {
             </div>
           )}
         </div>
-          <div
-            className={`lg:block relative mx-auto my-5  lg:my-0`}
-          >
-            <BookingButton/>
-          </div>
+        <div className={`lg:block relative mx-auto my-5  lg:my-0`}>
+          <BookingButton />
+        </div>
       </nav>
+      <div
+        style={{
+          width: `${scrollTopPercentage}%`,
+          height: 3,
+          transition: `width .2 ease-in-out`,
+        }}
+        className="bg-orange-400"
+      ></div>
     </header>
   );
 };
@@ -107,6 +152,7 @@ const Header = ({showNav, isHome }: props) => {
 Header.defaultProps = {
   isRegistrationEnabled: true,
   showNav: true,
+  changeBgOpacity: false,
 };
 
 export default Header;

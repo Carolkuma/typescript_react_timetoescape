@@ -4,7 +4,7 @@ import { title, description, backgroundImage  } from '../../../content/home/outr
 import { MainPageSection } from '../MainPageSection';
 
 export const Outro = () => (
-        <MainPageSection imageSrc={backgroundImage} className="md:pt-48 text-center">
+        <MainPageSection imageSrc={backgroundImage} className="md:pt-48 text-center py-20" hasDividerOnTop>
             <>
              <h3 className="text-3xl  md:text-4xl alt-font ">
                {title}

@@ -8,6 +8,9 @@ export const AboutEscapeRoom = () => (
          <MainPageSection
            id={id}
            imageSrc={backgroundImage}
+           hasDividerOnTop
+           hasDividerOnBottom
+           className={'py-24'}
          >
            <div className="container mx-auto px-3">
              <h2 className="text-3xl lg:text-4xl alt-font text-center">

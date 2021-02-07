@@ -15,10 +15,12 @@ import { Faq } from '../components/layout/Faq';
 import { Contact } from '../components/layout/Contact/Contact';
 import { AboutEscapeRoom } from '../components/layout/AboutEscapeRoom';
 import { Notice } from '../components/Notice';
+import { Gallery } from '../components/Gallery';
+import { Slider } from '../components/Slider';
 
 
 export default () => (
-  <Layout isHome={true}>
+  <Layout isHome={true} changeBgOpacity={true}>
     <Helmet
       htmlAttributes={{
         lang: "sk-SK",
@@ -31,17 +33,17 @@ export default () => (
         content="Napínavá a zábavná úniková hra Escape Room priamo v Spiškej
       Novej Vsi."
       />
-      
     </Helmet>
 
     <Intro />
-    <Notice/>
+    <Notice />
     <ReasonsToEnter />
-    <AboutEscapeRoom/>
+    <AboutEscapeRoom />
     <Rooms />
     {/* TODO: gallery */}
-
-    <Testimonials/>
+    <Gallery />
+    <Testimonials />
+    <Slider></Slider>
     <Faq />
     <Contact />
     <Outro />

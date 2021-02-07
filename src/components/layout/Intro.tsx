@@ -4,16 +4,10 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 
 
 import { MainPageSection } from "../MainPageSection";
-
-
-
-
 import {title, description, buttonlabel, backgroundImage} from '../../../content/home/intro.json'
 import { header } from '../../../content/home/common/navigation.json'
 
 const firstAnchor = header[0].href
-
-
 
 export const Intro = () => {             
            return (
@@ -21,6 +15,8 @@ export const Intro = () => {
                id="intro"
                imageSrc={backgroundImage}
                videoEnabled={true}
+               className="py-40"
+               hasDividerOnBottom
              >
                <div className="text-center flex-1">
                  <h1 className="text-4xl lg:text-5xl xl:text-6xl leading-none alt-font">
