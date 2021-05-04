@@ -16636,10 +16636,10 @@ react-icons@^3.0.1:
   dependencies:
     camelcase "^5.0.0"
 
-react-in-viewport@1.0.0-alpha.14:
-  version "1.0.0-alpha.14"
-  resolved "https://registry.yarnpkg.com/react-in-viewport/-/react-in-viewport-1.0.0-alpha.14.tgz#7f75c44ac6731e5bd9bef99a67834b6d84eda0de"
-  integrity sha512-kKjfWogLy3T8xtk0lWJVWGHxtjScEOonfa11swYkGC3ISxl9C/7Mvi+NORw5EctfCHR9oQM5W47DnRQK43iK1g==
+react-in-viewport@1.0.0-alpha.16:
+  version "1.0.0-alpha.16"
+  resolved "https://registry.yarnpkg.com/react-in-viewport/-/react-in-viewport-1.0.0-alpha.16.tgz#98ea6bdf8b9ed527abc16532efb0f911bc74754e"
+  integrity sha512-qYW7ndaFZkqgDOMPtCVNnHK6NmKXIEhQqmpeXRKh3cZ1mkhOU6LHF9ivu6K8PoWpfZo8c32m5sJ/9VKDlEmOeA==
   dependencies:
     hoist-non-react-statics "^3.0.0"
 
