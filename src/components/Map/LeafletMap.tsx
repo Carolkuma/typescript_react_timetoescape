@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { Map, TileLayer, Marker } from "react-leaflet";
+import { MapContainer, TileLayer, Marker } from "react-leaflet";
 import { withPrefix } from 'gatsby';
 import handleViewport from "react-in-viewport";
 import L from "leaflet";
 import { isMobile } from 'react-device-detect';
 import { Helmet } from 'react-helmet';
+import { ErrorBoundary } from '../ErrorBoundary'
 
 const style = {
     height: "15.35rem",
@@ -44,8 +45,8 @@ export class LeafletMap extends Component<props>  {
     return (
       <div style={style} className="hidden md:block">
         {insertMap ? (
-          <>
-            <Map
+          <ErrorBoundary>
+            <MapContainer
               center={position}
               zoom={zoom}
               zoomControl={false}
@@ -58,8 +59,7 @@ export class LeafletMap extends Component<props>  {
                 url={url}
               />
               <Marker position={position} icon={icon} />
-            </Map>
-
+            </MapContainer>
             <Helmet>
               <link
                 rel="stylesheet"
@@ -67,8 +67,8 @@ export class LeafletMap extends Component<props>  {
                 integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
                 crossOrigin=""
               />
-            </Helmet>
-          </>
+            </Helmet> 
+          </ErrorBoundary>
         ) : null}
       </div>
     );
