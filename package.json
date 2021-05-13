@@ -16,6 +16,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@babel/helper-define-map": "^7.13.12",
     "@fortawesome/fontawesome-svg-core": "1.2.35",
     "@fortawesome/free-brands-svg-icons": "5.15.3",
     "@fortawesome/free-regular-svg-icons": "5.15.3",
