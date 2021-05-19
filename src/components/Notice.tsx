@@ -1,7 +1,9 @@
 import React from "react";
 
-import {title , description, rules} from '../../content/home/notice.json'
+import notice from '../../content/home/notice.json'
 import { MainPageSection } from './MainPageSection';
+
+const {title , description, rules} = notice
 
 const getItemClass = (index: number, length: number) =>
   `${"ml-8 pl-2"}  ${index !== length - 1 ? "mb-2" : ""}`;

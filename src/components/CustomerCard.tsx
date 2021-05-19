@@ -12,8 +12,6 @@ export interface Customer {
   date: string,
   customerImage: string,
   customerName: string,
-
-  title: string,
   content: string,
 }
 interface props {

@@ -3,8 +3,8 @@ import Card from '../Card'
 import useDimensions from 'react-use-dimensions'
 
 import { Accordion } from '../Accordion';
-import {title, questions} from '../../../content/home/faq.json'
-
+import faq from '../../../content/home/faq.json'
+const {title, questions} = faq
 export const Faq = () => {  
     const [openIndex, setOpenIndex] = useState(0)
     const [ref, { x, y, height}] = useDimensions()

@@ -1,8 +1,9 @@
 import React from 'react'
 import { BookingButton } from '../BookingButton';
-import { title, description, backgroundImage  } from '../../../content/home/outro.json' 
 import { MainPageSection } from '../MainPageSection';
-
+import outro from '../../../content/home/outro.json'
+ 
+const { title, description, backgroundImage  } = outro
 export const Outro = () => (
         <MainPageSection imageSrc={backgroundImage} className="md:pt-48 text-center py-20" hasDividerOnTop>
             <>

@@ -1,12 +1,12 @@
 import React from "react";
 import Button, { ButtonElement } from '../Button';
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
-
 import { MainPageSection } from "../MainPageSection";
-import {title, description, buttonlabel, backgroundImage} from '../../../content/home/intro.json'
-import { header } from '../../../content/home/common/navigation.json'
+import  intro from '../../../content/home/intro.json'
+import nav from '../../../content/home/common/navigation.json'
 
+const {title, description, buttonlabel, backgroundImage} = intro
+const { header } = nav
 const firstAnchor = header[0].href
 
 export const Intro = () => {             

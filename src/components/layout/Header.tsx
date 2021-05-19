@@ -1,13 +1,15 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import LogoIcon from "../../svg/LogoIcon";
 import { NavigationButton } from "../NavigationButton";
 import { isMobile } from 'react-device-detect';
 import { Link } from 'gatsby';
 import { BookingButton } from "../BookingButton";
-import {header} from '../../../content/home/common/navigation.json'
+import nav from '../../../content/home/common/navigation.json'
 import {throttle} from 'lodash'
 
+
+const {header} = nav
 interface props {
   showNav?: boolean,
   children?: JSX.Element | JSX.Element[] | string,
