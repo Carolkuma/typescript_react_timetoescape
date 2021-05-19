@@ -2,7 +2,7 @@ import React from 'react';
 
 import {CustomerCard, Customer} from './CustomerCard';
 import LabelText from './LabelText';
-import * as data  from '../../content/home/reviews.json'
+import data  from '../../content/home/reviews.json'
 
 
 

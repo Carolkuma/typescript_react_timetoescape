@@ -1,13 +1,14 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import {sites} from '../../content/home/common/social.json'
 import { getIcon } from './getIcon';
+import social from '../../content/home/common/social.json'
 
 const style = {
     marginLeft: '-8px' 
 }
  
+const { sites } = social
+
 export const Social = () => sites.map(({ link, icon, alt }, key) => (
            <a
              href={link}

@@ -3,9 +3,9 @@ import Card from '../../Card'
 import { GMap } from "../../Map/Map"
 import { ContactCard } from './ContactCard'
 import { Social } from '../../Social'
-import { title, address, map, info } from '../../../../content/home/contact.json'
+import contact from '../../../../content/home/contact.json'
 import { getIcon } from '../../getIcon';
-
+const { title, address, map, info } = contact
 
 const createMarkup = (content: string) => {
   return {__html: content};

@@ -1,7 +1,8 @@
 import React from "react";
+import about from '../../../content/home/about.json'
+import { MainPageSection } from "../MainPageSection"
 
-import {title, id, description, backgroundImage} from '../../../content/home/about.json'
-import { MainPageSection } from "../MainPageSection";
+const { title, id, description, backgroundImage } = about
 
 
 export const AboutEscapeRoom = () => (

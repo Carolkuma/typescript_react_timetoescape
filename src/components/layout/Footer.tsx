@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { footer as FOOTER_NAVIGATION } from '../../../content/home/common/navigation.json'
+import nav from '../../../content/home/common/navigation.json'
+
+const { footer } = nav
+const FOOTER_NAVIGATION = footer
 
 const getCopyright = (startYear = 2020) => {
   const toYear = new Date().getFullYear()

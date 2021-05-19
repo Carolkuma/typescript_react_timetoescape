@@ -1,6 +1,6 @@
 import React from "react";
 
-import * as data  from '../../../content/home/rooms.json'
+import rooms  from '../../../content/home/rooms.json'
 import { BookingButton } from "../BookingButton";
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby";
@@ -38,10 +38,10 @@ export const Rooms = () => {
     return (
       <MainPageSection id="rooms" className="py-10">
         <h2 className="text-3xl lg:text-4xl alt-font text-center">
-          {data.title}
+          {rooms.title}
         </h2>
         <div className="">
-          {data.rooms.map(({ title, description, href, image }, index) => {
+          {rooms.rooms.map(({ title, description, href, image }, index) => {
             const optImage = findImages(images, image.src)[0];
             return (
               <div

@@ -1,8 +1,10 @@
 import React from "react";
 import Button from "./Button";
 import { Link } from 'gatsby';
-import {title, description , button} from '../../content/home/common/notfound.json'
 import UndrawNotFound from "./ReactSvgs/UndrawNotFound";
+import notfound from '../../content/home/common/notfound.json'
+
+const {title, description , button} = notfound
 
 export const NotFound = () => (
          <section className="py-20 flex items-center">
