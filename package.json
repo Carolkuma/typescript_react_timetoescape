@@ -62,7 +62,7 @@
     "react-video-cover": "1.2.2",
     "ts-jest": "27.0.0",
     "ts-loader": "9.2.2",
-    "typescript": "4.2.4"
+    "typescript": "4.3.2"
   },
   "devDependencies": {
     "@storybook/addon-actions": "6.2.9",
