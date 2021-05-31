@@ -29,7 +29,7 @@
     "@types/react-leaflet": "2.8.1",
     "awesome-typescript-loader": "5.2.1",
     "babel-loader": "8.2.2",
-    "date-fns": "2.21.3",
+    "date-fns": "2.22.1",
     "gatsby": "3.6.1",
     "gatsby-background-image": "1.5.3",
     "gatsby-image": "3.6.0",
