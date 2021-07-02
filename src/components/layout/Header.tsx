@@ -136,6 +136,7 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
           )}
         </div>
         <div className={`lg:block relative mx-auto my-5  lg:my-0`}>
+          <a href="tel:+421951406635">+421 951 406 635</a> 
           <BookingButton />
         </div>
       </nav>
