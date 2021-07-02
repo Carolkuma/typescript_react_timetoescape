@@ -1,5 +1,5 @@
 {
     "label": "Rezervácia",
     "link": "https://time-to-escape-escape-room.reservio.com/booking",
-    "isBookingEnabled": true
+    "isBookingEnabled": false
 }
