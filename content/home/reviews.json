@@ -3,32 +3,39 @@
   "reviews": [
     {
       "rating": 5,
-    "scale": 5,
-    "content":
-    "Mám prejdené už desiatky takýchto hier a môžem konštatovať že tuto radim medzi tie top, ktoré som doteraz vyskúšala 👍🏻👍🏻 vynikajúce úlohy, hlavne ich jedinečnosť nič podobne som inde nevidela 🤓",
-    "customerName": "Renáta Keruľová",
-    "customerImage": "reviews/1.jpg",
-    "date": "2020-10-06T00:45:00.000Z",
-    "source": "Facebook"
-  },
-  {
-    "rating": 5,
-    "scale": 5,
-    "content":
-    "Podľa môjho skromného názoru najlepšia escape roomka v hre 💪🏻",
-    "customerName": "Tímea Bocanová",
-    "customerImage": "reviews/2.jpg",
-    "date": "2020-10-06T00:21:00.000Z",
-    "source": "Facebook"
-  },
-  {
-    "rating": 5,
-    "scale": 5,
-    "content": "Skvelá zábava a vrelo odporúčam 👌👌",
-    "customerName": "Maroš Lapčák",
-    "customerImage": "reviews/3.jpg",      
-    "date": "2020-09-10T00:45:00.000Z",
-    "source": "Facebook"
+      "scale": 5,
+      "content": "Skvelý príbeh, ešte lepšie úlohy. Escape rooms sme prešli už mnoho, ale táto bola naozaj dobrá. Napätie, jedinečné úlohy, aké sme ešte neriešili, skvelé priestory- mnoho miestností a celé to bol úžasný zážitok, ktorý rozhodne stojí za to. Personál bol taktiež veľmi milý no a my sa už teraz tešíme na ďalšie miestnosti! -ESKA team ❤️",
+      "customerName": "Ema Katarína Mišendová",
+      "customerImage": "reviews/4.jpg",
+      "date": "2021-05-16T12:22:00.000Z",
+      "source": "Facebook"
+    },
+    {
+      "rating": 5,
+      "scale": 5,
+      "content": "Mám prejdené už desiatky takýchto hier a môžem konštatovať že tuto radim medzi tie top, ktoré som doteraz vyskúšala 👍🏻👍🏻 vynikajúce úlohy, hlavne ich jedinečnosť nič podobne som inde nevidela 🤓",
+      "customerName": "Renáta Keruľová",
+      "customerImage": "reviews/1.jpg",
+      "date": "2020-10-06T00:45:00.000Z",
+      "source": "Facebook"
+    },
+    {
+      "rating": 5,
+      "scale": 5,
+      "content": "Podľa môjho skromného názoru najlepšia escape roomka v hre 💪🏻",
+      "customerName": "Tímea Bocanová",
+      "customerImage": "reviews/2.jpg",
+      "date": "2020-10-06T00:21:00.000Z",
+      "source": "Facebook"
+    },
+    {
+      "rating": 5,
+      "scale": 5,
+      "content": "Skvelá zábava a vrelo odporúčam 👌👌",
+      "customerName": "Maroš Lapčák",
+      "customerImage": "reviews/3.jpg",
+      "date": "2020-09-10T00:45:00.000Z",
+      "source": "Facebook"
     }
   ]
 }
