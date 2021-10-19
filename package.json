@@ -65,11 +65,11 @@
     "typescript": "4.4.4"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "6.3.4",
+    "@storybook/addon-actions": "6.3.12",
     "@storybook/addon-info": "5.3.21",
-    "@storybook/addon-links": "6.3.4",
-    "@storybook/addons": "6.3.4",
-    "@storybook/react": "6.3.4",
+    "@storybook/addon-links": "6.3.12",
+    "@storybook/addons": "6.3.12",
+    "@storybook/react": "6.3.12",
     "@typescript-eslint/eslint-plugin": "5.1.0",
     "@typescript-eslint/parser": "5.1.0",
     "eslint": "8.0.1",
