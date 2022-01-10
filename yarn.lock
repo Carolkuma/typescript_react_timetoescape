@@ -17508,10 +17508,10 @@ react-colorful@^5.1.2:
   resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.2.3.tgz#579faf42542e32645c5dee66c8530292b2d61646"
   integrity sha512-lAge4syxosZg9SX8fJiwOLd9ZJSW3poPBtypnz1aMiFoHsRnK5G3+INGGx9DGtsrso4h5uFYbiFpjAfWyK3Kag==
 
-react-cookie-consent@6.4.1:
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-6.4.1.tgz#256916725d87d8227e1f71d6aa4a18d451dc0d40"
-  integrity sha512-dAgC2uSrUN0eXoNhEKDCHH/dL3RUs/84SPO8hRvJVz7HtPGmF+t/mQwd4V4qsGAvVqhbn0hzMdftEuiJS3iueQ==
+react-cookie-consent@7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-7.2.0.tgz#5e6c528468271c66ecc03aaa563a6f904f77af95"
+  integrity sha512-O3k8W3PF0Zd9E+G4cKSSd4EnbfybruL1evMY9ZCd0GGXG2SNG1lAPwBzoCJqtuQZcFZGOPB8NFkoYREWcTwFDA==
   dependencies:
     js-cookie "^2.2.1"
     prop-types "^15.7.2"
