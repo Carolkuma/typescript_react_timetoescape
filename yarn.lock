@@ -17720,10 +17720,10 @@ react-helmet@^5.2.1:
     react-fast-compare "^2.0.2"
     react-side-effect "^1.1.0"
 
-react-in-viewport@1.0.0-alpha.19:
-  version "1.0.0-alpha.19"
-  resolved "https://registry.yarnpkg.com/react-in-viewport/-/react-in-viewport-1.0.0-alpha.19.tgz#ce24b658e004787e9611a2bf60e44265a8b1d71b"
-  integrity sha512-tPVvg9e2wnPOqoEIn+/5F5WIz10P9huiOqbA9oFDRTvCWX3DlWhq6KXaAycPIUOw7dbtotOvLP1YkVDnXuLQSQ==
+react-in-viewport@1.0.0-alpha.20:
+  version "1.0.0-alpha.20"
+  resolved "https://registry.yarnpkg.com/react-in-viewport/-/react-in-viewport-1.0.0-alpha.20.tgz#f68aa2a72671e9ec12319c33a6483747b2893444"
+  integrity sha512-AW9kns8advQqY0CnBt6ZRgkvYp0Xxzqhd8ey0hjGTk5obGl4ZdxG3XMnHYmCjpsDYxQ1CPGqRf9VchL1VmIfhg==
   dependencies:
     hoist-non-react-statics "^3.0.0"
 
