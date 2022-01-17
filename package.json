@@ -24,7 +24,7 @@
     "@fortawesome/react-fontawesome": "0.1.14",
     "@loadable/component": "5.15.2",
     "@react-google-maps/api": "2.7.0",
-    "@types/jest": "27.0.2",
+    "@types/jest": "27.4.0",
     "@types/react-helmet": "6.1.5",
     "@types/react-leaflet": "2.8.2",
     "awesome-typescript-loader": "5.2.1",
@@ -80,7 +80,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "eslint-plugin-react": "7.28.0",
     "eslint-plugin-react-hooks": "4.3.0",
-    "jest": "27.3.1",
+    "jest": "27.4.7",
     "prettier": "2.5.1",
     "react-docgen-typescript-loader": "3.7.2"
   }
