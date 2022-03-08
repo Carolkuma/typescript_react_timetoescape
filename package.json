@@ -30,7 +30,7 @@
     "awesome-typescript-loader": "5.2.1",
     "babel-loader": "8.2.3",
     "date-fns": "2.28.0",
-    "gatsby": "4.9.1",
+    "gatsby": "4.9.2",
     "gatsby-background-image": "1.6.0",
     "gatsby-image": "3.11.0",
     "gatsby-plugin-facebook-pixel": "1.0.8",
