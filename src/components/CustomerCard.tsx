@@ -1,27 +1,29 @@
-import React from 'react';
+import React from "react";
 import Img from "gatsby-image";
-import Card from './Card';
-import StarRatings from 'react-star-ratings';
-import { lightFormat } from 'date-fns'
-import { graphql, useStaticQuery } from 'gatsby';
-import { findImages } from './SectionBackground';
+import Card from "./Card";
+import StarRatings from "react-star-ratings";
+import { lightFormat } from "date-fns";
+import { graphql, useStaticQuery } from "gatsby";
+import { findImages } from "./SectionBackground";
+import "twin.macro";
 export interface Customer {
-  rating: number,
-  scale: number,
-  source: number,
-  date: string,
-  customerImage: string,
-  customerName: string,
-  content: string,
+  rating: number;
+  scale: number;
+  source: number;
+  date: string;
+  customerImage: string;
+  customerName: string;
+  content: string;
 }
 interface props {
-  customer: Customer,
+  customer: Customer;
 }
 
+const formatDate = (date: string): string =>
+  lightFormat(new Date(date), "dd.MM.yyyy");
 
-const formatDate = (date: string): string => lightFormat(new Date(date), 'dd.MM.yyyy')
-
-const showTextRating = (rating: number, scale: number): string => `${rating}/${scale}`
+const showTextRating = (rating: number, scale: number): string =>
+  `${rating}/${scale}`;
 
 export const CustomerCard = ({ customer }: props) => {
   const { images } = useStaticQuery(graphql`
@@ -42,12 +44,12 @@ export const CustomerCard = ({ customer }: props) => {
       }
     }
   `);
-  
+
   const optImage = findImages(images, customer.customerImage)[0];
-  
+
   return (
-    <Card className="flex flex-1 flex-col mb-8 p-5 md:p-10 md:mx-5">
-      <div className="flex mb-8">
+    <Card tw="flex flex-1 flex-col mb-8 p-5 md:p-10 md:mx-5">
+      <div tw="flex mb-8">
         <StarRatings
           rating={customer.rating}
           starDimension="1.5rem"
@@ -57,25 +59,26 @@ export const CustomerCard = ({ customer }: props) => {
           numberOfStars={customer.scale}
           name="hodnotenie"
         />
-        <div className="float-right flex-1 text-right">
+        <div tw="float-right flex-1 text-right">
           {showTextRating(customer.rating, customer.scale)}
         </div>
       </div>
-      <div className="flex-grow">
+      <div tw="flex-grow">
         <q>{customer.content}</q>
         <br />
         <small>Zdroj:{customer.source}</small>
       </div>
-      <div className="flex items-center mt-8">
+      <div tw="flex items-center mt-8">
         <Img
           fluid={optImage.node.childImageSharp.fluid}
           alt={customer.customerName}
-          className="w-12 h-12 mr-4 rounded-full"
+          tw="w-12 h-12 mr-4 rounded-full"
         />
         <div>
           <p>{customer.customerName}</p>
-          <p className="text-sm">{formatDate(customer.date)}</p>
+          <p tw="text-sm">{formatDate(customer.date)}</p>
         </div>
       </div>
     </Card>
-  );};
+  );
+};

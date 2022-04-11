@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
+import "twin.macro";
 
-
-const LabelText = ({ children, className = '' }) => (
-  <p className={`uppercase tracking-wider ${className}`}>{children}</p>
+const LabelText = ({ children, className = "" }) => (
+  <p tw="uppercase tracking-wider" className={className}>
+    {children}
+  </p>
 );
 
 export default LabelText;

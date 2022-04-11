@@ -1,47 +1,54 @@
-import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
 
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from "gatsby-background-image";
 
-interface props  {
-  className?: string | undefined, 
-  children?: JSX.Element | JSX.Element[],
-  imageSrc: string,
-  tag: string,
-  id: string,
+interface props {
+  className?: string | undefined;
+  children?: JSX.Element | JSX.Element[];
+  imageSrc: string;
+  tag: string;
+  id: string;
 }
 
 interface Node {
-  relativePath: string,
+  relativePath: string;
 }
 
-
 interface ImageQueryResult {
-  node: Node
+  node: Node;
 }
 
 interface QueryResult {
-  edges: ImageQueryResult[]
+  edges: ImageQueryResult[];
 }
 
+export const findImages = ({ edges }: QueryResult, relativePath: string) => {
+  const images = edges.filter(({ node }: ImageQueryResult) =>
+    node.relativePath.includes(relativePath)
+  );
 
-
-export const findImages = ({edges}: QueryResult, relativePath: string) => {
-  const images = edges.filter(({node}: ImageQueryResult) => node.relativePath.includes(relativePath))
-  
-  if (images.length <= 0) {
-    throw new Error(`Cannot find image ${relativePath}`)
+  if (images.length <= 0) {
+    throw new Error(`Cannot find image ${relativePath}`);
   }
-  return images  
-}
+  return images;
+};
 
-const SectionBackground = ({ className, children, imageSrc, tag, id }: props) => {
+const SectionBackground = ({
+  className,
+  children,
+  imageSrc,
+  tag,
+  id,
+}: props) => {
   const { mobileImages, desktopImages } = useStaticQuery(
     graphql`
       query {
-        mobileImages: allFile(filter:{ extension: { regex: "/jpeg|jpg|png|gif/"}}) {
+        mobileImages: allFile(
+          filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }
+        ) {
           edges {
-            node { 
+            node {
               extension
               relativePath
               childImageSharp {
@@ -49,12 +56,14 @@ const SectionBackground = ({ className, children, imageSrc, tag, id }: props) =>
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
-            } 
+            }
           }
         }
-        desktopImages: allFile(filter:{ extension: { regex: "/jpeg|jpg|png|gif/"}}) {
+        desktopImages: allFile(
+          filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }
+        ) {
           edges {
-            node { 
+            node {
               extension
               relativePath
               childImageSharp {
@@ -62,42 +71,36 @@ const SectionBackground = ({ className, children, imageSrc, tag, id }: props) =>
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
-            } 
+            }
           }
         }
       }
     `
-  )
+  );
   // Set up the array of image data and `media` keys.
   // You can have as many entries as you'd like.
-  const mobileImage = findImages(mobileImages, imageSrc)[0]
-  const desctopImage = findImages(desktopImages, imageSrc)[0]
-  
+  const mobileImage = findImages(mobileImages, imageSrc)[0];
+  const desctopImage = findImages(desktopImages, imageSrc)[0];
+
   const sources = [
     mobileImage.node.childImageSharp.fluid,
     {
       ...desctopImage.node.childImageSharp.fluid,
       media: `(min-width: 491px)`,
     },
-  ]
+  ];
 
   return (
-    <BackgroundImage
-      Tag={tag}
-      id={id}
-      className={className}
-      fluid={sources}
-    >
-        {children}
+    <BackgroundImage Tag={tag} id={id} className={className} fluid={sources}>
+      {children}
     </BackgroundImage>
-  )
-}
+  );
+};
 
 SectionBackground.defaultProps = {
-  tag: 'div',
-  id: '',
+  tag: "div",
+  id: "",
   className: undefined,
-}
+};
 
-
-export default SectionBackground
+export default SectionBackground;

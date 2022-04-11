@@ -2,19 +2,19 @@ import React, { useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import LogoIcon from "../../svg/LogoIcon";
 import { NavigationButton } from "../NavigationButton";
-import { isMobile } from 'react-device-detect';
-import { Link } from 'gatsby';
+import { isMobile } from "react-device-detect";
+import { Link } from "gatsby";
 import { BookingButton } from "../BookingButton";
-import nav from '../../../content/home/common/navigation.json'
-import {throttle} from 'lodash'
+import nav from "../../../content/home/common/navigation.json";
+import { throttle } from "lodash";
+import "twin.macro";
 
-
-const {header} = nav
+const { header } = nav;
 interface props {
-  showNav?: boolean,
-  children?: JSX.Element | JSX.Element[] | string,
-  changeBgOpacity?: boolean,
-  isHome: boolean,
+  showNav?: boolean;
+  children?: JSX.Element | JSX.Element[] | string;
+  changeBgOpacity?: boolean;
+  isHome: boolean;
 }
 
 const style = {
@@ -24,34 +24,39 @@ const style = {
 const headerStyles = (isOpen: boolean) => {
   return {
     maxHeight: `${isOpen ? "100vh" : "5rem"}`,
-    transition: "max-height 0.3s ease-in-out, background-color 0.6s ease-in-out ",
+    transition:
+      "max-height 0.3s ease-in-out, background-color 0.6s ease-in-out ",
   };
 };
 
+const roundToEven = (n: number): number => 2 * Math.round(n / 2);
 
-const roundToEven = (n:number): number => 2 * Math.round(n / 2);
-
-const getLinkClass = (className: string | undefined): string => `block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto text-white ${className}`
+const getLinkClass = (className: string | undefined): string =>
+  `block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto text-white ${className}`;
 
 const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
   const getPercentage = () => {
-    const isSSR = typeof window === "undefined"
+    const isSSR = typeof window === "undefined";
 
     if (isSSR) {
-      return 0
+      return 0;
     }
 
-    if (typeof window !== "undefined" && window.pageXOffset === (document.body.clientHeight -window.innerHeight )) {
-      return 100
+    if (
+      typeof window !== "undefined" &&
+      window.pageXOffset === document.body.clientHeight - window.innerHeight
+    ) {
+      return 100;
     }
-      const per =
-        (window.pageYOffset /
-          (document.body.clientHeight - window.innerHeight)) *
-        100;
+    const per =
+      (window.pageYOffset / (document.body.clientHeight - window.innerHeight)) *
+      100;
     return roundToEven(Math.round(per));
   };
 
-  const [scrollTopPercentage, setScrollTopPercentage] = useState(getPercentage());
+  const [scrollTopPercentage, setScrollTopPercentage] = useState(
+    getPercentage()
+  );
   const [isOpen, setIsOpen] = useState(false);
 
   const offset = !isMobile ? 100 : 350;
@@ -98,7 +103,7 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
         </div>
 
         <NavigationButton
-          className="block lg:hidden pl-3 py-2"
+          tw="block lg:hidden pl-3 py-2"
           isOpen={isOpen}
           onClick={() => setIsOpen(!isOpen)}
         />
@@ -135,8 +140,8 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
             </div>
           )}
         </div>
-        <div className={`lg:block relative mx-auto my-5  lg:my-0`}>
-          <a href="tel:+421951406635">+421 951 406 635</a> 
+        <div tw="lg:block relative mx-auto my-5 lg:my-0">
+          <a href="tel:+421951406635">+421 951 406 635</a>
           <BookingButton />
         </div>
       </nav>

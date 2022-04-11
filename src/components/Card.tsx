@@ -1,13 +1,17 @@
-import React, { forwardRef, RefObject } from 'react';
+import React, { forwardRef } from "react";
+import "twin.macro";
 interface Props {
-  className?: string,
-  children?: JSX.Element | JSX.Element[],
+  className?: string;
+  children?: JSX.Element | JSX.Element[];
 }
-type Ref = HTMLDivElement
+type Ref = HTMLDivElement;
+
+//TODO: refactor to styled adn default export
 const Card = forwardRef<Ref, Props>(({ className, children }, ref) => (
   <div
     ref={ref}
-    className={`md:rounded-lg md:border border-solid border-gray-200 card-shadow overflow-hidden ${className}`}
+    tw="md:rounded-lg md:border border-solid border-gray-200 overflow-hidden"
+    className={`card-shadow  ${className}`}
   >
     {children}
   </div>
