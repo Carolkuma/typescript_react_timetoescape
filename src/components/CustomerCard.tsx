@@ -1,6 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
-import Card from "./Card";
+import { Card } from "./Card";
 import StarRatings from "react-star-ratings";
 import { lightFormat } from "date-fns";
 import { graphql, useStaticQuery } from "gatsby";

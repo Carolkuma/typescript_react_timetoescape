@@ -1,9 +1,11 @@
 import React from "react";
+import tw from "twin.macro";
+import styled from "styled-components";
 
 const sizes = {
-  default: `py-3 px-5`,
-  lg: `py-3 px-5 md:py-4 md:px-12`,
-  xl: `py-3 px-5 md:py-5 md:px-16 md:text-lg`,
+  default: `button bg-orange-400 hover:text-gray-900 hover:bg-orange-600 py-3 px-5`,
+  lg: `button bg-orange-400 hover:text-gray-900 hover:bg-orange-600 py-3 px-5 md:py-4 md:px-12`,
+  xl: `button bg-orange-400 hover:text-gray-900 hover:bg-orange-600 py-3 px-5 md:py-5 md:px-16 md:text-lg`,
 };
 
 interface props {
@@ -22,8 +24,8 @@ export enum ButtonElement {
   DIV,
 }
 
-const staticClassNames = `
-  bg-orange-400
+const StyledButton = styled.div`
+  ${tw`
   text-center
   transition-all
   w-full 
@@ -32,13 +34,10 @@ const staticClassNames = `
   md:inline
   duration-200 
   ease-in-out
-  hover:bg-orange-600
   text-gray-800
-  hover:text-gray-900
   uppercase
-  button
   tracking-wider
-  print:hidden
+  print:hidden`}
 `;
 
 const Button = ({
@@ -53,33 +52,28 @@ const Button = ({
   const classNames: string = `
         ${sizes[size] || sizes.default}
         ${className}
-       
     `;
 
   if (element === ButtonElement.BUTTON) {
     return (
-      <button className={classNames} tw={staticClassNames}>
+      <StyledButton as="button" className={classNames}>
         {children}
-      </button>
+      </StyledButton>
     );
   }
   if (element === ButtonElement.DIV) {
-    return (
-      <div className={classNames} tw={staticClassNames}>
-        {children}
-      </div>
-    );
+    return <StyledButton className={classNames}>{children}</StyledButton>;
   }
   return (
-    <a
+    <StyledButton
+      as="a"
       href={href}
       rel={rel}
       className={classNames}
-      tw={staticClassNames}
       target={target}
     >
       {children}
-    </a>
+    </StyledButton>
   );
 };
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from "../Card";
+import { Card } from "../Card";
 import useDimensions from "react-use-dimensions";
 import "twin.macro";
 import { Accordion } from "../Accordion";

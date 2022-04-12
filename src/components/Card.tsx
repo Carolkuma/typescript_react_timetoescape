@@ -1,20 +1,22 @@
-import React, { forwardRef } from "react";
-import "twin.macro";
+import tw from "twin.macro";
+import styled from "styled-components";
 interface Props {
   className?: string;
   children?: JSX.Element | JSX.Element[];
 }
 type Ref = HTMLDivElement;
 
-//TODO: refactor to styled adn default export
-const Card = forwardRef<Ref, Props>(({ className, children }, ref) => (
-  <div
-    ref={ref}
-    tw="md:rounded-lg md:border border-solid border-gray-200 overflow-hidden"
-    className={`card-shadow  ${className}`}
-  >
-    {children}
-  </div>
-));
+export const Card = styled.div`
+  ${tw`md:rounded-lg md:border border-solid border-gray-200 overflow-hidden`}
+  @media only screen and (min-width: 769px) {
+    & {
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+    }
+  }
 
-export default Card;
+  @media only screen and (min-width: 769px) and (prefers-color-scheme: dark) {
+    & {
+      box-shadow: 0 10px 28px rgba(255, 255, 255, 0.08);
+    }
+  }
+`;

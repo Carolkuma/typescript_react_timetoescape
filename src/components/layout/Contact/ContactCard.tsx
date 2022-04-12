@@ -1,7 +1,7 @@
 import React from "react";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Card from "../../Card";
+import { Card } from "../../Card";
 import "twin.macro";
 interface props {
   title: string;
