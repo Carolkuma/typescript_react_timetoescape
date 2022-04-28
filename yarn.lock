@@ -4233,10 +4233,10 @@
     prop-types "^15.6.1"
     react-lifecycles-compat "^3.0.4"
 
-"@react-google-maps/api@2.10.1":
-  version "2.10.1"
-  resolved "https://registry.yarnpkg.com/@react-google-maps/api/-/api-2.10.1.tgz#c157499114eb500aa6f777d15b5667da720bf8fb"
-  integrity sha512-7TwU9FaICWxLCrXFgUyFXqZ2+wv2p4Fj5kk9GzgWmUUr5hHMPb2c7hajvFk65UOVRUw/6NWPMBZ3tKiPkT2m/A==
+"@react-google-maps/api@2.10.2":
+  version "2.10.2"
+  resolved "https://registry.yarnpkg.com/@react-google-maps/api/-/api-2.10.2.tgz#f1bbe4eea199ad7b7613ae17a8abce25813e868e"
+  integrity sha512-vQDtwyC1g/s8SGLmPIn021EaA4hWn8pjky2qHDHH3m4C4i3ljyj9kgBx0Fs+CySebYxsrzyymaDBhQiSpLEqFw==
   dependencies:
     "@googlemaps/js-api-loader" "1.14.1"
     "@googlemaps/markerclusterer" "2.0.4"
