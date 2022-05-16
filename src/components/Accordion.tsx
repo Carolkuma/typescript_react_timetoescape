@@ -2,8 +2,9 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "twin.macro";
-
-interface props {
+import styled from "styled-components";
+import tw from "twin.macro";
+interface Props {
   question: string;
   answer: string;
   index: number;
@@ -11,16 +12,24 @@ interface props {
   toggle: () => void;
 }
 
-const style = (isOpen: boolean) => {
-  return {
-    transition: "max-height .5s ease-in-out",
-    maxHeight: isOpen ? "10rem" : 0,
-  };
-};
+const AnswerContainer = styled.p<{ isOpen: boolean }>`
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out;
+  max-height: ${({ isOpen }) => (isOpen ? "10rem" : 0)};
 
-const transitionStyle = {
-  transition: "all .6s",
-};
+  ${tw`text-gray-700 dark:text-gray-200 text-base`}
+`;
+
+const ArrowIcon = styled(FontAwesomeIcon)`
+  transition: 0.6s ease-in-out;
+  ${tw`h-full text-xl mt-2 text-xl float-right`}
+`;
+// TODO: fix borders
+const QuestionContainer = styled.div<{ isOpen: boolean; index: number }>`
+  ${tw`text-2xl border-gray-200 dark:border-gray-900 cursor-pointer`}
+  ${({ isOpen }) => isOpen && tw`border-b-2`}
+  ${({ index }) => index !== 0 && tw`border-t-2`}
+`;
 
 export const Accordion = ({
   question,
@@ -28,25 +37,17 @@ export const Accordion = ({
   index,
   isOpen,
   toggle,
-}: props) => (
-  <div tw="w-full leading-normal">
-    <div
-      tw="text-2xl border-gray-200 cursor-pointer px-6 py-3"
-      className={`alt-font  ${isOpen && "border-b-2"}   ${
-        index !== 0 && "border-t-2"
-      }`}
+}: Props) => (
+  <div tw="w-full leading-normal py-3 px-6">
+    <QuestionContainer
+      className="alt-font"
+      index={index}
+      isOpen={isOpen}
       onClick={toggle}
     >
       {question}
-      <FontAwesomeIcon
-        rotation={isOpen ? undefined : 180}
-        icon={faChevronUp}
-        tw="h-full text-xl mt-2 text-xl float-right"
-        style={transitionStyle}
-      />
-    </div>
-    <div tw="overflow-hidden" style={style(isOpen)}>
-      <p tw="text-gray-700 text-base px-6 py-3">{answer}</p>
-    </div>
+      <ArrowIcon rotation={isOpen ? undefined : 180} icon={faChevronUp} />
+    </QuestionContainer>
+    <AnswerContainer isOpen={isOpen}>{answer}</AnswerContainer>
   </div>
 );

@@ -1,5 +1,5 @@
 import React from "react";
-import Button, { ButtonElement } from "../Button";
+import Button, { ButtonElement } from "../shared/Button";
 import { isMobile } from "react-device-detect";
 import "twin.macro";
 interface props {

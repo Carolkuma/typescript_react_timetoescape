@@ -1,7 +1,7 @@
 import React from "react";
-import Button, { ButtonElement } from "../Button";
+import Button, { ButtonElement } from "../shared/Button";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { MainPageSection } from "../MainPageSection";
+import { MainPageSection } from "../shared/MainPageSection";
 import intro from "../../../content/home/intro.json";
 import nav from "../../../content/home/common/navigation.json";
 import "twin.macro";

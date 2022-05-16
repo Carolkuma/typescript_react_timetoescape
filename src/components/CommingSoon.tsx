@@ -1,5 +1,6 @@
 import React from "react";
 import "twin.macro";
+import { Container } from "./shared/Container";
 
 const style = {
   backgroundImage: `url("intro-bg.jpg")`,
@@ -10,7 +11,7 @@ const style = {
 
 export const CommingSoon = () => (
   <section tw="py-20" style={style}>
-    <div tw="container mx-auto lg:flex">
+    <Container tw="lg:flex">
       <div tw="text-center flex-1 lg:w-1/2">
         <h1 tw="text-4xl lg:text-4xl xl:text-6xl leading-none alt-font">
           Nezabudnuteľný zážitok
@@ -20,6 +21,6 @@ export const CommingSoon = () => (
         </p>
         <p tw="mt-8 md:mt-12"></p>
       </div>
-    </div>
+    </Container>
   </section>
 );

@@ -1,6 +1,6 @@
 import React from "react";
 import Lightbox from "./LightBox";
-import { MainPageSection } from "./MainPageSection";
+import { MainPageSection } from "./shared/MainPageSection";
 import "twin.macro";
 const imagesPath = "gallery/";
 

@@ -1,14 +1,15 @@
 import React from "react";
-import Button from "./Button";
+import Button from "./shared/Button";
 import { Link } from "gatsby";
 import UndrawNotFound from "./ReactSvgs/UndrawNotFound";
 import notfound from "../../content/home/common/notfound.json";
+import { Container } from "./shared/Container";
 
 const { title, description, button } = notfound;
 
 export const NotFound = () => (
   <section tw="py-20 flex items-center">
-    <div tw="container mx-auto p-4 flex flex-wrap items-center">
+    <Container tw="p-4 flex flex-wrap items-center">
       <div tw="w-full flex md:w-5/12 text-center p-10">
         <UndrawNotFound />
       </div>
@@ -23,6 +24,6 @@ export const NotFound = () => (
           </Link>
         </p>
       </div>
-    </div>
+    </Container>
   </section>
 );

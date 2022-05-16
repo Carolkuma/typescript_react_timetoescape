@@ -1,32 +1,32 @@
 {
-    "title": "Kontakt", 
-    "info": [
-        {
-          "title": "Telefónne číslo",
-          "icon": "faPhone",
-          "content": "<a href='tel:+421951406635'>+421 951 406 635</a>"
-        },
-        {
-            "title": "Emailová adresa",
-            "icon": "faEnvelope",
-            "content": "<a href='mailto:rezervacia@timetoescape.sk'>rezervacia@timetoescape.sk</a>"
-        },
-        {
-            "title": "Otváracia doba",
-            "icon": "faClock",
-            "content": "<span>PO - PI 16:00 - 22:00</span><br /><span>SO - NE 9:00 - 22:00</span>"
-        }
-    ],
-    "address": {
-        "title": "Time to escape",
-        "mail": "Zimná 61, \n 052 01 Spišská Nová Ves"
+  "title": "Kontakt",
+  "info": [
+    {
+      "title": "Telefónne číslo",
+      "icon": "faPhone",
+      "content": "<a href='tel:+421951406635'>+421 951 406 635</a>"
     },
-    "map": {
-        "googleMapsLink": "https://www.google.com/maps/dir//Time+to+Escape,+Zimn%C3%A1+61,+052+01+Spi%C5%A1sk%C3%A1+Nov%C3%A1+Ves/@48.9431917,20.5667879,18z/",
-        "coordinates": {
-            "lat": 48.9439800,
-            "lng": 20.5672
-        },
-        "label": "Otvoriť v mapách"
+    {
+      "title": "Emailová adresa",
+      "icon": "faEnvelope",
+      "content": "<a href='mailto:rezervacia@timetoescape.sk'>rezervacia@timetoescape.sk</a>"
+    },
+    {
+      "title": "Otváracia doba",
+      "icon": "faClock",
+      "content": "<span>PO - PI 16:00 - 22:00</span><br /><span>SO - NE 9:00 - 22:00</span>"
     }
+  ],
+  "address": {
+    "title": "Time to escape",
+    "mail": "Zimná 61, \n 052 01 Spišská Nová Ves"
+  },
+  "map": {
+    "googleMapsLink": "https://www.google.com/maps/dir//Time+to+Escape,+Zimn%C3%A1+61,+052+01+Spi%C5%A1sk%C3%A1+Nov%C3%A1+Ves/@48.9431917,20.5667879,18z/",
+    "coordinates": {
+      "lat": 48.94398,
+      "lng": 20.5672
+    },
+    "label": "Otvoriť v mapách"
+  }
 }

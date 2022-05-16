@@ -1,6 +1,6 @@
 import React from "react";
 import { BookingButton } from "../BookingButton";
-import { MainPageSection } from "../MainPageSection";
+import { MainPageSection } from "../shared/MainPageSection";
 import outro from "../../../content/home/outro.json";
 import "twin.macro";
 const { title, description, backgroundImage } = outro;
@@ -16,8 +16,6 @@ export const Outro = () => (
       </h3>
       {description !== "" && <p tw="mt-5 text-xl font-light">{description}</p>}
     </>
-    <div tw="mt-10">
-      <BookingButton size="xl" />
-    </div>
+    <BookingButton size="xl" tw="mt-10" />
   </MainPageSection>
 );

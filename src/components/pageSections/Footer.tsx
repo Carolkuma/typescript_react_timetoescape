@@ -1,22 +1,30 @@
 import React from "react";
 import { Link } from "gatsby";
 import nav from "../../../content/home/common/navigation.json";
+import tw from "twin.macro";
 import "twin.macro";
+import styled from "styled-components";
+import { Container } from "../shared/Container";
 
 const { footer } = nav;
 const FOOTER_NAVIGATION = footer;
 
-const getCopyright = (startYear = 2020) => {
+const Copyright = ({ startYear = 2020 }) => {
   const toYear = new Date().getFullYear();
   const copyrightDate =
     startYear === toYear ? `${startYear}` : `${startYear} - ${toYear}`;
-  return `© ${copyrightDate}`;
+  return <>© {copyrightDate}</>;
 };
 
+const FooterContainer = styled.footer`
+  height: 2rem;
+  ${tw`bg-dark text-gray-100 print:bg-white print:text-gray-500`}
+`;
+
 const Footer = () => (
-  <footer tw="bg-dark text-gray-100 print:bg-white print:text-gray-500">
-    <div tw="container mx-auto  px-3 flex flex-col md:flex-row-reverse text-center">
-      <nav tw="print:hidden py-5 flex flex-col md:flex-row ">
+  <FooterContainer as={"footer"}>
+    <Container tw="px-3 flex flex-col md:flex-row-reverse text-center">
+      <nav tw="print:hidden py-5 flex flex-col md:flex-row">
         {FOOTER_NAVIGATION.map(({ link, label }, i) => (
           <Link
             to={link}
@@ -29,10 +37,10 @@ const Footer = () => (
         ))}
       </nav>
       <span tw="flex-grow md:text-left mb-5 md:py-5">
-        {getCopyright()} Time to escape
+        <Copyright /> Time to escape
       </span>
-    </div>
-  </footer>
+    </Container>
+  </FooterContainer>
 );
 
 export default Footer;

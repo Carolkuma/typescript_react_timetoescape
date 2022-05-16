@@ -1,24 +1,24 @@
-import React from 'react';
-import Footer from './Footer';
-import Header from './Header';
-import loadable from "@loadable/component"
+import React from "react";
+import Footer from "../pageSections/Footer";
+import Header from "../pageSections/Header/Header";
+import loadable from "@loadable/component";
 
 // const FacebookPixel = loadable(() => import( '../FacebookPixel'))
 // const CustomerChat = loadable(() => import("../CustomerChat"))
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 import CookieConsent from "react-cookie-consent";
-import { withPrefix } from "gatsby"
-import FacebookPixel from '../FacebookPixel';
-import CustomerChat from '../CustomerChat';
-
-
+import { withPrefix } from "gatsby";
+import FacebookPixel from "../FacebookPixel";
+import CustomerChat from "../CustomerChat";
+import { GlobalStyles } from "../GlobalStyles";
+import { Content } from "../shared/Content";
 
 interface Props {
-  isHome: boolean,
-  isRegistrationEnabled?: boolean,
-  showNav?: boolean,
-  changeBgOpacity?: boolean,
-  children: JSX.Element | JSX.Element[] | string,
+  isHome: boolean;
+  isRegistrationEnabled?: boolean;
+  showNav?: boolean;
+  changeBgOpacity?: boolean;
+  children: JSX.Element | JSX.Element[] | string;
 }
 
 const preconnect = [
@@ -29,12 +29,9 @@ const preconnect = [
   "https://script.hotjar.com",
 ];
 
-
 const cookieStyle = {
   zIndex: 2147483646,
 };
-
-
 
 const Layout = ({
   children,
@@ -53,31 +50,15 @@ const Layout = ({
           rel="stylesheet"
         ></link>
       </Helmet>
-      <div className="content">
-        <Header
-          isHome={isHome}
-          showNav={showNav}
-          changeBgOpacity={changeBgOpacity}
-          isRegistrationEnabled={isRegistrationEnabled}
-        />
-        <main>{children}</main>
-      </div>
-      <Footer />
-      <Helmet>
-        {preconnect.map((url, key) => {
-          return <link rel="preconnect" href={url} key={key}></link>;
-        })}
-      </Helmet>
-      <FacebookPixel />
-      <CustomerChat />
+      <GlobalStyles />
       <CookieConsent
         style={cookieStyle}
         disableStyles={true}
         location="bottom"
         buttonText="Rozumiem"
         declineButtonText="Decline"
-        contentClasses="w-full "
-        containerClasses="z-50 fixed w-full flex items-center bg-dark text-white text-sm font-bold px-4 py-3 print:hidden"
+        contentClasses="container mx-auto px-3"
+        containerClasses="z-50 w-full flex items-center bg-dark text-white text-sm font-bold px-4 py-3 print:hidden"
         cookieName="gatsby-gdpr-google-analytics"
         buttonClasses="py-3 px-5
         float-right
@@ -97,12 +78,29 @@ const Layout = ({
         Táto stránka používa súbory cookies a iné technológie pre správne
         fungovanie a zlepšenie chodu stránky.
       </CookieConsent>
+      <Content>
+        <Header
+          isHome={isHome}
+          showNav={showNav}
+          changeBgOpacity={changeBgOpacity}
+          isRegistrationEnabled={isRegistrationEnabled}
+        />
+        <main>{children}</main>
+      </Content>
+      <Footer />
+      <Helmet>
+        {preconnect.map((url, key) => {
+          return <link rel="preconnect" href={url} key={key}></link>;
+        })}
+      </Helmet>
+      <FacebookPixel />
+      <CustomerChat />
     </>
   );
 };
 
 Layout.defaultProps = {
   isHome: false,
-}
+};
 
 export default Layout;

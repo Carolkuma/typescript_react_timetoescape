@@ -1,12 +1,11 @@
 import React from "react";
 import Layout from "../components/layout/Layout";
-
+import { Container } from "../components/shared/Container";
 
 interface TableConfig {
-  tableTitles: string[],
-  data: string[][],
+  tableTitles: string[];
+  data: string[][];
 }
-
 
 const tableConfig: TableConfig = {
   tableTitles: ["Poradie", "Tím", "Dosiahnutý čas", "Dátum", "Miestnosť"],
@@ -24,11 +23,9 @@ const tableConfig: TableConfig = {
   ],
 };
 
-
-
 export default () => (
   <Layout>
-    <div className="container mx-auto pt-20">
+    <Container className="pt-20">
       <h2 className="text-3xl lg:text-4xl alt-font px-3">Leaderboard</h2>
       <table className="table-auto text-left border-collapse mx-3">
         <thead>
@@ -61,6 +58,6 @@ export default () => (
           })}
         </tbody>
       </table>
-    </div>
+    </Container>
   </Layout>
 );

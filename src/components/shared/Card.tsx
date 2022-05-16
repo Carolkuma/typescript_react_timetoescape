@@ -1,13 +1,8 @@
 import tw from "twin.macro";
 import styled from "styled-components";
-interface Props {
-  className?: string;
-  children?: JSX.Element | JSX.Element[];
-}
-type Ref = HTMLDivElement;
 
 export const Card = styled.div`
-  ${tw`md:rounded-lg md:border border-solid border-gray-200 overflow-hidden`}
+  ${tw`md:rounded-lg md:border border-solid border-gray-200 dark:border-gray-900 overflow-hidden`}
   @media only screen and (min-width: 769px) {
     & {
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import LogoIcon from "../../svg/LogoIcon";
-import { NavigationButton } from "../NavigationButton";
+import LogoIcon from "../../../svg/LogoIcon";
+import { NavigationButton } from "../../NavigationButton";
 import { isMobile } from "react-device-detect";
 import { Link } from "gatsby";
-import { BookingButton } from "../BookingButton";
-import nav from "../../../content/home/common/navigation.json";
+import { BookingButton } from "../../BookingButton";
+import nav from "../../../../content/home/common/navigation.json";
 import { throttle } from "lodash";
 import "twin.macro";
+import ScrollIndicator from "./ScrollIndicator";
+import { NavContainer } from "./NavContainer";
 
 const { header } = nav;
 interface props {
@@ -82,9 +84,9 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
   return (
     <header
       style={headerStyles(isOpen)}
-      className={`overflow-hidden fixed w-full z-20 top-0 bg-dark shadow text-orange-400 border-gray-800 print:bg-white ${scrolledClass} content-visibility`}
+      className={`overflow-hidden sticky w-full z-20 top-0 bg-dark shadow text-orange-400 border-gray-800 print:bg-white ${scrolledClass} content-visibility`}
     >
-      <nav className="container mx-auto flex flex-row-reverse lg:flex-row items-center justify-between flex-wrap p-3">
+      <NavContainer as={"nav"}>
         <div className="flex items-center flex-shrink-0 text-white">
           {isHome ? (
             <AnchorLink
@@ -102,11 +104,7 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
           )}
         </div>
 
-        <NavigationButton
-          tw="block lg:hidden pl-3 py-2"
-          isOpen={isOpen}
-          onClick={() => setIsOpen(!isOpen)}
-        />
+        <NavigationButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
 
         <div
           className={`mt-4 lg:mt-0 w-full block lg:block flex-grow lg:flex lg:items-center lg:w-auto`}
@@ -144,15 +142,8 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
           <a href="tel:+421951406635">+421 951 406 635</a>
           <BookingButton />
         </div>
-      </nav>
-      <div
-        style={{
-          width: `${scrollTopPercentage}%`,
-          height: 3,
-          transition: `width .2 ease-in-out`,
-        }}
-        className="bg-orange-400"
-      ></div>
+      </NavContainer>
+      <ScrollIndicator scrollTopPercentage={scrollTopPercentage} />
     </header>
   );
 };

@@ -1,4 +1,4 @@
-const path = require(`path`)
+const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
@@ -7,12 +7,6 @@ module.exports = {
     siteUrl: "https://timetoescape.sk",
   },
   plugins: [
-    {
-      resolve: `gatsby-theme-codebushi`,
-      options: {
-        tailwindConfig: `tailwind.config.js`,
-      },
-    },
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-typescript",
     `gatsby-plugin-offline`,
@@ -62,7 +56,7 @@ module.exports = {
         path: `${__dirname}/content/images/`,
       },
     },
-    `gatsby-transformer-sharp`, 
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-subfont`,

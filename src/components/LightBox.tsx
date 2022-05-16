@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 import Img from "gatsby-image";
-import { findImages } from "./SectionBackground";
+import { findImages } from "./shared/SectionBackground";
 import { graphql, useStaticQuery } from "gatsby";
-import { Card } from "./Card";
+import { Card } from "./shared/Card";
 
 interface Props {
   imagesPath: string;

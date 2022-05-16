@@ -3,7 +3,7 @@ import React from "react";
 
 import BackgroundImage from "gatsby-background-image";
 
-interface props {
+interface Props {
   className?: string | undefined;
   children?: JSX.Element | JSX.Element[];
   imageSrc: string;
@@ -40,7 +40,7 @@ const SectionBackground = ({
   imageSrc,
   tag,
   id,
-}: props) => {
+}: Props) => {
   const { mobileImages, desktopImages } = useStaticQuery(
     graphql`
       query {

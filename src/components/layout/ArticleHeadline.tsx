@@ -1,5 +1,6 @@
 import React from "react";
-import SectionBackground from "../SectionBackground";
+import { Container } from "../shared/Container";
+import SectionBackground from "../shared/SectionBackground";
 
 type Props = {
   title?: string;
@@ -16,7 +17,7 @@ export const ArticleHeadline = ({ title, children }: Props) => {
       tag={"div"}
     >
       <div tw="article-bg">
-        <div tw="container mx-auto pt-32 pb-4 px-3">{children}</div>
+        <Container tw="pt-32 pb-4 px-3">{children}</Container>
       </div>
     </SectionBackground>
   );

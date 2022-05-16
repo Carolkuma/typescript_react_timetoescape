@@ -3,8 +3,8 @@ import rooms from "../../../content/home/rooms.json";
 import { BookingButton } from "../BookingButton";
 import Img from "gatsby-image";
 import { graphql, useStaticQuery } from "gatsby";
-import { findImages } from "../SectionBackground";
-import { MainPageSection } from "../MainPageSection";
+import { findImages } from "../shared/SectionBackground";
+import { MainPageSection } from "../shared/MainPageSection";
 import "twin.macro";
 declare module "react" {
   interface HTMLProps<T> {

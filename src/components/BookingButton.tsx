@@ -1,16 +1,16 @@
 import React from "react";
-import Button from "./Button";
+import Button from "./shared/Button";
 import booking from "../../content/home/common/booking.json";
 import "twin.macro";
 
 const { isBookingEnabled, label, link } = booking;
-interface props {
+interface Props {
   size?: string;
   label?: string;
   className?: string;
 }
 
-export const BookingButton = ({ size, className }: props) =>
+export const BookingButton = ({ size, className }: Props) =>
   isBookingEnabled ? (
     <Button
       href={link}

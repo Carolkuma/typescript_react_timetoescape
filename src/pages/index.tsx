@@ -8,7 +8,7 @@ import { Intro } from "../components/layout/Intro";
 import { ReasonsToEnter } from "../components/layout/ReasonsToEnter/ReasonsToEnter";
 import { Rooms } from "../components/layout/Rooms";
 import { Outro } from "../components/layout/Outro";
-import { Testimonials } from "../components/Testimonials";
+import { Testimonials } from "../components/pageSections/Testimonials";
 import { Faq } from "../components/layout/Faq";
 import { Contact } from "../components/layout/Contact/Contact";
 import { AboutEscapeRoom } from "../components/layout/AboutEscapeRoom";
@@ -32,11 +32,10 @@ export default () => (
     </Helmet>
 
     <Intro />
-    <Notice />
+    {/* <Notice /> */}
     <ReasonsToEnter />
     <AboutEscapeRoom />
     <Rooms />
-    {/* TODO: gallery */}
     <Gallery />
     <Testimonials />
     <Faq />

@@ -1,24 +1,27 @@
 import React from "react";
-import { Card } from "../../Card";
+import { Card } from "../../shared/Card";
 import { GMap } from "../../Map/Map";
 import { ContactCard } from "./ContactCard";
 import { Social } from "../../Social";
 import contact from "../../../../content/home/contact.json";
 import { getIcon } from "../../getIcon";
 import "twin.macro";
+import { Container } from "../../shared/Container";
+import styled from "styled-components";
 const { title, address, map, info } = contact;
 
 const createMarkup = (content: string) => {
   return { __html: content };
 };
 
+const Address = styled.address`
+  whitespace: pre-line;
+  margin-bottom: 0.75rem;
+`;
+
 export const Contact = () => {
   return (
-    <section
-      id="contact"
-      tw="pt-10 pb-20 md:pb-0  mx-auto"
-      className="container"
-    >
+    <Container as={"section"} id="contact" tw="pt-10 pb-20 md:pb-0">
       <h2 tw="text-3xl lg:text-4xl text-center mb-10" className="alt-font">
         {title}
       </h2>
@@ -37,9 +40,9 @@ export const Contact = () => {
           <div tw="uppercase tracking-wider font-bold mb-5">
             {address.title}
           </div>
-          <address tw="mb-3" style={{ whiteSpace: "pre-line" }}>
+          <Address>
             <p>{address.mail}</p>
-          </address>
+          </Address>
           <Social />
         </div>
         <div tw="flex-auto lg:flex-1  ">
@@ -50,6 +53,6 @@ export const Contact = () => {
           ></GMap>
         </div>
       </Card>
-    </section>
+    </Container>
   );
 };

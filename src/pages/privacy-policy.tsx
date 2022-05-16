@@ -1,14 +1,11 @@
-
-
 import React from "react";
 import Layout from "../components/layout/Layout";
-
-
+import { Container } from "../components/shared/Container";
 
 export default () => (
   <Layout>
     <section className="my-10">
-      <article className="container px-3 mx-auto md:text-lg text-justify">
+      <Container as={"article"} className="px-3 md:text-lg text-justify">
         <h1 className="mb-10 text-3xl font-bold">
           Ochrana osobných údajov v rámci internetovej stránky
         </h1>
@@ -388,7 +385,7 @@ export default () => (
             </ol>
           </li>
         </ol>
-      </article>
+      </Container>
     </section>
   </Layout>
 );

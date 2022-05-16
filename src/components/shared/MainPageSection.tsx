@@ -1,7 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import SectionBackground from "./SectionBackground";
 import loadable from "@loadable/component";
-import SectionDivider from "./ReactSvgs/SectionDivider";
+import SectionDivider from "../ReactSvgs/SectionDivider";
+import { Container } from "./Container";
 
 interface props {
   id?: string;
@@ -23,15 +24,13 @@ const DividerWrapper = ({
   hasDividerOnTop,
   hasDividerOnBottom,
   children,
-}: DividerWrapperProps) => {
-  return (
-    <Fragment>
-      {hasDividerOnTop && <SectionDivider isTop />}
-      {children}
-      {hasDividerOnBottom && <SectionDivider />}
-    </Fragment>
-  );
-};
+}: DividerWrapperProps) => (
+  <>
+    {hasDividerOnTop && <SectionDivider isTop />}
+    {children}
+    {hasDividerOnBottom && <SectionDivider />}
+  </>
+);
 
 export const MainPageSection = ({
   id,
@@ -48,13 +47,13 @@ export const MainPageSection = ({
         hasDividerOnTop={hasDividerOnTop}
         hasDividerOnBottom={hasDividerOnBottom}
       >
-        <div className="container mx-auto px-3">{children}</div>
+        <Container className="px-3">{children}</Container>
       </DividerWrapper>
     </div>
   );
 
   if (videoEnabled) {
-    const BackgroundVideo = loadable(() => import("./BackgroundVideo"));
+    const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
     return (
       <section className={`text-gray-100 bg-styles bg-dark relative`} id={id}>
         {InsideContent}
@@ -75,9 +74,9 @@ export const MainPageSection = ({
   }
 
   return (
-    <section className={`container mx-auto px-3 ${className} `} id={id}>
+    <Container as={"section"} className={`px-3 ${className}`} id={id}>
       {children}
-    </section>
+    </Container>
   );
 };
 

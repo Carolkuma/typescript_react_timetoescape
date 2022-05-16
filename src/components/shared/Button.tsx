@@ -3,14 +3,13 @@ import tw from "twin.macro";
 import styled from "styled-components";
 
 const sizes = {
-  default: `button bg-orange-400 hover:text-gray-900 hover:bg-orange-600 py-3 px-5`,
-  lg: `button bg-orange-400 hover:text-gray-900 hover:bg-orange-600 py-3 px-5 md:py-4 md:px-12`,
-  xl: `button bg-orange-400 hover:text-gray-900 hover:bg-orange-600 py-3 px-5 md:py-5 md:px-16 md:text-lg`,
+  default: ``,
+  lg: `md:py-4 md:px-12`,
+  xl: `md:py-5 md:px-16 md:text-lg`,
 };
 
 interface props {
   children?: JSX.Element | JSX.Element[] | string;
-  className?: string;
   size?: string;
   rel?: string;
   href?: string;
@@ -19,9 +18,9 @@ interface props {
 }
 
 export enum ButtonElement {
-  LINK,
-  BUTTON,
-  DIV,
+  LINK = "a",
+  BUTTON = "button",
+  DIV = "div",
 }
 
 const StyledButton = styled.div`
@@ -37,12 +36,14 @@ const StyledButton = styled.div`
   text-gray-800
   uppercase
   tracking-wider
+  hover:text-gray-900 
+  py-3
+  px-5
   print:hidden`}
 `;
 
 const Button = ({
   children,
-  className = "",
   rel,
   size,
   href,
@@ -50,8 +51,10 @@ const Button = ({
   target,
 }: props) => {
   const classNames: string = `
+        button
+        bg-orange-400 
+        hover:bg-orange-600
         ${sizes[size] || sizes.default}
-        ${className}
     `;
 
   if (element === ButtonElement.BUTTON) {
