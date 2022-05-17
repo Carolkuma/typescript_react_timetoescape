@@ -5,7 +5,7 @@ import handleViewport from "react-in-viewport";
 import L from "leaflet";
 import { isMobile } from "react-device-detect";
 import { Helmet } from "react-helmet";
-import { ErrorBoundary } from "../ErrorBoundary";
+import { ErrorBoundary } from "../../ErrorBoundary";
 import styled from "styled-components";
 import tw from "twin.macro";
 

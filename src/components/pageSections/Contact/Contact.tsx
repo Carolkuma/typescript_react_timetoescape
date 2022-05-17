@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "../../shared/Card";
-import { GMap } from "../../Map/Map";
+import { GMap } from "../Map/Map";
 import { ContactCard } from "./ContactCard";
 import { Social } from "../../Social";
 import contact from "../../../../content/home/contact.json";
