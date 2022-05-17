@@ -4,8 +4,9 @@ import { findImages } from "../../shared/SectionBackground";
 import { graphql, useStaticQuery } from "gatsby";
 import { Card } from "../../shared/Card";
 import "twin.macro";
-import Lightbox from "react-image-lightbox";
-import "react-image-lightbox/style.css";
+
+import loadable from "@loadable/component";
+const LightBoxGallery = loadable(() => import("./LightBoxGallery"));
 
 interface Props {
   imagesPath: string;
@@ -100,7 +101,7 @@ const GalleryLightbox = (props: Props) => {
         ))}
       </div>
       {isLighBoxOpen && (
-        <Lightbox
+        <LightBoxGallery
           mainSrc={images[lightBoxIndex]}
           nextSrc={images[(lightBoxIndex + 1) % images.length]}
           prevSrc={images[(lightBoxIndex + images.length - 1) % images.length]}
