@@ -6,9 +6,9 @@ import { Helmet } from "react-helmet";
 
 import { Intro } from "../components/pageSections/Intro";
 import { ReasonsToEnter } from "../components/pageSections/ReasonsToEnter/ReasonsToEnter";
-import { Rooms } from "../components/layout/Rooms";
+import { Rooms } from "../components/pageSections/Rooms";
 import { Outro } from "../components/pageSections/Outro";
-import { Testimonials } from "../components/pageSections/Testimonials";
+import { Testimonials } from "../components/pageSections/Testimonials/Testimonials";
 import { Faq } from "../components/pageSections/Faq/Faq";
 import { Contact } from "../components/pageSections/Contact/Contact";
 import { AboutEscapeRoom } from "../components/pageSections/AboutEscapeRoom";

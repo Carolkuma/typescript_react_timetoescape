@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 
 interface Props {
@@ -29,8 +29,4 @@ SectionDivider.defaultProps = {
   isTop: false,
 };
 
-const areEqual = (prevProps: Props, nextProps: Props): boolean => {
-  return prevProps.isTop === nextProps.isTop;
-};
-
-export default React.memo(SectionDivider, areEqual);
+export default memo(SectionDivider);

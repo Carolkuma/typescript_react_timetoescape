@@ -1,10 +1,10 @@
 import React from "react";
-import { CustomerCard, Customer } from "../CustomerCard";
-import data from "../../../content/home/reviews.json";
+import { CustomerCard, Customer } from "./CustomerCard";
+import data from "../../../../content/home/reviews.json";
 import "twin.macro";
 import tw from "twin.macro";
 import styled from "styled-components";
-import { Container } from "../shared/Container";
+import { Container } from "../../shared/Container";
 
 const LabelText = styled.div`
   text-align: center;

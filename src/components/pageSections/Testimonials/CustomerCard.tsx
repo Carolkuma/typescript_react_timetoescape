@@ -1,10 +1,10 @@
 import React from "react";
 import Img from "gatsby-image";
-import { Card } from "./shared/Card";
+import { Card } from "../../shared/Card";
 import StarRatings from "react-star-ratings";
 import { lightFormat } from "date-fns";
 import { graphql, useStaticQuery } from "gatsby";
-import { findImages } from "./shared/SectionBackground";
+import { findImages } from "../../shared/SectionBackground";
 import "twin.macro";
 export interface Customer {
   rating: number;

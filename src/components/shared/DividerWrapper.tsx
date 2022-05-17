@@ -1,5 +1,5 @@
 import React from "react";
-import SectionDivider from "../ReactSvgs/SectionDivider";
+import SectionDivider from "./SectionDivider";
 
 interface DividerWrapperProps {
   hasDividerOnTop: boolean;
