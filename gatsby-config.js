@@ -7,6 +7,7 @@ module.exports = {
     siteUrl: "https://timetoescape.sk",
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
     "gatsby-plugin-typescript",
     `gatsby-plugin-offline`,

@@ -6,15 +6,17 @@ import L from "leaflet";
 import { isMobile } from "react-device-detect";
 import { Helmet } from "react-helmet";
 import { ErrorBoundary } from "../ErrorBoundary";
-import "twin.macro";
+import styled from "styled-components";
+import tw from "twin.macro";
 
-const style = {
-  height: "15.35rem",
-  width: "100%",
-  zIndex: 1,
-};
+const MapWrapper = styled.div`
+  height: 15.35rem;
+  width: 100%;
+  z-index: 1;
+  ${tw`hidden md:block`}
+`;
 
-interface props {
+interface Props {
   enterCount: number;
   inViewport: boolean;
   coordinates: {
@@ -30,10 +32,10 @@ const icon = new L.Icon({
 });
 
 const attribution =
-  '&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
+  '© <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
 const url = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
 
-export class LeafletMap extends Component<props> {
+export class LeafletMap extends Component<Props> {
   render() {
     const { coordinates, zoom, enterCount } = this.props;
 
@@ -43,7 +45,7 @@ export class LeafletMap extends Component<props> {
     const insertMap = enterCount > 0 && !isMobile;
 
     return (
-      <div style={style} tw="hidden md:block">
+      <MapWrapper>
         {insertMap ? (
           <ErrorBoundary>
             <MapContainer
@@ -67,7 +69,7 @@ export class LeafletMap extends Component<props> {
             </Helmet>
           </ErrorBoundary>
         ) : null}
-      </div>
+      </MapWrapper>
     );
   }
 }

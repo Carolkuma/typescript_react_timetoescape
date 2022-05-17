@@ -57,6 +57,7 @@
     "react-device-detect": "2.1.2",
     "react-dom": "18.0.0",
     "react-helmet": "6.1.0",
+    "react-image-lightbox": "^5.1.4",
     "react-in-viewport": "1.0.0-alpha.26",
     "react-leaflet": "3.2.5",
     "react-star-ratings": "2.3.0",

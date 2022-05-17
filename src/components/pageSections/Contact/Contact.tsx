@@ -8,6 +8,7 @@ import { getIcon } from "../../getIcon";
 import "twin.macro";
 import { Container } from "../../shared/Container";
 import styled from "styled-components";
+import tw from "twin.macro";
 const { title, address, map, info } = contact;
 
 const createMarkup = (content: string) => {
@@ -17,6 +18,11 @@ const createMarkup = (content: string) => {
 const Address = styled.address`
   whitespace: pre-line;
   margin-bottom: 0.75rem;
+`;
+
+const ContactWrapper = styled(Card)`
+  ${tw`px-5 md:px-0 md:flex md:flex-row md:flex-row-reverse mt-10 md:-mb-32 overflow-hidden relative z-10`}
+  background-color: var(--color-bg);
 `;
 
 export const Contact = () => {
@@ -35,7 +41,7 @@ export const Contact = () => {
         })}
       </div>
 
-      <Card tw="px-5 md:px-0 md:flex md:flex-row md:flex-row-reverse mt-10 md:-mb-32 overflow-hidden bg-white relative z-10">
+      <ContactWrapper>
         <div tw="w-full text-center md:text-left lg:w-1/3 p-10">
           <div tw="uppercase tracking-wider font-bold mb-5">
             {address.title}
@@ -45,14 +51,14 @@ export const Contact = () => {
           </Address>
           <Social />
         </div>
-        <div tw="flex-auto lg:flex-1  ">
+        <div tw="flex-auto lg:flex-1">
           <GMap
             coordinates={map.coordinates}
             label={map.label}
             link={map.googleMapsLink}
           ></GMap>
         </div>
-      </Card>
+      </ContactWrapper>
     </Container>
   );
 };

@@ -1,17 +1,27 @@
-import React, { Component, Fragment } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Img from "gatsby-image";
 import { findImages } from "./shared/SectionBackground";
 import { graphql, useStaticQuery } from "gatsby";
 import { Card } from "./shared/Card";
+import "twin.macro";
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
 
 interface Props {
   imagesPath: string;
 }
 
+const getImagesFromQueryToLightBox = (sources): string[] => {
+  return sources.map(([_, desktopImage]) => {
+    const { srcWebp } = desktopImage;
+    return srcWebp;
+  });
+};
+
 const getKeyCode = (e: KeyboardEvent) =>
   e.key ? e.key : e.keyCode ? e.keyCode : undefined;
 
-const Lightbox = (props: Props) => {
+const GalleryLightbox = (props: Props) => {
   const { mobileImages, desktopImages } = useStaticQuery(
     graphql`
       query {
@@ -64,37 +74,49 @@ const Lightbox = (props: Props) => {
       },
     ];
   });
-
-  return (
-    <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
-      {sources.map((img, i) => (
-        <Card key={i} className="flex flex-auto w-full flex-col">
-          <Img fluid={img} />
-        </Card>
-      ))}
-    </div>
+  const images = getImagesFromQueryToLightBox(sources);
+  debugger;
+  const [isLighBoxOpen, setLighBoxOpen] = useState(false);
+  const [lightBoxIndex, setLightBoxIndex] = useState(0);
+  const openLightBox = useCallback(
+    (index: number) => {
+      setLightBoxIndex(index);
+      setLighBoxOpen(true);
+    },
+    [isLighBoxOpen, lightBoxIndex]
   );
 
-  // {/* do the showing animation break to new component*/}
-  // {/* <div visible={showLightbox}>
-  //   <div>
-  //     <Img fluid={images[selectedImage].node.sizes} />
-  //     <div>
-  //       <button onClick={this.closeModal}>Close</button>
-  //       <div>
-  //         <button onClick={this.goBack} disabled={selectedImage === 0}>
-  //           Previous
-  //         </button>
-  //         <button
-  //           onClick={this.goForward}
-  //           disabled={selectedImage === images.length - 1}
-  //         >
-  //           Next
-  //         </button>
-  //       </div>
-  //     </div>
-  //   </div>
-  // </div> */}
+  return (
+    <>
+      <div tw="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+        {sources.map((img, i) => (
+          <Card
+            key={i}
+            tw="flex flex-auto w-full flex-col cursor-pointer"
+            onClick={() => openLightBox(i)}
+          >
+            <Img fluid={img} />
+          </Card>
+        ))}
+      </div>
+      {isLighBoxOpen && (
+        <Lightbox
+          mainSrc={images[lightBoxIndex]}
+          nextSrc={images[(lightBoxIndex + 1) % images.length]}
+          prevSrc={images[(lightBoxIndex + images.length - 1) % images.length]}
+          onCloseRequest={() => setLighBoxOpen(false)}
+          onMovePrevRequest={() =>
+            setLightBoxIndex(
+              (lightBoxIndex + images.length - 1) % images.length
+            )
+          }
+          onMoveNextRequest={() =>
+            setLightBoxIndex((lightBoxIndex + 1) % images.length)
+          }
+        />
+      )}
+    </>
+  );
 };
 
-export default Lightbox;
+export default GalleryLightbox;

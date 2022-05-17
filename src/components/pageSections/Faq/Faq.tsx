@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Card } from "../shared/Card";
+import { Card } from "../../shared/Card";
 import useDimensions from "react-use-dimensions";
 import "twin.macro";
-import { Accordion } from "../Accordion";
-import faq from "../../../content/home/faq.json";
-import { Container } from "../shared/Container";
+import { Accordion } from "./Accordion";
+import faq from "../../../../content/home/faq.json";
+import { Container } from "../../shared/Container";
 const { title, questions } = faq;
 export const Faq = () => {
   const [openIndex, setOpenIndex] = useState(0);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import LogoIcon from "../../../svg/LogoIcon";
-import { NavigationButton } from "../../NavigationButton";
+import { NavigationButton } from "./NavigationButton";
 import { isMobile } from "react-device-detect";
 import { Link } from "gatsby";
 import { BookingButton } from "../../BookingButton";
@@ -10,6 +10,7 @@ import { throttle } from "lodash";
 import "twin.macro";
 import ScrollIndicator from "./ScrollIndicator";
 import { NavContainer } from "./NavContainer";
+import { HeaderContainer } from "./HeaderContainer";
 
 const { header } = nav;
 interface props {
@@ -33,8 +34,7 @@ const headerStyles = (isOpen: boolean) => {
 
 const roundToEven = (n: number): number => 2 * Math.round(n / 2);
 
-const getLinkClass = (className: string | undefined): string =>
-  `block border-solid lg:border-none border-b border-orange-400 py-4 lg:inline-block lg:py-0 tex-bold anchor px-3 w-full lg:w-auto text-white ${className}`;
+const getLinkClass = (className: string | undefined): string => ` ${className}`;
 
 const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
   const getPercentage = () => {
@@ -82,12 +82,9 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
       : `bg-opacity-50`;
 
   return (
-    <header
-      style={headerStyles(isOpen)}
-      className={`overflow-hidden sticky w-full z-20 top-0 bg-dark shadow text-orange-400 border-gray-800 print:bg-white ${scrolledClass} content-visibility`}
-    >
+    <HeaderContainer isOpen={isOpen}>
       <NavContainer as={"nav"}>
-        <div className="flex items-center flex-shrink-0 text-white">
+        <div tw="flex items-center flex-shrink-0 text-white">
           {isHome ? (
             <AnchorLink
               offset={offset}
@@ -105,19 +102,17 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
         </div>
 
         <NavigationButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
-
-        <div
-          className={`mt-4 lg:mt-0 w-full block lg:block flex-grow lg:flex lg:items-center lg:w-auto`}
-        >
+        <div tw="mt-4 lg:mt-0 w-full block lg:block flex-grow lg:flex lg:items-center lg:w-auto">
           {showNav && header.length !== 0 && (
-            <div className="text-sm lg:flex-grow text-center print:hidden">
+            <div tw="mt-4 lg:mt-0 w-full text-sm lg:flex-grow text-center print:hidden">
               {header.map((link, key) =>
                 isHome ? (
                   <AnchorLink
                     offset={offset}
                     key={key}
                     style={style}
-                    className={getLinkClass(link.className)}
+                    tw="block border-solid lg:border-none border-b py-4 lg:inline-block lg:py-0 px-3 w-full lg:w-auto text-white"
+                    className={[link.className, "anchor"]}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                   >
@@ -128,7 +123,8 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
                     to={`/${link.href}`}
                     key={key}
                     style={style}
-                    className={getLinkClass(link.className)}
+                    tw="block border-solid lg:border-none border-b py-4 lg:inline-block lg:py-0 px-3 w-full lg:w-auto text-white"
+                    className={[link.className, "anchor"]}
                     onClick={() => setIsOpen(false)}
                   >
                     {link.label}
@@ -144,7 +140,7 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
         </div>
       </NavContainer>
       <ScrollIndicator scrollTopPercentage={scrollTopPercentage} />
-    </header>
+    </HeaderContainer>
   );
 };
 

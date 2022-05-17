@@ -20,7 +20,7 @@ const videoOptions = {
 const VideoContainer = styled.div`
   position: absolute;
   top: 0;
-  z-index: 0,
+  z-index: 0;
   overflow: hidden;
   width: 100%;
   height: 100%;

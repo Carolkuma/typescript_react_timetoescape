@@ -4,16 +4,16 @@ import Layout from "../components/layout/Layout";
 
 import { Helmet } from "react-helmet";
 
-import { Intro } from "../components/layout/Intro";
-import { ReasonsToEnter } from "../components/layout/ReasonsToEnter/ReasonsToEnter";
+import { Intro } from "../components/pageSections/Intro";
+import { ReasonsToEnter } from "../components/pageSections/ReasonsToEnter/ReasonsToEnter";
 import { Rooms } from "../components/layout/Rooms";
 import { Outro } from "../components/layout/Outro";
 import { Testimonials } from "../components/pageSections/Testimonials";
-import { Faq } from "../components/layout/Faq";
-import { Contact } from "../components/layout/Contact/Contact";
-import { AboutEscapeRoom } from "../components/layout/AboutEscapeRoom";
+import { Faq } from "../components/pageSections/Faq/Faq";
+import { Contact } from "../components/pageSections/Contact/Contact";
+import { AboutEscapeRoom } from "../components/pageSections/AboutEscapeRoom";
 import { Notice } from "../components/Notice";
-import { Gallery } from "../components/Gallery";
+import { Gallery } from "../components/pageSections/Gallery/Gallery";
 
 export default () => (
   <Layout isHome={true} changeBgOpacity={true}>

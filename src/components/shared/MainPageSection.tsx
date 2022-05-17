@@ -1,8 +1,8 @@
 import React from "react";
 import SectionBackground from "./SectionBackground";
 import loadable from "@loadable/component";
-import SectionDivider from "../ReactSvgs/SectionDivider";
 import { Container } from "./Container";
+import { DividerWrapper } from "./DividerWrapper";
 
 interface props {
   id?: string;
@@ -14,24 +14,6 @@ interface props {
   hasDividerOnBottom: boolean;
 }
 
-interface DividerWrapperProps {
-  hasDividerOnTop: boolean;
-  hasDividerOnBottom: boolean;
-  children?: JSX.Element | JSX.Element[];
-}
-
-const DividerWrapper = ({
-  hasDividerOnTop,
-  hasDividerOnBottom,
-  children,
-}: DividerWrapperProps) => (
-  <>
-    {hasDividerOnTop && <SectionDivider isTop />}
-    {children}
-    {hasDividerOnBottom && <SectionDivider />}
-  </>
-);
-
 export const MainPageSection = ({
   id,
   children,
@@ -42,7 +24,7 @@ export const MainPageSection = ({
   hasDividerOnBottom,
 }: props) => {
   const InsideContent = (
-    <div className={`relative z-10 intro-bg text-gray-100 ${className}`}>
+    <div tw="relative z-10 intro-bg text-gray-100" className={className}>
       <DividerWrapper
         hasDividerOnTop={hasDividerOnTop}
         hasDividerOnBottom={hasDividerOnBottom}
@@ -55,7 +37,7 @@ export const MainPageSection = ({
   if (videoEnabled) {
     const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
     return (
-      <section className={`text-gray-100 bg-styles bg-dark relative`} id={id}>
+      <section tw="text-gray-100 bg-styles bg-dark relative" id={id}>
         {InsideContent}
         {<BackgroundVideo />}
       </section>
@@ -63,7 +45,7 @@ export const MainPageSection = ({
   } else if (imageSrc !== "") {
     return (
       <SectionBackground
-        className={`text-gray-100 bg-styles bg-dark `}
+        tw="text-gray-100 bg-styles bg-dark"
         imageSrc={imageSrc}
         tag={"section"}
         id={id}
@@ -74,7 +56,7 @@ export const MainPageSection = ({
   }
 
   return (
-    <Container as={"section"} className={`px-3 ${className}`} id={id}>
+    <Container as={"section"} tw="px-3" className={className} id={id}>
       {children}
     </Container>
   );
