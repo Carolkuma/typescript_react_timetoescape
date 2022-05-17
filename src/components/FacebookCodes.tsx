@@ -1,3 +1,4 @@
+import React from "react";
 import CustomerChat from "./CustomerChat";
 import FacebookPixel from "./FacebookPixel";
 
