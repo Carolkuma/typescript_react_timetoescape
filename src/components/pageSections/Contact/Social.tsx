@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { getIcon } from "./getIcon";
-import social from "../../content/home/common/social.json";
+import { getIcon } from "../../getIcon";
+import social from "../../../../content/home/common/social.json";
 import tw from "twin.macro";
 import styled from "styled-components";
 

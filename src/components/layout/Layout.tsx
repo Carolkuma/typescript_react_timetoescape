@@ -3,13 +3,10 @@ import Footer from "../pageSections/Footer";
 import Header from "../pageSections/Header/Header";
 import loadable from "@loadable/component";
 
-// const FacebookPixel = loadable(() => import( '../FacebookPixel'))
-// const CustomerChat = loadable(() => import("../CustomerChat"))
+const FacebookCodes = loadable(() => import("../FacebookCodes"));
 import { Helmet } from "react-helmet";
 import CookieConsent from "react-cookie-consent";
 import { withPrefix } from "gatsby";
-import FacebookPixel from "../FacebookPixel";
-import CustomerChat from "../CustomerChat";
 import { GlobalStyles } from "../GlobalStyles";
 import { Content } from "../shared/Content";
 
@@ -73,7 +70,7 @@ const Layout = ({
         uppercase
         button
         w-full
-        tracking-wider "
+        tracking-wider"
       >
         Táto stránka používa súbory cookies a iné technológie pre správne
         fungovanie a zlepšenie chodu stránky.
@@ -93,8 +90,7 @@ const Layout = ({
           return <link rel="preconnect" href={url} key={key}></link>;
         })}
       </Helmet>
-      <FacebookPixel />
-      <CustomerChat />
+      <FacebookCodes />
     </>
   );
 };
