@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
 import Img from "gatsby-image";
-import { findImages } from "./shared/SectionBackground";
+import { findImages } from "../../shared/SectionBackground";
 import { graphql, useStaticQuery } from "gatsby";
-import { Card } from "./shared/Card";
+import { Card } from "../../shared/Card";
 import "twin.macro";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";

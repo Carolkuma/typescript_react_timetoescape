@@ -35,7 +35,7 @@ export const MainPageSection = ({
   );
 
   if (videoEnabled) {
-    const BackgroundVideo = loadable(() => import("../BackgroundVideo"));
+    const BackgroundVideo = loadable(() => import("./BackgroundVideo"));
     return (
       <section tw="text-gray-100 bg-styles bg-dark relative" id={id}>
         {InsideContent}
