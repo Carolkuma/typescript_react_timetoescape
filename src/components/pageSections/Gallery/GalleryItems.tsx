@@ -22,7 +22,7 @@ const getImagesFromQueryToLightBox = (sources): string[] => {
 const getKeyCode = (e: KeyboardEvent) =>
   e.key ? e.key : e.keyCode ? e.keyCode : undefined;
 
-const GalleryItems = (props: Props) => {
+export const GalleryItems = (props: Props) => {
   const { mobileImages, desktopImages } = useStaticQuery(
     graphql`
       query {
@@ -119,5 +119,3 @@ const GalleryItems = (props: Props) => {
     </>
   );
 };
-
-export default GalleryLightbox;
