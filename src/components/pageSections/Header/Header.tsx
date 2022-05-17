@@ -4,7 +4,7 @@ import LogoIcon from "../../../svg/LogoIcon";
 import { NavigationButton } from "./NavigationButton";
 import { isMobile } from "react-device-detect";
 import { Link } from "gatsby";
-import { BookingButton } from "../../BookingButton";
+import { BookingButton } from "../../shared/BookingButton";
 import nav from "../../../../content/home/common/navigation.json";
 import { throttle } from "lodash";
 import "twin.macro";

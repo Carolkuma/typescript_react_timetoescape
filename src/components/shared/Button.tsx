@@ -39,7 +39,9 @@ const StyledButton = styled.div`
   hover:text-gray-900 
   py-3
   px-5
-  print:hidden`}
+  print:hidden
+  `}
+  background-color: #f6ad55;
 `;
 
 const Button = ({
@@ -51,7 +53,7 @@ const Button = ({
   target,
 }: props) => {
   const classNames: string = `
-        button
+        
         bg-orange-400 
         hover:bg-orange-600
         ${sizes[size] || sizes.default}

@@ -1,6 +1,6 @@
 import React from "react";
 import rooms from "../../../content/home/rooms.json";
-import { BookingButton } from "../BookingButton";
+import { BookingButton } from "../shared/BookingButton";
 import Img from "gatsby-image";
 import { graphql, useStaticQuery } from "gatsby";
 import { findImages } from "../shared/SectionBackground";

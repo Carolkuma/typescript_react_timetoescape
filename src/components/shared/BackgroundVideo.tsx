@@ -29,19 +29,20 @@ const VideoContainer = styled.div`
 const SUPPORTED_EXTENSIONS = [".webm", ".mp4"];
 
 export const BackgroundVideo = () => (
-  <VideoContainer
-    as={VideoCover}
-    videoOptions={{
-      ...videoOptions,
-      children: SUPPORTED_EXTENSIONS.map((ext, i) => (
-        <source
-          key={i}
-          src={getVideoPath("intro", ext, isMobile ? "_mobile" : "")}
-        />
-      )),
-    }}
-    remeasureOnWindowResize
-  />
+  <VideoContainer>
+    <VideoCover
+      videoOptions={{
+        ...videoOptions,
+        children: SUPPORTED_EXTENSIONS.map((ext, i) => (
+          <source
+            key={i}
+            src={getVideoPath("intro", ext, isMobile ? "_mobile" : "")}
+          />
+        )),
+      }}
+      remeasureOnWindowResize
+    />
+  </VideoContainer>
 );
 
 export default BackgroundVideo;

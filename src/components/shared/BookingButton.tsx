@@ -1,6 +1,6 @@
 import React from "react";
-import Button from "./shared/Button";
-import booking from "../../content/home/common/booking.json";
+import Button from "./Button";
+import booking from "../../../content/home/common/booking.json";
 import "twin.macro";
 
 const { isBookingEnabled, label, link } = booking;

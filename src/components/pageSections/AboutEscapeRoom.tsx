@@ -11,7 +11,7 @@ export const AboutEscapeRoom = () => (
     imageSrc={backgroundImage}
     hasDividerOnTop
     hasDividerOnBottom
-    className={"py-24"}
+    tw="py-24"
   >
     <Container tw="px-3">
       <h2 tw="text-3xl lg:text-4xl text-center" className="alt-font">

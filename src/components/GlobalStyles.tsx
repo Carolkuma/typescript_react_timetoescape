@@ -45,11 +45,11 @@ a {
   transition: color 0.4s ease-in-out;
 }
 a:hover {
-  @apply text-orange-600;
+  color: #f6ad55;
 }
 
 a.anchor:hover {
-    @apply text-orange-500;
+  color: #f6ad55;
 }
 
 button:focus {
@@ -88,9 +88,6 @@ body {
   margin-left: 2rem;
 }
 
-.flip {
-  transform: scaleY(-1) scaleX(-1) translateY(1px);
-}
 .content-visibility {
   content-visibility: auto;
 }

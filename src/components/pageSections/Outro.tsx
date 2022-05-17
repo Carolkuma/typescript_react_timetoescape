@@ -1,5 +1,5 @@
 import React from "react";
-import { BookingButton } from "../BookingButton";
+import { BookingButton } from "../shared/BookingButton";
 import { MainPageSection } from "../shared/MainPageSection";
 import outro from "../../../content/home/outro.json";
 import "twin.macro";
