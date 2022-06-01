@@ -23,7 +23,7 @@
     "@fortawesome/free-solid-svg-icons": "5.15.3",
     "@fortawesome/react-fontawesome": "0.1.14",
     "@loadable/component": "5.15.2",
-    "@react-google-maps/api": "2.10.2",
+    "@react-google-maps/api": "2.12.0",
     "@types/jest": "27.5.1",
     "@types/react-helmet": "6.1.5",
     "@types/react-leaflet": "2.8.2",
