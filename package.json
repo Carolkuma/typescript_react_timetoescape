@@ -55,7 +55,7 @@
     "react-dom": "18.1.0",
     "react-helmet": "6.1.0",
     "react-in-viewport": "1.0.0-alpha.28",
-    "react-leaflet": "4.0.0",
+    "react-leaflet": "4.0.1",
     "react-star-ratings": "2.3.0",
     "react-undraw": "2.0.3",
     "react-use-dimensions": "1.2.1",
