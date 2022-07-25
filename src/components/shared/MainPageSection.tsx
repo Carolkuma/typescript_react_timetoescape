@@ -39,7 +39,7 @@ export const MainPageSection = ({
     return (
       <section tw="text-gray-100 bg-styles bg-dark relative" id={id}>
         {InsideContent}
-        {<BackgroundVideo />}
+        {/* {<BackgroundVideo />} */}
       </section>
     );
   } else if (imageSrc !== "") {

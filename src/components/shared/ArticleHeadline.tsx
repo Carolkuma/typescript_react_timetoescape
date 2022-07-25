@@ -1,6 +1,7 @@
 import React from "react";
-import { Container } from "../shared/Container";
-import SectionBackground from "../shared/SectionBackground";
+import styled from "styled-components";
+import { Container } from "./Container";
+import SectionBackground from "./SectionBackground";
 
 type Props = {
   title?: string;
@@ -9,6 +10,16 @@ type Props = {
   children?: JSX.Element | JSX.Element[] | string;
 };
 
+const ArticleBackground = styled.div`
+  background: rgb(33, 33, 33);
+  background: linear-gradient(
+    180deg,
+    rgba(33, 33, 33, 0.9304096638655462) 0%,
+    rgba(33, 33, 33, 0) 35%,
+    rgba(33, 33, 33, 1) 100%
+  );
+`;
+
 export const ArticleHeadline = ({ title, children }: Props) => {
   return (
     <SectionBackground
@@ -16,9 +27,9 @@ export const ArticleHeadline = ({ title, children }: Props) => {
       imageSrc={"bg/footer.jpg"}
       tag={"div"}
     >
-      <div tw="article-bg">
+      <ArticleBackground>
         <Container tw="pt-32 pb-4 px-3">{children}</Container>
-      </div>
+      </ArticleBackground>
     </SectionBackground>
   );
 };

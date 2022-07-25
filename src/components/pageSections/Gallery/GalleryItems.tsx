@@ -76,7 +76,6 @@ export const GalleryItems = (props: Props) => {
     ];
   });
   const images = getImagesFromQueryToLightBox(sources);
-  debugger;
   const [isLighBoxOpen, setLighBoxOpen] = useState(false);
   const [lightBoxIndex, setLightBoxIndex] = useState(0);
   const openLightBox = useCallback(

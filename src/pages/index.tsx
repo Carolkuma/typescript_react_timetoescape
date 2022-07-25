@@ -6,13 +6,13 @@ import { Helmet } from "react-helmet";
 
 import { Intro } from "../components/pageSections/Intro";
 import { ReasonsToEnter } from "../components/pageSections/ReasonsToEnter/ReasonsToEnter";
-import { Rooms } from "../components/pageSections/Rooms";
+import { Rooms } from "../components/pageSections/Rooms/Rooms";
 import { Outro } from "../components/pageSections/Outro";
 import { Testimonials } from "../components/pageSections/Testimonials/Testimonials";
 import { Faq } from "../components/pageSections/Faq/Faq";
 import { Contact } from "../components/pageSections/Contact/Contact";
 import { AboutEscapeRoom } from "../components/pageSections/AboutEscapeRoom";
-import { Notice } from "../components/Notice";
+// import { Notice } from "../components/Notice";
 import { Gallery } from "../components/pageSections/Gallery/Gallery";
 
 export default () => (

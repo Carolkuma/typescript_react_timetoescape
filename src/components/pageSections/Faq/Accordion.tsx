@@ -9,45 +9,55 @@ interface Props {
   answer: string;
   index: number;
   isOpen: boolean;
-  toggle: () => void;
+  onClick: () => void;
 }
 
-const AnswerContainer = styled.p<{ isOpen: boolean }>`
+const Details = styled.details`
+  & summary::-webkit-details-marker,
+  & summary::marker {
+    display: none;
+    content: "";
+  }
   overflow: hidden;
-  transition: max-height 0.6s ease-in-out;
-  max-height: ${({ isOpen }) => (isOpen ? "10rem" : 0)};
+  transition: all 0.3s ease-in-out;
 
-  ${tw`text-gray-700 dark:text-gray-200 text-base`}
+  &[open] {
+    min-height: 108px;
+  }
+  min-height: 58px;
+  &[open] {
+    max-height: 108px;
+  }
+  max-height: 58px;
+`;
+
+const AnswerContainer = styled.p`
+  ${tw`text-gray-700 dark:text-gray-200 border-gray-200 dark:border-gray-900 text-base border-b-2 py-3 px-6`}
 `;
 
 const ArrowIcon = styled(FontAwesomeIcon)`
   transition: 0.6s ease-in-out;
   ${tw`h-full text-xl mt-2 text-xl float-right`}
+  transform: rotateX(180deg);
+  details[open] & {
+    transform: rotateX(0);
+  }
 `;
-// TODO: fix borders
-const QuestionContainer = styled.div<{ isOpen: boolean; index: number }>`
-  ${tw`text-2xl border-gray-200 dark:border-gray-900 cursor-pointer`}
-  ${({ isOpen }) => isOpen && tw`border-b-2`}
-  ${({ index }) => index !== 0 && tw`border-t-2`}
+const QuestionContainer = styled.summary`
+  ${tw`text-2xl border-gray-200 dark:border-gray-900 cursor-pointer border-b-2 py-3  px-6`}
 `;
 
-export const Accordion = ({
-  question,
-  answer,
-  index,
-  isOpen,
-  toggle,
-}: Props) => (
-  <div tw="w-full leading-normal py-3 px-6">
-    <QuestionContainer
-      className="alt-font"
-      index={index}
-      isOpen={isOpen}
-      onClick={toggle}
-    >
-      {question}
-      <ArrowIcon rotation={isOpen ? undefined : 180} icon={faChevronUp} />
+export const Accordion = ({ question, answer, onClick, isOpen }: Props) => (
+  <Details
+    open={isOpen}
+    onClick={(e) => {
+      e.preventDefault();
+      onClick();
+    }}
+  >
+    <QuestionContainer className="alt-font">
+      {question} <ArrowIcon icon={faChevronUp} />
     </QuestionContainer>
-    <AnswerContainer isOpen={isOpen}>{answer}</AnswerContainer>
-  </div>
+    <AnswerContainer>{answer}</AnswerContainer>
+  </Details>
 );

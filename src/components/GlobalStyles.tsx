@@ -15,15 +15,6 @@ const StyledGlobalStyles = createGlobalStyle`
   );
 }
 
-.article-bg {
-  background: rgb(33, 33, 33);
-  background: linear-gradient(
-    180deg,
-    rgba(33, 33, 33, 0.9304096638655462) 0%,
-    rgba(33, 33, 33, 0) 35%,
-    rgba(33, 33, 33, 1) 100%
-  );
-}
 
 body {
   font-family: "Open Sans", sans-serif;
