@@ -5,6 +5,7 @@ import { MainPageSection } from "../shared/MainPageSection";
 import intro from "../../../content/home/intro.json";
 import nav from "../../../content/home/common/navigation.json";
 import "twin.macro";
+import { H1 } from "../shared/typography/Headline";
 
 const { title, description, buttonlabel, backgroundImage } = intro;
 const { header } = nav;
@@ -20,12 +21,7 @@ export const Intro = () => {
       hasDividerOnBottom
     >
       <div tw="text-center flex-1">
-        <h1
-          tw="text-4xl lg:text-5xl xl:text-6xl leading-none"
-          className="alt-font"
-        >
-          {title}
-        </h1>
+        <H1 altFont>{title}</H1>
         <p tw="text-xl lg:text-2xl mt-6 font-light mb-8 md:mb-12">
           {description}
         </p>

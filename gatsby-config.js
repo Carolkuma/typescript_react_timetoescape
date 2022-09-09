@@ -68,5 +68,12 @@ module.exports = {
         inlineFonts: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-portal`,
+      options: {
+        key: "portal",
+        id: "portal",
+      },
+    },
   ],
 };

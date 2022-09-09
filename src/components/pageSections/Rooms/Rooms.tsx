@@ -7,6 +7,7 @@ import { findImages } from "../../shared/SectionBackground";
 import { MainPageSection } from "../../shared/MainPageSection";
 import "twin.macro";
 import { Room } from "./Room";
+import { H2 } from "../../shared/typography/Headline";
 declare module "react" {
   interface HTMLProps<T> {
     async?: boolean;
@@ -34,18 +35,21 @@ export const Rooms = () => {
   `);
 
   return (
-    <MainPageSection id="rooms" tw="py-10">
-      <h2 tw="text-3xl lg:text-4xl  text-center" className="alt-font">
-        {rooms.title}
-      </h2>
-      <div>
+    <MainPageSection id="rooms" tw="py-10 text-center">
+      <H2 altFont>{rooms.title}</H2>
+      <>
         {rooms.rooms.map(({ image, ...props }, index) => {
           const optImage = findImages(images, image.src)[0];
           return (
-            <Room isEven={index % 2 === 0} {...props} optImage={optImage} />
+            <Room
+              key={index}
+              isEven={index % 2 === 0}
+              {...props}
+              optImage={optImage}
+            />
           );
         })}
-      </div>
+      </>
     </MainPageSection>
   );
 };
