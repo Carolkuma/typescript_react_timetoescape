@@ -9,6 +9,7 @@ import "twin.macro";
 import { Container } from "../../shared/Container";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { H2 } from "../../shared/typography/Headline";
 const { title, address, map, info } = contact;
 
 const createMarkup = (content: string) => {
@@ -21,17 +22,15 @@ const Address = styled.address`
 `;
 
 const ContactWrapper = styled(Card)`
-  ${tw`px-5 md:px-0 md:flex md:flex-row md:flex-row-reverse mt-10 md:-mb-32 overflow-hidden relative z-10`}
+  ${tw`px-5 md:px-0 md:flex md:flex-row md:flex-row-reverse md:-mb-32 overflow-hidden relative z-10`}
   background-color: var(--color-bg);
 `;
 
 export const Contact = () => {
   return (
-    <Container as={"section"} id="contact" tw="pt-10 pb-20 md:pb-0">
-      <h2 tw="text-3xl lg:text-4xl text-center mb-10" className="alt-font">
-        {title}
-      </h2>
-      <div tw="grid grid-cols-1 lg:grid-cols-3 gap-x-10">
+    <Container as={"section"} id="contact" tw="pt-10 pb-20 md:pb-0 text-center">
+      <H2 altFont>{title}</H2>
+      <div tw="grid grid-cols-1 lg:grid-cols-3 gap-x-10 py-10">
         {info.map((info, key) => {
           return (
             <ContactCard key={key} icon={getIcon(info.icon)} title={info.title}>

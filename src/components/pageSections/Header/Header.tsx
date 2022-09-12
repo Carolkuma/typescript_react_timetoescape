@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import LogoIcon from "../../../svg/LogoIcon";
 import { NavigationButton } from "./NavigationButton";
@@ -11,18 +11,15 @@ import "twin.macro";
 import ScrollIndicator from "./ScrollIndicator";
 import { NavContainer } from "./NavContainer";
 import { HeaderContainer } from "./HeaderContainer";
+import styled from "styled-components";
+import tw from "twin.macro";
 
 const { header } = nav;
-interface props {
-  showNav?: boolean;
-  children?: JSX.Element | JSX.Element[] | string;
-  changeBgOpacity?: boolean;
+interface Props extends PropsWithChildren {
   isHome: boolean;
+  showNav?: boolean;
+  changeBgOpacity?: boolean;
 }
-
-const style = {
-  borderColor: "rgb(189 189 189)",
-};
 
 const headerStyles = (isOpen: boolean) => {
   return {
@@ -34,9 +31,21 @@ const headerStyles = (isOpen: boolean) => {
 
 const roundToEven = (n: number): number => 2 * Math.round(n / 2);
 
-const getLinkClass = (className: string | undefined): string => ` ${className}`;
+const SidePart = styled.div`
+  ${tw`flex-none`}
+`;
 
-const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
+const CenterPart = styled.div`
+  ${tw`mt-5 flex justify-center flex-col lg:flex-row lg:mt-0 w-full lg:w-auto text-center`}
+`;
+// ${tw`flex border-solid lg:border-none border-b py-4 lg:inline-block lg:py-0 px-3 w-full lg:w-auto`}
+
+const NavigationLink = styled.a`
+  ${tw`border-solid lg:border-none border-b py-4 lg:py-0 px-3 w-full lg:w-auto`}s
+  border-color: "rgb(189 189 189)";
+`;
+
+const Header = ({ showNav = true, isHome, changeBgOpacity = false }: Props) => {
   const getPercentage = () => {
     const isSSR = typeof window === "undefined";
 
@@ -76,78 +85,59 @@ const Header = ({ showNav, isHome, changeBgOpacity }: props) => {
     };
   }, []);
 
-  const scrolledClass =
-    scrollTopPercentage > 0 || isOpen || !changeBgOpacity
-      ? `border-b`
-      : `bg-opacity-50`;
-
   return (
-    <HeaderContainer isOpen={isOpen}>
+    <HeaderContainer isOpen={isOpen} isScrolled={scrollTopPercentage > 0}>
       <NavContainer as={"nav"}>
-        <div tw="flex items-center flex-shrink-0 text-white">
-          {isHome ? (
-            <AnchorLink
-              offset={offset}
-              className="lg:w-200 anchor"
-              href={"#intro"}
-              aria-label="Navigate to home"
-            >
-              <LogoIcon />
-            </AnchorLink>
-          ) : (
-            <Link to="/#into">
-              <LogoIcon />
-            </Link>
-          )}
-        </div>
-
+        {isHome ? (
+          <AnchorLink
+            offset={offset}
+            className="anchor"
+            href={"#intro"}
+            aria-label="Navigate to home"
+            as={SidePart}
+          >
+            <LogoIcon />
+          </AnchorLink>
+        ) : (
+          <SidePart to="/#into" as={Link}>
+            <LogoIcon />
+          </SidePart>
+        )}
         <NavigationButton isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
-        <div tw="mt-4 lg:mt-0 w-full block lg:block flex-grow lg:flex lg:items-center lg:w-auto">
-          {showNav && header.length !== 0 && (
-            <div tw="mt-4 lg:mt-0 w-full text-sm lg:flex-grow text-center print:hidden">
-              {header.map((link, key) =>
-                isHome ? (
-                  <AnchorLink
-                    offset={offset}
-                    key={key}
-                    style={style}
-                    tw="block border-solid lg:border-none border-b py-4 lg:inline-block lg:py-0 px-3 w-full lg:w-auto text-white"
-                    className={[link.className, "anchor"]}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </AnchorLink>
-                ) : (
-                  <Link
-                    to={`/${link.href}`}
-                    key={key}
-                    style={style}
-                    tw="block border-solid lg:border-none border-b py-4 lg:inline-block lg:py-0 px-3 w-full lg:w-auto text-white"
-                    className={[link.className, "anchor"]}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                )
-              )}
-            </div>
-          )}
-        </div>
-        <div tw="lg:block relative mx-auto my-5 lg:my-0">
-          <a href="tel:+421951406635">+421 951 406 635</a>
-          <BookingButton />
-        </div>
+        <CenterPart>
+          {showNav &&
+            header.length !== 0 &&
+            header.map((link, key) =>
+              isHome ? (
+                <NavigationLink
+                  as={AnchorLink}
+                  offset={offset}
+                  key={key}
+                  className="anchor"
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </NavigationLink>
+              ) : (
+                <NavigationLink
+                  as={Link}
+                  to={`/${link.href}`}
+                  key={key}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </NavigationLink>
+              )
+            )}
+        </CenterPart>
+        <SidePart href="tel:+421951406635" as="a">
+          +421 951 406 635
+        </SidePart>
       </NavContainer>
       <ScrollIndicator scrollTopPercentage={scrollTopPercentage} />
     </HeaderContainer>
   );
-};
-
-Header.defaultProps = {
-  isRegistrationEnabled: true,
-  showNav: true,
-  changeBgOpacity: false,
 };
 
 export default Header;

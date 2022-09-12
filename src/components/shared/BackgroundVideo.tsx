@@ -20,10 +20,9 @@ const videoOptions = {
 const VideoContainer = styled.div`
   position: absolute;
   top: 0;
-  z-index: 0;
+  z-index: -1;
   overflow: hidden;
   width: 100%;
-  height: 100%;
 `;
 
 const SUPPORTED_EXTENSIONS = [".webm", ".mp4"];

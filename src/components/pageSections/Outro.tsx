@@ -16,7 +16,9 @@ export const Outro = () => (
       {title}
     </H2>
     <>
-      {description !== "" && <p tw="mt-5 text-xl font-light">{description}</p>}
+      {description && description !== "" && (
+        <p tw="mt-5 text-xl font-light">{description}</p>
+      )}
     </>
     <BookingButton size="xl" tw="mt-10" />
   </MainPageSection>

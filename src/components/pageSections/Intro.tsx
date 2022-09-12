@@ -17,20 +17,18 @@ export const Intro = () => {
       id="intro"
       imageSrc={backgroundImage}
       videoEnabled={false}
-      tw="py-40"
+      tw="py-40 text-center"
       hasDividerOnBottom
     >
-      <div tw="text-center flex-1">
-        <H1 altFont>{title}</H1>
-        <p tw="text-xl lg:text-2xl mt-6 font-light mb-8 md:mb-12">
-          {description}
-        </p>
-        <AnchorLink href={firstAnchor}>
-          <Button size="lg" element={ButtonElement.DIV}>
-            {buttonlabel}
-          </Button>
-        </AnchorLink>
-      </div>
+      <H1 altFont>{title}</H1>
+      <p tw="text-xl lg:text-2xl mt-6 font-light mb-8 md:mb-12">
+        {description}
+      </p>
+      <AnchorLink href={firstAnchor}>
+        <Button size="lg" element={ButtonElement.DIV}>
+          {buttonlabel}
+        </Button>
+      </AnchorLink>
     </MainPageSection>
   );
 };

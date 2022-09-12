@@ -6,14 +6,14 @@ import { BookingButton } from "../../shared/BookingButton";
 import Img from "gatsby-image";
 
 interface Props {
-  isEven: boolean;
   optImage: any;
   title: string;
   description: string;
 }
 
 const RoomWrapper = styled.div`
-  ${tw`text-center md:text-left md:flex md:flex-row-reverse`}
+  flex-direction: row-reverse;
+  ${tw`text-center md:text-left md:flex`}
 `;
 
 const RoomImageWrapper = styled.div`
@@ -24,9 +24,9 @@ const RoomTextWrapper = styled.div`
   ${tw`w-full lg:w-2/3 self-center p-5`}
 `;
 
-export const Room = ({ isEven, optImage, title, description }: Props) => {
+export const Room = ({ optImage, title, description }: Props) => {
   return (
-    <RoomWrapper className={`${isEven ? "" : ""}`}>
+    <RoomWrapper>
       <RoomImageWrapper>
         <Img
           fluid={optImage.node.childImageSharp.fluid}

@@ -1,22 +1,11 @@
-import React, { memo } from "react";
+import { memo } from "react";
 import styled from "styled-components";
 
-const ScrollIndicatorWrapper = styled.div`
+const ScrollIndicator = styled.div<{ scrollTopPercentage: number }>`
   height: 3px;
   transition: width 0.2 ease-in-out;
   background-color: #f6ad55;
+  ${({ scrollTopPercentage }) => `width: ${scrollTopPercentage}%`}
 `;
-
-interface Props {
-  scrollTopPercentage: number;
-}
-
-const ScrollIndicator = ({ scrollTopPercentage }: Props) => (
-  <ScrollIndicatorWrapper
-    style={{
-      width: `${scrollTopPercentage}%`,
-    }}
-  />
-);
 
 export default memo(ScrollIndicator);

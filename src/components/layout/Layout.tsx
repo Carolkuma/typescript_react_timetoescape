@@ -5,10 +5,11 @@ import loadable from "@loadable/component";
 
 const FacebookCodes = loadable(() => import("../FacebookCodes"));
 import { Helmet } from "react-helmet";
-import CookieConsent from "react-cookie-consent";
 import { withPrefix } from "gatsby";
 import { GlobalStyles } from "../GlobalStyles";
 import { Content } from "../shared/Content";
+import { CookieConsent as CookieConsentOld } from "react-cookie-consent";
+import { CookieConsent } from "../shared/cookie-consent/CookieConsent";
 
 interface Props {
   isHome: boolean;
@@ -48,7 +49,7 @@ const Layout = ({
         ></link>
       </Helmet>
       <GlobalStyles />
-      <CookieConsent
+      <CookieConsentOld
         style={cookieStyle}
         disableStyles={true}
         location="bottom"
@@ -74,7 +75,8 @@ const Layout = ({
       >
         Táto stránka používa súbory cookies a iné technológie pre správne
         fungovanie a zlepšenie chodu stránky.
-      </CookieConsent>
+      </CookieConsentOld>
+      <CookieConsent></CookieConsent>
       <Content>
         <Header
           isHome={isHome}

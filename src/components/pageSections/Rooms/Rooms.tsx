@@ -40,14 +40,7 @@ export const Rooms = () => {
       <>
         {rooms.rooms.map(({ image, ...props }, index) => {
           const optImage = findImages(images, image.src)[0];
-          return (
-            <Room
-              key={index}
-              isEven={index % 2 === 0}
-              {...props}
-              optImage={optImage}
-            />
-          );
+          return <Room key={index} {...props} optImage={optImage} />;
         })}
       </>
     </MainPageSection>

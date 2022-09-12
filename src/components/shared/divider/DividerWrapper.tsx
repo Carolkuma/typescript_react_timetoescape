@@ -1,10 +1,9 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import SectionDivider from "./SectionDivider";
 
-interface DividerWrapperProps {
+interface DividerWrapperProps extends PropsWithChildren {
   hasDividerOnTop: boolean;
   hasDividerOnBottom: boolean;
-  children?: JSX.Element | JSX.Element[];
 }
 
 export const DividerWrapper = ({

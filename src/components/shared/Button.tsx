@@ -15,6 +15,7 @@ interface props {
   href?: string;
   target?: string;
   element?: ButtonElement;
+  onClick?: () => void;
 }
 
 export enum ButtonElement {
@@ -51,9 +52,9 @@ const Button = ({
   href,
   element = ButtonElement.LINK,
   target,
+  onClick,
 }: props) => {
   const classNames: string = `
-        
         bg-orange-400 
         hover:bg-orange-600
         ${sizes[size] || sizes.default}
@@ -61,13 +62,17 @@ const Button = ({
 
   if (element === ButtonElement.BUTTON) {
     return (
-      <StyledButton as="button" className={classNames}>
+      <StyledButton as="button" className={classNames} onClick={onClick}>
         {children}
       </StyledButton>
     );
   }
   if (element === ButtonElement.DIV) {
-    return <StyledButton className={classNames}>{children}</StyledButton>;
+    return (
+      <StyledButton className={classNames} onClick={onClick}>
+        {children}
+      </StyledButton>
+    );
   }
   return (
     <StyledButton
@@ -76,6 +81,7 @@ const Button = ({
       rel={rel}
       className={classNames}
       target={target}
+      onClick={onClick}
     >
       {children}
     </StyledButton>

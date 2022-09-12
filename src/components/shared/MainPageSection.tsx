@@ -2,7 +2,7 @@ import React from "react";
 import SectionBackground from "./SectionBackground";
 import loadable from "@loadable/component";
 import { Container } from "./Container";
-import { DividerWrapper } from "./DividerWrapper";
+import { DividerWrapper } from "./divider/DividerWrapper";
 
 interface props {
   id?: string;
@@ -38,8 +38,15 @@ export const MainPageSection = ({
     const BackgroundVideo = loadable(() => import("./BackgroundVideo"));
     return (
       <section tw="text-gray-100 bg-styles bg-dark relative" id={id}>
-        {InsideContent}
-        {/* {<BackgroundVideo />} */}
+        <div tw="relative z-10 intro-bg text-gray-100" className={className}>
+          <DividerWrapper
+            hasDividerOnTop={hasDividerOnTop}
+            hasDividerOnBottom={hasDividerOnBottom}
+          >
+            {<BackgroundVideo />}
+            <Container className="px-3">{children}</Container>
+          </DividerWrapper>
+        </div>
       </section>
     );
   } else if (imageSrc !== "") {

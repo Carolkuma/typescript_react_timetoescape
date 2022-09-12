@@ -1,6 +1,6 @@
 import React, { memo, PropsWithChildren, useState } from "react";
 import styled from "styled-components";
-import { Portal } from "../Portal";
+import { Portal } from "../../Portal";
 
 interface Props {
   isTop?: boolean;

@@ -4,6 +4,7 @@ import { faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import "twin.macro";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { altFontMixin } from "../../shared/typography/Headline";
 interface Props {
   question: string;
   answer: string;
@@ -44,6 +45,7 @@ const ArrowIcon = styled(FontAwesomeIcon)`
   }
 `;
 const QuestionContainer = styled.summary`
+  ${altFontMixin}
   ${tw`text-2xl border-gray-200 dark:border-gray-900 cursor-pointer border-b-2 py-3  px-6`}
 `;
 
@@ -55,7 +57,7 @@ export const Accordion = ({ question, answer, onClick, isOpen }: Props) => (
       onClick();
     }}
   >
-    <QuestionContainer className="alt-font">
+    <QuestionContainer>
       {question} <ArrowIcon icon={faChevronUp} />
     </QuestionContainer>
     <AnswerContainer>{answer}</AnswerContainer>

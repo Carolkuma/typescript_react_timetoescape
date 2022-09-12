@@ -2,7 +2,8 @@ import React from "react";
 import about from "../../../content/home/about.json";
 import { MainPageSection } from "../shared/MainPageSection";
 import "twin.macro";
-import { Container } from "../shared/Container";
+import { H2 } from "../shared/typography/Headline";
+
 const { title, id, description, backgroundImage } = about;
 
 export const AboutEscapeRoom = () => (
@@ -11,15 +12,11 @@ export const AboutEscapeRoom = () => (
     imageSrc={backgroundImage}
     hasDividerOnTop
     hasDividerOnBottom
-    tw="py-24"
+    tw="py-24 px-3 text-center"
   >
-    <Container tw="px-3">
-      <h2 tw="text-3xl lg:text-4xl text-center" className="alt-font">
-        {title}
-      </h2>
-      <div tw="mt-10 text-center lg:w-2/3 mx-auto text-justify">
-        <p tw="md:text-lg ">{description}</p>
-      </div>
-    </Container>
+    <H2 altFont>{title}</H2>
+    <p tw="mt-10 text-center lg:w-2/3 mx-auto text-justify md:text-lg ">
+      {description}
+    </p>
   </MainPageSection>
 );
