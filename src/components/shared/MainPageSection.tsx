@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import SectionBackground from "./SectionBackground";
 import loadable from "@loadable/component";
 import { Container } from "./Container";
@@ -27,6 +27,10 @@ const TextWrapper = styled.div`
   ${tw`relative z-10 text-gray-100`}
 `;
 
+const Background = styled(SectionBackground)`
+  ${tw`text-gray-100 bg-dark flex flex-col text-gray-100 relative`}
+`;
+
 export const MainPageSection = ({
   id,
   children,
@@ -42,36 +46,21 @@ export const MainPageSection = ({
         hasDividerOnTop={hasDividerOnTop}
         hasDividerOnBottom={hasDividerOnBottom}
       >
-        <Container className="px-3">{children}</Container>
+        <Container>{children}</Container>
       </DividerWrapper>
     </TextWrapper>
   );
 
-  if (videoEnabled) {
-    const BackgroundVideo = loadable(() => import("./BackgroundVideo"));
+  const BackgroundVideo = videoEnabled
+    ? loadable(() => import("./BackgroundVideo"))
+    : Fragment;
+
+  if (imageSrc !== "") {
     return (
-      <section tw="text-gray-100 bg-dark relative" id={id}>
-        <TextWrapper className={className}>
-          <DividerWrapper
-            hasDividerOnTop={hasDividerOnTop}
-            hasDividerOnBottom={hasDividerOnBottom}
-          >
-            {<BackgroundVideo />}
-            <Container className="px-3">{children}</Container>
-          </DividerWrapper>
-        </TextWrapper>
-      </section>
-    );
-  } else if (imageSrc !== "") {
-    return (
-      <SectionBackground
-        tw="text-gray-100 bg-dark"
-        imageSrc={imageSrc}
-        tag={"section"}
-        id={id}
-      >
+      <Background imageSrc={imageSrc} tag={"section"} id={id}>
         {InsideContent}
-      </SectionBackground>
+        <BackgroundVideo />
+      </Background>
     );
   }
 
@@ -88,5 +77,4 @@ MainPageSection.defaultProps = {
   id: null,
   hasDividerOnTop: false,
   hasDividerOnBottom: false,
-  className: "py-20",
 };

@@ -10,8 +10,8 @@ export const HeaderContainer = styled.header<{
   position: sticky;
   width: 100%;
   overflow: hidden;
-  z-index: 20;
+  z-index: 30;
   top: 0;
   ${tw`bg-dark shadow border-gray-800 print:bg-white`}
-  ${({ isScrolled }) => (isScrolled ? tw`border-b` : tw`bg-opacity-50`)}
+  ${({ isScrolled }) => (isScrolled ? tw`border-b` : tw`bg-opacity-0`)}
 `;

@@ -7,7 +7,7 @@ interface Props {
   className?: string | undefined;
   children?: JSX.Element | JSX.Element[];
   imageSrc: string;
-  tag: string;
+  tag: JSX.IntrinsicElements["div"];
   id: string;
 }
 

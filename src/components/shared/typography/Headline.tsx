@@ -4,8 +4,8 @@ import tw from "twin.macro";
 const VARIANTS = {};
 
 export const altFontMixin = `
-font-family: "Teko", sans-serif;
-font-weight: 400;
+  font-family: "Teko", sans-serif;
+  font-weight: 400;
 `;
 
 export const H1 = styled.h1<{ altFont: boolean }>`

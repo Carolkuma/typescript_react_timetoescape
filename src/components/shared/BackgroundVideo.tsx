@@ -18,10 +18,10 @@ const videoOptions = {
 };
 
 const VideoContainer = styled.div`
-  position: absolute;
   top: 0;
-  z-index: -1;
-  overflow: hidden;
+  flex: 1 1;
+  position: absolute;
+  height: 100%;
   width: 100%;
 `;
 

@@ -53,10 +53,6 @@ body {
   color: rgb(26, 32, 44);
 }
 
-.alt-bg {
-  background-color: rgba(237, 242, 247, 0.6);
-}
-
 .ol-rules {
   list-style: decimal;
   list-style-position: outside;

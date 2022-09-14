@@ -16,7 +16,7 @@ export const Intro = () => {
     <MainPageSection
       id="intro"
       imageSrc={backgroundImage}
-      videoEnabled={false}
+      videoEnabled={true}
       tw="py-40 text-center"
       hasDividerOnBottom
     >

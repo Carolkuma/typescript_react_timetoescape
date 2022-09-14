@@ -7,8 +7,10 @@ const APROVED_KEY = "isAproved";
 
 type isAproved = boolean;
 
+const isSSR = typeof window === "undefined";
+
 const getAprovedFromStorage = (): isAproved => {
-  if (window) {
+  if (!isSSR) {
     const val = localStorage.getItem(APROVED_KEY);
 
     return val === "true";
@@ -18,7 +20,7 @@ const getAprovedFromStorage = (): isAproved => {
 };
 
 const setAprovedFromStorage = (isAproved: isAproved) => {
-  if (window) {
+  if (!isSSR) {
     localStorage.setItem(APROVED_KEY, isAproved ? "true" : "false");
   }
 };

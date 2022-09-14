@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../pageSections/Footer";
+import { Footer } from "../pageSections/Footer/Footer";
 import Header from "../pageSections/Header/Header";
 import loadable from "@loadable/component";
 

@@ -41,7 +41,7 @@ const CenterPart = styled.div`
 // ${tw`flex border-solid lg:border-none border-b py-4 lg:inline-block lg:py-0 px-3 w-full lg:w-auto`}
 
 const NavigationLink = styled.a`
-  ${tw`border-solid lg:border-none border-b py-4 lg:py-0 px-3 w-full lg:w-auto`}s
+  ${tw`border-solid lg:border-none border-b py-4 lg:py-0 px-3 w-full lg:w-auto`}
   border-color: "rgb(189 189 189)";
 `;
 
