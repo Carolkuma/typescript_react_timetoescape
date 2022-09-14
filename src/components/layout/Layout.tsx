@@ -8,7 +8,6 @@ import { Helmet } from "react-helmet";
 import { withPrefix } from "gatsby";
 import { GlobalStyles } from "../GlobalStyles";
 import { Content } from "../shared/Content";
-import { CookieConsent as CookieConsentOld } from "react-cookie-consent";
 import { CookieConsent } from "../shared/cookie-consent/CookieConsent";
 import { Main } from "../shared/Main";
 

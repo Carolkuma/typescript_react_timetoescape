@@ -25,13 +25,6 @@ body {
   font-weight: 400;
 }
 
-.bg-styles {
-  /* background-attachment: fixed; */
-  background-position: center;
-  background-repeat: none;
-  background-size: cover;
-}
-
 a {
   transition: color 0.4s ease-in-out;
 }

@@ -3,6 +3,9 @@ import SectionBackground from "./SectionBackground";
 import loadable from "@loadable/component";
 import { Container } from "./Container";
 import { DividerWrapper } from "./divider/DividerWrapper";
+import styled from "styled-components";
+import tw from "twin.macro";
+import "twin.macro";
 
 interface props {
   id?: string;
@@ -14,6 +17,16 @@ interface props {
   hasDividerOnBottom: boolean;
 }
 
+const TextWrapper = styled.div`
+  background: rgba(33, 33, 33, 0.8);
+  background: radial-gradient(
+    circle,
+    rgba(33, 33, 33, 0.8) 25%,
+    rgba(33, 33, 33, 0) 100%
+  );
+  ${tw`relative z-10 text-gray-100`}
+`;
+
 export const MainPageSection = ({
   id,
   children,
@@ -24,21 +37,21 @@ export const MainPageSection = ({
   hasDividerOnBottom,
 }: props) => {
   const InsideContent = (
-    <div tw="relative z-10 intro-bg text-gray-100" className={className}>
+    <TextWrapper className={className}>
       <DividerWrapper
         hasDividerOnTop={hasDividerOnTop}
         hasDividerOnBottom={hasDividerOnBottom}
       >
         <Container className="px-3">{children}</Container>
       </DividerWrapper>
-    </div>
+    </TextWrapper>
   );
 
   if (videoEnabled) {
     const BackgroundVideo = loadable(() => import("./BackgroundVideo"));
     return (
-      <section tw="text-gray-100 bg-styles bg-dark relative" id={id}>
-        <div tw="relative z-10 intro-bg text-gray-100" className={className}>
+      <section tw="text-gray-100 bg-dark relative" id={id}>
+        <TextWrapper className={className}>
           <DividerWrapper
             hasDividerOnTop={hasDividerOnTop}
             hasDividerOnBottom={hasDividerOnBottom}
@@ -46,13 +59,13 @@ export const MainPageSection = ({
             {<BackgroundVideo />}
             <Container className="px-3">{children}</Container>
           </DividerWrapper>
-        </div>
+        </TextWrapper>
       </section>
     );
   } else if (imageSrc !== "") {
     return (
       <SectionBackground
-        tw="text-gray-100 bg-styles bg-dark"
+        tw="text-gray-100 bg-dark"
         imageSrc={imageSrc}
         tag={"section"}
         id={id}
