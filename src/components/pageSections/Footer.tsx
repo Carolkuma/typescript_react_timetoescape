@@ -21,23 +21,27 @@ const FooterContainer = styled.footer`
   ${tw`bg-dark text-gray-100 print:bg-white print:text-gray-500`}
 `;
 
+const FooterNavigation = styled.nav`
+  ${tw`print:hidden flex flex-col md:flex-row border-b md:border-none`}
+`;
+
 const Footer = () => (
   <FooterContainer as={"footer"}>
     <Container tw="px-3 flex flex-col md:flex-row-reverse text-center">
-      <nav tw="print:hidden py-5 flex flex-col md:flex-row">
+      <FooterNavigation>
         {FOOTER_NAVIGATION.map(({ link, label }, i) => (
           <Link
             to={link}
             activeClassName="text-orange-400"
-            tw="text-center md:ml-5 px-3 pb-5 md:pb-0 block md:flex"
+            tw="text-center md:ml-5 px-3 py-5 md:pb-0 block md:flex"
             key={i}
           >
             {label}
           </Link>
         ))}
-      </nav>
-      <span tw="flex-grow md:text-left mb-5 md:py-5">
-        <Copyright /> Time to escape
+      </FooterNavigation>
+      <span tw="flex-grow md:text-left py-5">
+        <Copyright /> Time to Escape
       </span>
     </Container>
   </FooterContainer>

@@ -10,6 +10,7 @@ import { GlobalStyles } from "../GlobalStyles";
 import { Content } from "../shared/Content";
 import { CookieConsent as CookieConsentOld } from "react-cookie-consent";
 import { CookieConsent } from "../shared/cookie-consent/CookieConsent";
+import { Main } from "../shared/Main";
 
 interface Props {
   isHome: boolean;
@@ -49,34 +50,7 @@ const Layout = ({
         ></link>
       </Helmet>
       <GlobalStyles />
-      <CookieConsentOld
-        style={cookieStyle}
-        disableStyles={true}
-        location="bottom"
-        buttonText="Rozumiem"
-        declineButtonText="Decline"
-        contentClasses="container mx-auto px-3"
-        containerClasses="z-50 w-full flex items-center bg-dark text-white text-sm font-bold px-4 py-3 print:hidden"
-        cookieName="gatsby-gdpr-google-analytics"
-        buttonClasses="py-3 px-5
-        float-right
-        text-sm
-        bg-orange-400
-        transition-all
-        duration-200 
-        ease-in-out
-        hover:bg-orange-600
-        text-gray-800
-        hover:text-gray-200
-        uppercase
-        button
-        w-full
-        tracking-wider"
-      >
-        Táto stránka používa súbory cookies a iné technológie pre správne
-        fungovanie a zlepšenie chodu stránky.
-      </CookieConsentOld>
-      <CookieConsent></CookieConsent>
+      <CookieConsent />
       <Content>
         <Header
           isHome={isHome}
@@ -84,7 +58,7 @@ const Layout = ({
           changeBgOpacity={changeBgOpacity}
           isRegistrationEnabled={isRegistrationEnabled}
         />
-        <main>{children}</main>
+        <Main>{children}</Main>
       </Content>
       <Footer />
       <Helmet>

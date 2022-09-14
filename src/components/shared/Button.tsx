@@ -28,21 +28,30 @@ const StyledButton = styled.div`
   ${tw`
   text-center
   transition-all
-  w-full 
-  md:w-auto 
-  block 
-  md:inline
+   
+  inline
   duration-200 
   ease-in-out
-  text-gray-800
+  text-gray-50
+  font-medium
   uppercase
   tracking-wider
-  hover:text-gray-900 
+  hover:text-white 
+  hover:drop-shadow-2xl
   py-3
-  px-5
+  px-8
   print:hidden
+  rounded
+  drop-shadow-xl
+  bg-gradient-to-r
+  from-yellow-600 to-yellow-700
   `}
-  background-color: #f6ad55;
+  // background-color: #f6ad55;
+  /* Created with https://www.css-gradient.com */
+  background: #F6AE56;
+  background: -webkit-radial-gradient(center, #f6ae56, #e5983c);
+  background: -moz-radial-gradient(center, #f6ae56, #e5983c);
+  background: radial-gradient(ellipse at center, #f6ae56, #e5983c);
 `;
 
 const Button = ({
