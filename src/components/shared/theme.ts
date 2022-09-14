@@ -4,7 +4,8 @@ import { DefaultTheme } from "styled-components";
 const COLORS = {};
 
 export const defaultTheme: DefaultTheme = {
-  borderRadius: "4px",
+  mainColor: "#f6ad55",
+  mainColorVar: "var(--main-color)",
   palette: {
     common: {
       black: "#222831",

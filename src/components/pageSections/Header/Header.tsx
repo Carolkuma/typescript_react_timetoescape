@@ -15,28 +15,18 @@ import styled from "styled-components";
 import tw from "twin.macro";
 
 const { header } = nav;
-interface Props extends PropsWithChildren {
-  isHome: boolean;
-  showNav?: boolean;
-  changeBgOpacity?: boolean;
-}
-
-const headerStyles = (isOpen: boolean) => {
-  return {
-    maxHeight: `${isOpen ? "100vh" : "5rem"}`,
-    transition:
-      "max-height 0.3s ease-in-out, background-color 0.6s ease-in-out ",
-  };
-};
 
 const roundToEven = (n: number): number => 2 * Math.round(n / 2);
 
 const SidePart = styled.div`
-  ${tw`flex-none`}
+  flex: none;
 `;
 
 const CenterPart = styled.div`
-  ${tw`mt-5 flex justify-center flex-col lg:flex-row lg:mt-0 w-full lg:w-auto text-center`}
+  display: flex;
+  width: 100%;
+  text-align: center;
+  ${tw`mt-5  flex-col lg:flex-row lg:mt-0 lg:w-auto`}
 `;
 // ${tw`flex border-solid lg:border-none border-b py-4 lg:inline-block lg:py-0 px-3 w-full lg:w-auto`}
 
@@ -44,6 +34,12 @@ const NavigationLink = styled.a`
   ${tw`border-solid lg:border-none border-b py-4 lg:py-0 px-3 w-full lg:w-auto`}
   border-color: "rgb(189 189 189)";
 `;
+
+interface Props extends PropsWithChildren {
+  isHome: boolean;
+  showNav?: boolean;
+  changeBgOpacity?: boolean;
+}
 
 const Header = ({ showNav = true, isHome, changeBgOpacity = false }: Props) => {
   const getPercentage = () => {

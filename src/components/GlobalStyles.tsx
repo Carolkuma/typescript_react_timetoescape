@@ -4,20 +4,16 @@ import { createGlobalStyle } from "styled-components";
 
 const StyledGlobalStyles = createGlobalStyle`
 :root {
-  --color-bg: #fff;
-}
-.intro-bg {
-  background: rgba(33, 33, 33, 0.8);
-  background: radial-gradient(
-    circle,
-    rgba(33, 33, 33, 0.8) 25%,
-    rgba(33, 33, 33, 0) 100%
-  );
+  --color-fg: #2D3748;
+  --color-bg: #F7FAFC;
+  --main-color: ${(props) => props.theme.mainColor};
 }
 
 
 body {
   font-family: "Open Sans", sans-serif;
+  color: var(--color-fg);
+  background: var(--color-bg);
 }
 
 .alt-font {
@@ -28,12 +24,8 @@ body {
 a {
   transition: color 0.4s ease-in-out;
 }
-a:hover {
-  color: #f6ad55;
-}
-
-a.anchor:hover {
-  color: #f6ad55;
+a:hover, a.anchor:hover  {
+  color: ${(props) => props.theme.mainColorVar};
 }
 
 button:focus {
@@ -47,10 +39,6 @@ button:focus {
 /* purgecss ignore */
 .leaflet-container {
   height: 15rem;
-}
-
-body {
-  color: rgb(26, 32, 44);
 }
 
 .ol-rules {
@@ -82,9 +70,6 @@ body {
   }
   .bg-white {
     background-color: rgb(33, 33, 33);
-  }
-  .alt-bg {
-    background-color: rgba(30, 34, 37, 0.6);
   }
   .bg-gray-400 {
     background-color: rgb(179 187 204);

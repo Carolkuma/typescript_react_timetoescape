@@ -7,7 +7,7 @@ import { Copyright } from "./Copyright";
 
 const FooterContainer = styled.footer`
   height: 2rem;
-  ${tw`bg-dark text-gray-100 print:bg-white print:text-gray-500`}
+  ${tw`bg-dark text-gray-100`}
 `;
 
 export const Footer = () => (

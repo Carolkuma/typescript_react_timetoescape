@@ -20,6 +20,5 @@ export const Outro = () => (
         <p tw="mt-5 text-xl font-light">{description}</p>
       )}
     </>
-    <BookingButton size="xl" tw="mt-10" />
   </MainPageSection>
 );

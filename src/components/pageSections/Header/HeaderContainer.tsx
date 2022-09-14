@@ -12,6 +12,7 @@ export const HeaderContainer = styled.header<{
   overflow: hidden;
   z-index: 30;
   top: 0;
+  color: var(--color-bg);
   ${tw`bg-dark shadow border-gray-800 print:bg-white`}
-  ${({ isScrolled }) => (isScrolled ? tw`border-b` : tw`bg-opacity-0`)}
+  ${({ isScrolled }) => (isScrolled ? tw`border-b` : tw`bg-opacity-0`)};
 `;

@@ -10,6 +10,8 @@ import { GlobalStyles } from "../GlobalStyles";
 import { Content } from "../shared/Content";
 import { CookieConsent } from "../shared/cookie-consent/CookieConsent";
 import { Main } from "../shared/Main";
+import { ThemeProvider } from "styled-components";
+import { defaultTheme } from "../shared/theme";
 
 interface Props {
   isHome: boolean;
@@ -27,10 +29,6 @@ const preconnect = [
   "https://script.hotjar.com",
 ];
 
-const cookieStyle = {
-  zIndex: 2147483646,
-};
-
 const Layout = ({
   children,
   isRegistrationEnabled,
@@ -39,7 +37,7 @@ const Layout = ({
   isHome,
 }: Props) => {
   return (
-    <>
+    <ThemeProvider theme={defaultTheme}>
       <Helmet>
         <meta name="theme-color" content="#212121"></meta>
         <link rel="manifest" href={withPrefix("/manifest.json")} />
@@ -66,7 +64,7 @@ const Layout = ({
         })}
       </Helmet>
       <FacebookCodes />
-    </>
+    </ThemeProvider>
   );
 };
 

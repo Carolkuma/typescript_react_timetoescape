@@ -28,24 +28,26 @@ const setAprovedFromStorage = (isAproved: isAproved) => {
 export const CookieConsent = () => {
   const [isAproved, setAproved] = useState<isAproved>(getAprovedFromStorage());
   return (
-    !isAproved && (
-      <div tw="bg-dark">
-        <Container tw="p-2 flex flex-row items-center">
-          <div tw="flex-1">
-            Táto stránka používa súbory cookies a iné technológie pre správne
-            fungovanie a zlepšenie chodu stránky.
-          </div>
-          <Button
-            element={ButtonElement.BUTTON}
-            onClick={() => {
-              setAproved(true);
-              setAprovedFromStorage(true);
-            }}
-          >
-            Rozumiem
-          </Button>
-        </Container>
-      </div>
-    )
+    <>
+      {!isAproved && (
+        <div tw="bg-dark">
+          <Container tw="p-2 flex flex-row items-center">
+            <div tw="flex-1">
+              Táto stránka používa súbory cookies a iné technológie pre správne
+              fungovanie a zlepšenie chodu stránky.
+            </div>
+            <Button
+              element={ButtonElement.BUTTON}
+              onClick={() => {
+                setAproved(true);
+                setAprovedFromStorage(true);
+              }}
+            >
+              Rozumiem
+            </Button>
+          </Container>
+        </div>
+      )}
+    </>
   );
 };

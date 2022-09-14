@@ -8,9 +8,11 @@ interface Props {
 
 const StyledSvg = styled.svg<Props>`
   position: absolute;
+  left: 0;
   ${({ isTop }) =>
     isTop
       ? `top: 0; 
+         
          transform: scaleY(-1) scaleX(-1) translateY(1px);`
       : `bottom: 0;`}
 `;
