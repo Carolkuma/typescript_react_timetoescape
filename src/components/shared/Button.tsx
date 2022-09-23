@@ -34,12 +34,12 @@ const StyledButton = styled.div`
   ease-in-out
   text-gray-50
   font-medium
-  uppercase
-  tracking-wider
+  text-lg
+  tracking-wider 
   hover:text-white 
   hover:drop-shadow-2xl
   py-3
-  px-8
+  px-6
   print:hidden
   rounded
   drop-shadow-xl
