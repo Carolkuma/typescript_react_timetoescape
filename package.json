@@ -51,7 +51,7 @@
     "gatsby-plugin-web-font-loader": "1.0.4",
     "gatsby-source-filesystem": "4.22.0",
     "gatsby-transformer-sharp": "^4.24.0",
-    "leaflet": "1.8.0",
+    "leaflet": "1.9.2",
     "lodash": "4.17.21",
     "react": "18.2.0",
     "react-anchor-link-smooth-scroll": "1.0.12",
