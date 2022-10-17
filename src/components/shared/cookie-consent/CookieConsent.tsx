@@ -30,7 +30,7 @@ export const CookieConsent = () => {
   return (
     <>
       {!isAproved && (
-        <div tw="bg-dark">
+        <div tw="bg-dark fixed bottom-0 w-full z-10">
           <Container tw="p-2 flex flex-row items-center">
             <div tw="flex-1">
               Táto stránka používa súbory cookies a iné technológie pre správne
