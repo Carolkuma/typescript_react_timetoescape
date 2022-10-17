@@ -1,18 +1,17 @@
-import React, { PropsWithChildren, useEffect, useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-import LogoIcon from "../../../svg/LogoIcon";
-import { NavigationButton } from "./NavigationButton";
-import { isMobile } from "react-device-detect";
 import { Link } from "gatsby";
-import { BookingButton } from "../../shared/BookingButton";
-import nav from "../../../../content/home/common/navigation.json";
 import { throttle } from "lodash";
-import "twin.macro";
-import ScrollIndicator from "./ScrollIndicator";
-import { NavContainer } from "./NavContainer";
-import { HeaderContainer } from "./HeaderContainer";
+import { PropsWithChildren, useEffect, useState } from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import { isMobile } from "react-device-detect";
 import styled from "styled-components";
+import "twin.macro";
 import tw from "twin.macro";
+import nav from "../../../../content/home/common/navigation.json";
+import LogoIcon from "../../../svg/LogoIcon";
+import { HeaderContainer } from "./HeaderContainer";
+import { NavContainer } from "./NavContainer";
+import { NavigationButton } from "./NavigationButton";
+import ScrollIndicator from "./ScrollIndicator";
 
 const { header } = nav;
 
@@ -20,6 +19,9 @@ const roundToEven = (n: number): number => 2 * Math.round(n / 2);
 
 const SidePart = styled.div`
   flex: none;
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-fg);
+  }
 `;
 
 const CenterPart = styled.div`
@@ -33,6 +35,9 @@ const CenterPart = styled.div`
 const NavigationLink = styled.a`
   ${tw`border-solid lg:border-none border-b py-4 lg:py-0 px-3 w-full lg:w-auto`}
   border-color: "rgb(189 189 189)";
+  @media (prefers-color-scheme: dark) {
+    color: var(--color-fg);
+  }
 `;
 
 interface Props extends PropsWithChildren {

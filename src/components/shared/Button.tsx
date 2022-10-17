@@ -28,12 +28,11 @@ const StyledButton = styled.div`
   ${tw`
   text-center
   transition-all
-   
   inline
   duration-200 
   ease-in-out
   text-gray-50
-  font-medium
+  font-normal
   text-lg
   tracking-wider 
   hover:text-white 

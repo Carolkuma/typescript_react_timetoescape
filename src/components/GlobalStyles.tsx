@@ -63,6 +63,7 @@ button:focus {
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: rgb(33, 33, 33);
+    --color-fg: #F7FAFC;
   }
   body {
     background-color: rgb(33, 33, 33);
