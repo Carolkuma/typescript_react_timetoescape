@@ -13,14 +13,14 @@ module.exports = {
     "gatsby-plugin-typescript",
     `gatsby-plugin-offline`,
     "gatsby-plugin-sitemap",
-    {
-      resolve: `gatsby-plugin-hotjar-tracking`,
-      options: {
-        includeInDevelopment: false,
-        id: 1837182,
-        sv: 6,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-hotjar-tracking`,
+    //   options: {
+    //     includeInDevelopment: false,
+    //     id: 1837182,
+    //     sv: 6,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
