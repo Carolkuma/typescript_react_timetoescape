@@ -25,7 +25,7 @@ const VideoContainer = styled.div`
   width: 100%;
 `;
 
-const SUPPORTED_EXTENSIONS = [".webm", ".mp4"];
+const SUPPORTED_EXTENSIONS = [".webm"];
 
 export const BackgroundVideo = () => (
   <VideoContainer>
