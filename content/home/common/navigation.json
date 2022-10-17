@@ -1,39 +1,34 @@
 {
-    "header": [
-        {
-            "label": "Koronavírus",
-            "href": "#koronavirus",
-            "className": "text-red-600"
-        },
-        {
-            "label": "Miestnosti",
-            "href": "#rooms"
-        },
-        {
-            "label": "Galéria",
-            "href": "#gallery"
-        },
-        {
-            "label": "Referencie",
-            "href": "#testimonials"
-        },
-        {
-            "label": "Časté otázky",
-            "href": "#faq"
-        },
-        {
-            "label": "Kontakt",
-            "href": "#contact"
-        }
-    ],
-    "footer": [
-        {
-            "label": "Pravidlá hry",
-            "link": "/pravidla-hry/"
-        },
-        {
-            "link": "/privacy-policy/",
-            "label": "Ochrana osobných údajov"
-        }
-    ]
+  "header": [
+    {
+      "label": "Miestnosti",
+      "href": "#rooms"
+    },
+    {
+      "label": "Galéria",
+      "href": "#gallery"
+    },
+    {
+      "label": "Referencie",
+      "href": "#testimonials"
+    },
+    {
+      "label": "Časté otázky",
+      "href": "#faq"
+    },
+    {
+      "label": "Kontakt",
+      "href": "#contact"
+    }
+  ],
+  "footer": [
+    {
+      "label": "Pravidlá hry",
+      "link": "/pravidla-hry/"
+    },
+    {
+      "link": "/privacy-policy/",
+      "label": "Ochrana osobných údajov"
+    }
+  ]
 }

@@ -1,23 +1,15 @@
-import React from 'react';
-
-
-import Layout from '../components/layout/Layout';
-
-
+import React from "react";
+import Layout from "../components/layout/Layout";
 import { Helmet } from "react-helmet";
-
-import { Intro } from '../components/layout/Intro';
-import { ReasonsToEnter } from '../components/layout/ReasonsToEnter/ReasonsToEnter';
-import { Rooms } from '../components/layout/Rooms';
-import { Outro } from '../components/layout/Outro';
-import { Testimonials } from '../components/Testimonials';
-import { Faq } from '../components/layout/Faq';
-import { Contact } from '../components/layout/Contact/Contact';
-import { AboutEscapeRoom } from '../components/layout/AboutEscapeRoom';
-import { Notice } from '../components/Notice';
-import { Gallery } from '../components/Gallery';
-import { Slider } from '../components/Slider';
-
+import { Intro } from "../components/pageSections/Intro";
+import { ReasonsToEnter } from "../components/pageSections/ReasonsToEnter/ReasonsToEnter";
+import { Rooms } from "../components/pageSections/Rooms/Rooms";
+import { Outro } from "../components/pageSections/Outro";
+import { Testimonials } from "../components/pageSections/Testimonials/Testimonials";
+import { Faq } from "../components/pageSections/Faq/Faq";
+import { Contact } from "../components/pageSections/Contact/Contact";
+import { AboutEscapeRoom } from "../components/pageSections/AboutEscapeRoom";
+import { Gallery } from "../components/pageSections/Gallery/Gallery";
 
 export default () => (
   <Layout isHome={true} changeBgOpacity={true}>
@@ -36,14 +28,11 @@ export default () => (
     </Helmet>
 
     <Intro />
-    <Notice />
     <ReasonsToEnter />
     <AboutEscapeRoom />
     <Rooms />
-    {/* TODO: gallery */}
     <Gallery />
     <Testimonials />
-    <Slider></Slider>
     <Faq />
     <Contact />
     <Outro />
