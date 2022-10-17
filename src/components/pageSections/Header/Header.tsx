@@ -20,7 +20,7 @@ const roundToEven = (n: number): number => 2 * Math.round(n / 2);
 const SidePart = styled.div`
   flex: none;
   @media (prefers-color-scheme: dark) {
-    color: var(--color-fg);
+    color: var(--main-color);
   }
 `;
 
@@ -30,7 +30,6 @@ const CenterPart = styled.div`
   text-align: center;
   ${tw`mt-5  flex-col lg:flex-row lg:mt-0 lg:w-auto`}
 `;
-// ${tw`flex border-solid lg:border-none border-b py-4 lg:inline-block lg:py-0 px-3 w-full lg:w-auto`}
 
 const NavigationLink = styled.a`
   ${tw`border-solid lg:border-none border-b py-4 lg:py-0 px-3 w-full lg:w-auto`}
