@@ -2,13 +2,14 @@ import React from "react";
 import { GalleryItems } from "./GalleryItems";
 import { MainPageSection } from "../../shared/MainPageSection";
 import "twin.macro";
+import { H2 } from "../../shared/typography/Headline";
 const imagesPath = "gallery/";
 
 export const Gallery = () => (
   <MainPageSection id={"gallery"}>
-    <h2 tw="text-3xl lg:text-4xl text-center" className="alt-font">
+    <H2 tw="text-center" altFont>
       Galéria
-    </h2>
+    </H2>
     <GalleryItems imagesPath={imagesPath} />
   </MainPageSection>
 );

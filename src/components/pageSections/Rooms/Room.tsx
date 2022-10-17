@@ -4,6 +4,7 @@ import tw from "twin.macro";
 import "twin.macro";
 import { BookingButton } from "../../shared/BookingButton";
 import Img from "gatsby-image";
+import { H3 } from "../../shared/typography/Headline";
 
 interface Props {
   optImage: any;
@@ -35,9 +36,7 @@ export const Room = ({ optImage, title, description }: Props) => {
         />
       </RoomImageWrapper>
       <RoomTextWrapper>
-        <h3 tw="text-3xl" className="alt-font">
-          {title}
-        </h3>
+        <H3 altFont>{title}</H3>
         <p tw="mt-6 mb-10 md:text-lg">{description}</p>
         <BookingButton />
       </RoomTextWrapper>

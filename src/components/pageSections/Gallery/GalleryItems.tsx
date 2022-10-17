@@ -4,6 +4,12 @@ import { findImages } from "../../shared/SectionBackground";
 import { graphql, useStaticQuery } from "gatsby";
 import { Card } from "../../shared/Card";
 import "twin.macro";
+import {
+  getImage,
+  GatsbyImage,
+  ImageDataLike,
+  IGatsbyImageData,
+} from "gatsby-plugin-image";
 
 import loadable from "@loadable/component";
 const LightBoxGallery = loadable(() => import("./LightBoxGallery"));
@@ -12,46 +18,31 @@ interface Props {
   imagesPath: string;
 }
 
-const getImagesFromQueryToLightBox = (sources): string[] => {
-  return sources.map(([_, desktopImage]) => {
-    const { srcWebp } = desktopImage;
-    return srcWebp;
-  });
-};
+const getImagesFromQueryToLightBox = (sources: IGatsbyImageData[]) =>
+  sources.map(({ images: { fallback } }) => fallback?.src ?? "");
 
 const getKeyCode = (e: KeyboardEvent) =>
   e.key ? e.key : e.keyCode ? e.keyCode : undefined;
 
 export const GalleryItems = (props: Props) => {
-  const { mobileImages, desktopImages } = useStaticQuery(
+  const {
+    allFiles: { edges: images },
+  } = useStaticQuery(
     graphql`
-      query {
-        mobileImages: allFile(
-          filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }
-        ) {
-          edges {
-            node {
-              extension
-              relativePath
-              childImageSharp {
-                fluid(maxWidth: 490, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-            }
+      query GalleryImages {
+        allFiles: allFile(
+          filter: {
+            extension: { regex: "/jpg/" }
+            relativeDirectory: { eq: "gallery" }
           }
-        }
-        desktopImages: allFile(
-          filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }
         ) {
           edges {
             node {
-              extension
+              name
+              id
               relativePath
               childImageSharp {
-                fluid(quality: 100, maxWidth: 4160) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+                gatsbyImageData(layout: FULL_WIDTH, formats: [WEBP, AVIF])
               }
             }
           }
@@ -59,23 +50,12 @@ export const GalleryItems = (props: Props) => {
       }
     `
   );
-  const { imagesPath } = props;
-  // Set up the array of image data and `media` keys.
-  // You can have as many entries as you'd like.
-  // TODO: make it as HOC
-  const mobileGalleryImages = findImages(mobileImages, imagesPath);
-  const desctopGalleryImages = findImages(desktopImages, imagesPath);
 
-  const sources = mobileGalleryImages.map((mobileImage, i) => {
-    return [
-      mobileImage.node.childImageSharp.fluid,
-      {
-        ...desctopGalleryImages[i].node.childImageSharp.fluid,
-        media: `(min-width: 491px)`,
-      },
-    ];
-  });
-  const images = getImagesFromQueryToLightBox(sources);
+  const gatsbyImages: IGatsbyImageData[] = images.map(
+    ({ node }: { node: ImageDataLike | null }) => getImage(node)
+  );
+
+  const lightBoxImages = getImagesFromQueryToLightBox(gatsbyImages);
   const [isLighBoxOpen, setLighBoxOpen] = useState(false);
   const [lightBoxIndex, setLightBoxIndex] = useState(0);
   const openLightBox = useCallback(
@@ -89,21 +69,26 @@ export const GalleryItems = (props: Props) => {
   return (
     <>
       <div tw="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
-        {sources.map((img, i) => (
+        {gatsbyImages.map((image, i: number) => (
           <Card
-            key={i}
+            key={images[i].id}
             tw="flex flex-auto w-full flex-col cursor-pointer"
             onClick={() => openLightBox(i)}
           >
-            <Img fluid={img} />
+            <GatsbyImage image={image} alt={images[i].name} />
           </Card>
         ))}
       </div>
       {isLighBoxOpen && (
         <LightBoxGallery
-          mainSrc={images[lightBoxIndex]}
-          nextSrc={images[(lightBoxIndex + 1) % images.length]}
-          prevSrc={images[(lightBoxIndex + images.length - 1) % images.length]}
+          mainSrc={lightBoxImages[lightBoxIndex]}
+          nextSrc={lightBoxImages[(lightBoxIndex + 1) % lightBoxImages.length]}
+          prevSrc={
+            lightBoxImages[
+              (lightBoxIndex + lightBoxImages.length - 1) %
+                lightBoxImages.length
+            ]
+          }
           onCloseRequest={() => setLighBoxOpen(false)}
           onMovePrevRequest={() =>
             setLightBoxIndex(
@@ -111,7 +96,7 @@ export const GalleryItems = (props: Props) => {
             )
           }
           onMoveNextRequest={() =>
-            setLightBoxIndex((lightBoxIndex + 1) % images.length)
+            setLightBoxIndex((lightBoxIndex + 1) % lightBoxImages.length)
           }
         />
       )}

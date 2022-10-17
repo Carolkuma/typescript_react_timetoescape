@@ -17,3 +17,8 @@ export const H2 = styled.h2<{ altFont: boolean }>`
   ${tw`text-3xl lg:text-4xl leading-none`}
   ${({ altFont }) => (altFont ? altFontMixin : "")}
 `;
+
+export const H3 = styled.h3<{ altFont: boolean }>`
+  ${tw`text-3xl lg:text-4xl leading-none`}
+  ${({ altFont }) => (altFont ? altFontMixin : "")}
+`;
