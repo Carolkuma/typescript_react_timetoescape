@@ -6,7 +6,6 @@ import { FooterNavigation } from "./FooterNavigation";
 import { Copyright } from "./Copyright";
 
 const FooterContainer = styled.footer`
-  height: 2rem;
   ${tw`bg-dark text-gray-100`}
 `;
 

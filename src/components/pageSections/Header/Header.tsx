@@ -87,7 +87,11 @@ const Header = ({ showNav = true, isHome, changeBgOpacity = false }: Props) => {
   }, []);
 
   return (
-    <HeaderContainer isOpen={isOpen} isScrolled={scrollTopPercentage > 0}>
+    <HeaderContainer
+      isOpen={isOpen}
+      changeBgOpacity={changeBgOpacity}
+      isScrolled={scrollTopPercentage > 0}
+    >
       <NavContainer as={"nav"}>
         {isHome ? (
           <AnchorLink

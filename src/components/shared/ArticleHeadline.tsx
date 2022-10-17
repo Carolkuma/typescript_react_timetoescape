@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container } from "./Container";
 import SectionBackground from "./SectionBackground";
+import "twin.macro";
 
 type Props = {
   title?: string;
@@ -18,6 +19,9 @@ const ArticleBackground = styled.div`
     rgba(33, 33, 33, 0) 35%,
     rgba(33, 33, 33, 1) 100%
   );
+  min-height: 20vh;
+  display: flex;
+  align-items: flex-end;
 `;
 
 export const ArticleHeadline = ({ title, children }: Props) => {

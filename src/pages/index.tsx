@@ -1,9 +1,6 @@
 import React from "react";
-
 import Layout from "../components/layout/Layout";
-
 import { Helmet } from "react-helmet";
-
 import { Intro } from "../components/pageSections/Intro";
 import { ReasonsToEnter } from "../components/pageSections/ReasonsToEnter/ReasonsToEnter";
 import { Rooms } from "../components/pageSections/Rooms/Rooms";
@@ -12,7 +9,6 @@ import { Testimonials } from "../components/pageSections/Testimonials/Testimonia
 import { Faq } from "../components/pageSections/Faq/Faq";
 import { Contact } from "../components/pageSections/Contact/Contact";
 import { AboutEscapeRoom } from "../components/pageSections/AboutEscapeRoom";
-// import { Notice } from "../components/Notice";
 import { Gallery } from "../components/pageSections/Gallery/Gallery";
 
 export default () => (
@@ -32,7 +28,6 @@ export default () => (
     </Helmet>
 
     <Intro />
-    {/* <Notice /> */}
     <ReasonsToEnter />
     <AboutEscapeRoom />
     <Rooms />

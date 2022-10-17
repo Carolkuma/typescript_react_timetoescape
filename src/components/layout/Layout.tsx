@@ -49,12 +49,7 @@ const Layout = ({
       <GlobalStyles />
       <CookieConsent />
       <Content>
-        <Header
-          isHome={isHome}
-          showNav={showNav}
-          changeBgOpacity={changeBgOpacity}
-          isRegistrationEnabled={isRegistrationEnabled}
-        />
+        <Header showNav={showNav} changeBgOpacity={changeBgOpacity} />
         <Main>{children}</Main>
       </Content>
       <Footer />

@@ -135,12 +135,12 @@ body {
   margin-left: 2rem;
 }
 
-.flip {
+/* .flip {
   transform: scaleY(-1) scaleX(-1) translateY(1px);
 }
 .content-visibility {
   content-visibility: auto;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
