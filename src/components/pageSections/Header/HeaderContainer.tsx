@@ -15,6 +15,8 @@ export const HeaderContainer = styled.header<{
   top: 0;
   color: var(--color-bg);
   ${tw`bg-dark shadow border-gray-800 print:bg-white`}
-  ${({ isScrolled, changeBgOpacity }) =>
-    isScrolled || !changeBgOpacity ? tw`border-b` : tw`bg-opacity-0`};
+  ${({ isOpen, isScrolled, changeBgOpacity }) =>
+    isScrolled || !changeBgOpacity || !isOpen
+      ? tw`border-b`
+      : tw`bg-opacity-0`};
 `;
