@@ -31,7 +31,7 @@
     "@types/styled-components": "^5.1.25",
     "awesome-typescript-loader": "5.2.1",
     "babel-loader": "8.2.5",
-    "date-fns": "2.29.2",
+    "date-fns": "2.29.3",
     "gatsby": "4.24.4",
     "gatsby-background-image": "1.6.0",
     "gatsby-image": "3.11.0",
