@@ -16,6 +16,9 @@
     "undraw": "node ./node_modules/.bin/react-undraw-cli",
     "build-storybook": "build-storybook"
   },
+  "broserlist": [
+    "> 0.25%, not dead and last 5 versions and not OperaMini all"
+  ],
   "dependencies": {
     "@babel/core": "7.19.3",
     "@emotion/react": "11.10.4",
@@ -42,6 +45,7 @@
     "gatsby-plugin-image": "2.24.0",
     "gatsby-plugin-offline": "5.24.0",
     "gatsby-plugin-portal": "1.0.7",
+    "gatsby-plugin-purgecss": "^6.1.2",
     "gatsby-plugin-react-helmet": "5.24.0",
     "gatsby-plugin-sharp": "4.24.0",
     "gatsby-plugin-sitemap": "5.24.0",
