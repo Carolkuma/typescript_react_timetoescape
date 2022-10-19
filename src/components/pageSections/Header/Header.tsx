@@ -24,6 +24,11 @@ const SidePart = styled.div`
   }
 `;
 
+const PhoneLink = styled.a`
+  text-align: center;
+  ${tw`mt-5 w-full lg:mt-0 lg:w-auto`}
+`;
+
 const CenterPart = styled.div`
   display: flex;
   width: 100%;
@@ -113,8 +118,7 @@ const Header = ({ showNav = true, isHome, changeBgOpacity = false }: Props) => {
             header.length !== 0 &&
             header.map((link, key) =>
               isHome ? (
-                <NavigationLink
-                  as={AnchorLink}
+                <AnchorLink
                   offset={offset}
                   key={key}
                   className="anchor"
@@ -122,7 +126,7 @@ const Header = ({ showNav = true, isHome, changeBgOpacity = false }: Props) => {
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
-                </NavigationLink>
+                </AnchorLink>
               ) : (
                 <NavigationLink
                   as={Link}
@@ -135,7 +139,7 @@ const Header = ({ showNav = true, isHome, changeBgOpacity = false }: Props) => {
               )
             )}
         </CenterPart>
-        <SidePart href="tel:+421951406635" as="a">
+        <SidePart href="tel:+421951406635" as={PhoneLink}>
           +421 951 406 635
         </SidePart>
       </NavContainer>

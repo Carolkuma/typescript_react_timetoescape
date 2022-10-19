@@ -81,6 +81,7 @@
     "@storybook/addons": "6.5.12",
     "@storybook/react": "6.5.12",
     "@types/loadable__component": "5.13.4",
+    "@types/react-anchor-link-smooth-scroll": "1.0.2",
     "@typescript-eslint/eslint-plugin": "5.40.1",
     "@typescript-eslint/parser": "5.40.1",
     "eslint": "8.25.0",
