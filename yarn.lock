@@ -9848,7 +9848,7 @@ gatsby-plugin-portal@1.0.7:
   dependencies:
     "@babel/runtime" "^7.3.1"
 
-gatsby-plugin-purgecss@^6.1.2:
+gatsby-plugin-purgecss@6.1.2:
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-purgecss/-/gatsby-plugin-purgecss-6.1.2.tgz#64467685b6e4e393bcf62b675b7ec52413cedfac"
   integrity sha512-TT2Af1qS+IUoWN+8UpKDOA1j+HOTuc/LVngc77mmgoARnWZntXNHJJccbUIWHc9nu9jKOOwUbrtdA0iJ60uCuA==
