@@ -1,4 +1,3 @@
-import React from "react";
 import { Columns } from "./Columns";
 import reasonsToEnter from "../../../../content/home/reasons-to-enter.json";
 import "twin.macro";

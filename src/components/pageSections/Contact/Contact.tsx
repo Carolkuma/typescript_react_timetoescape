@@ -1,6 +1,5 @@
-import React from "react";
 import { Card } from "../../shared/Card";
-import { GMap } from "../Map/Map";
+import { Map } from "../Map/Map";
 import { ContactCard } from "./ContactCard";
 import { Social } from "./Social";
 import contact from "../../../../content/home/contact.json";
@@ -51,11 +50,11 @@ export const Contact = () => {
           <Social />
         </div>
         <div tw="flex-auto lg:flex-1">
-          <GMap
+          <Map
             coordinates={map.coordinates}
             label={map.label}
             link={map.googleMapsLink}
-          ></GMap>
+          ></Map>
         </div>
       </ContactWrapper>
     </Container>

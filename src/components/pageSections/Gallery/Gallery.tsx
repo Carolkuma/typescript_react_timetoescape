@@ -1,4 +1,3 @@
-import React from "react";
 import { GalleryItems } from "./GalleryItems";
 import { MainPageSection } from "../../shared/MainPageSection";
 import "twin.macro";

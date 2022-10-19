@@ -1,5 +1,3 @@
-import React from "react";
-
 import notice from "../../content/home/notice.json";
 import { MainPageSection } from "./shared/MainPageSection";
 import "twin.macro";

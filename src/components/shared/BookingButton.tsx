@@ -1,4 +1,3 @@
-import React from "react";
 import Button from "./Button";
 import booking from "../../../content/home/common/booking.json";
 import "twin.macro";
@@ -10,7 +9,7 @@ interface Props {
   className?: string;
 }
 
-export const BookingButton = ({ size, className }: Props) =>
+export const BookingButton = ({ size = "default", className }: Props) =>
   isBookingEnabled ? (
     <Button
       href={link}
@@ -23,7 +22,3 @@ export const BookingButton = ({ size, className }: Props) =>
       {label}
     </Button>
   ) : null;
-
-BookingButton.defaultProps = {
-  size: "default",
-};

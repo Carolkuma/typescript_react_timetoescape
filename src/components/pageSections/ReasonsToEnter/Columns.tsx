@@ -1,4 +1,3 @@
-import React from "react";
 import { Card } from "../../shared/Card";
 import Undraw from "react-undraw";
 import "twin.macro";

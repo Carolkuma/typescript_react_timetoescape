@@ -1,4 +1,3 @@
-import React from "react";
 import { Footer } from "../pageSections/Footer/Footer";
 import Header from "../pageSections/Header/Header";
 import loadable from "@loadable/component";
@@ -34,7 +33,7 @@ const Layout = ({
   isRegistrationEnabled,
   showNav,
   changeBgOpacity,
-  isHome,
+  isHome = false,
 }: Props) => {
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -61,10 +60,6 @@ const Layout = ({
       <FacebookCodes />
     </ThemeProvider>
   );
-};
-
-Layout.defaultProps = {
-  isHome: false,
 };
 
 export default Layout;

@@ -1,5 +1,3 @@
-import React from "react";
-
 const createMarkup = () => {
   return {
     __html: `<!-- Facebook Pixel Code -->

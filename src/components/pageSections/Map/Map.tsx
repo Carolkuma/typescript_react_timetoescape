@@ -1,33 +1,19 @@
-
-
-import React from "react";
-
 import { Overlay } from "./Overlay";
 import loadable from "@loadable/component";
 const LeafletMap = loadable(() => import("./LeafletMap"));
 
-interface props  {
+interface Props {
   coordinates: {
-    lat: number,
-    lng: number,
-  },
-  zoom: number,
-  link?: string,
-  label?: string,
-};
+    lat: number;
+    lng: number;
+  };
+  zoom: number;
+  link: string;
+  label: string;
+}
 
-export const GMap = ({ zoom, link, label, coordinates }: props) => {
-  return (
-    <Overlay label={label} link={link}>
-      <LeafletMap coordinates={coordinates} zoom={zoom}/>
-    </Overlay>
-  );
-};
-
-GMap.defaultProps = {
-  zoom: 16,
-};
-
-
-
-
+export const Map = ({ zoom = 16, link, label, coordinates }: Props) => (
+  <Overlay label={label} link={link}>
+    <LeafletMap coordinates={coordinates} zoom={zoom} />
+  </Overlay>
+);

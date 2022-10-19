@@ -1,4 +1,3 @@
-import React from "react";
 import { CustomerCard, Customer } from "./CustomerCard";
 import data from "../../../../content/home/reviews.json";
 import "twin.macro";

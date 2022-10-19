@@ -1,4 +1,3 @@
-import React from "react";
 import VideoCover from "react-video-cover";
 import { withPrefix } from "gatsby";
 import { isMobile } from "react-device-detect";

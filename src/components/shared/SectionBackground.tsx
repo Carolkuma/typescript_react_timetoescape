@@ -1,5 +1,4 @@
 import { graphql, useStaticQuery } from "gatsby";
-import React from "react";
 
 import BackgroundImage from "gatsby-background-image";
 
@@ -38,8 +37,8 @@ const SectionBackground = ({
   className,
   children,
   imageSrc,
-  tag,
-  id,
+  tag = "div",
+  id = "",
 }: Props) => {
   const { mobileImages, desktopImages } = useStaticQuery(
     graphql`
@@ -95,12 +94,6 @@ const SectionBackground = ({
       {children}
     </BackgroundImage>
   );
-};
-
-SectionBackground.defaultProps = {
-  tag: "div",
-  id: "",
-  className: undefined,
 };
 
 export default SectionBackground;

@@ -1,4 +1,3 @@
-import React from "react";
 import Button, { ButtonElement } from "../shared/Button";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { MainPageSection } from "../shared/MainPageSection";

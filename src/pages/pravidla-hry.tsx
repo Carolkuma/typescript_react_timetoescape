@@ -1,4 +1,3 @@
-import React from "react";
 import { ArticleHeadline } from "../components/shared/ArticleHeadline";
 import Layout from "../components/layout/Layout";
 import "twin.macro";

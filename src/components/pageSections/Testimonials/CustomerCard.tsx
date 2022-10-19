@@ -1,4 +1,3 @@
-import React from "react";
 import Img from "gatsby-image";
 import { Card } from "../../shared/Card";
 import StarRatings from "react-star-ratings";

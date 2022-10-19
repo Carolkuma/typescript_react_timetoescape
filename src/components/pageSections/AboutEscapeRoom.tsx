@@ -1,4 +1,3 @@
-import React from "react";
 import about from "../../../content/home/about.json";
 import { MainPageSection } from "../shared/MainPageSection";
 import "twin.macro";

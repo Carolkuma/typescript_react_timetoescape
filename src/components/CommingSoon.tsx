@@ -1,4 +1,3 @@
-import React from "react";
 import "twin.macro";
 import { Container } from "./shared/Container";
 
