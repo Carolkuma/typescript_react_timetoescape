@@ -1,6 +1,6 @@
 ![timetoescape.sk](https://timetoescape.sk/logo.svg)
 
-Public website for escape room.
+Public website for escape room business.
 
 ## Run Locally
 
