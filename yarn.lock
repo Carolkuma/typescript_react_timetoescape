@@ -4001,7 +4001,7 @@
     "@types/leaflet" "*"
     "@types/react" "*"
 
-"@types/react-star-ratings@^2.3.0":
+"@types/react-star-ratings@2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/@types/react-star-ratings/-/react-star-ratings-2.3.0.tgz#b9094da58c037faf7b9d85990b2a637dceae2f42"
   integrity sha512-IVvUZTq02YFi0x2UZ2+pHDvxcQukoMeJO/H4a/CF16U2Vs0mJZWaPNvQaXvvAfqtqt2D4WsWQj/ml+Fq0KS/Hw==
@@ -12715,7 +12715,7 @@ lazy-universal-dotenv@^3.0.1:
     dotenv "^8.0.0"
     dotenv-expand "^5.1.0"
 
-leaflet@^1.9.2:
+leaflet@1.9.2:
   version "1.9.2"
   resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.9.2.tgz#168b6c6ef1d4d1e8409bde2c4ad050c249c4dbe6"
   integrity sha512-Kc77HQvWO+y9y2oIs3dn5h5sy2kr3j41ewdqCMEUA4N89lgfUUfOBy7wnnHEstDpefiGFObq12FdopGRMx4J7g==
