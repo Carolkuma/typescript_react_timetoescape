@@ -45,7 +45,7 @@ const ArrowIcon = styled(FontAwesomeIcon)`
 `;
 const QuestionContainer = styled.summary`
   ${altFontMixin}
-  ${tw`text-2xl border-gray-200 dark:border-gray-900 cursor-pointer border-b-2 py-3  px-6`}
+  ${tw`text-2xl border-gray-200 dark:border-gray-900 cursor-pointer border-b-2 py-3 px-6`}
 `;
 
 export const Accordion = ({ question, answer, onClick, isOpen }: Props) => (

@@ -1,10 +1,10 @@
-import Img from "gatsby-image";
-import { Card } from "../../shared/Card";
-import StarRatings from "react-star-ratings";
 import { lightFormat } from "date-fns";
 import { graphql, useStaticQuery } from "gatsby";
-import { findImages } from "../../shared/SectionBackground";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { FileNode } from "gatsby-plugin-image/dist/src/components/hooks";
+import StarRatings from "react-star-ratings";
 import "twin.macro";
+import { Card } from "../../shared/Card";
 export interface Customer {
   rating: number;
   scale: number;
@@ -25,18 +25,23 @@ const showTextRating = (rating: number, scale: number): string =>
   `${rating}/${scale}`;
 
 export const CustomerCard = ({ customer }: props) => {
-  const { images } = useStaticQuery(graphql`
-    query CUstomerImagesQuery {
-      images: allFile(filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }) {
+  const {
+    allFiles: { edges: images },
+  } = useStaticQuery(graphql`
+    query CustomerImages {
+      allFiles: allFile(
+        filter: {
+          extension: { regex: "/jpg/" }
+          relativeDirectory: { eq: "reviews" }
+        }
+      ) {
         edges {
           node {
-            extension
+            name
+            id
             relativePath
             childImageSharp {
-              # Specify the image processing specifications right in the query.
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp
-              }
+              gatsbyImageData(layout: FULL_WIDTH, formats: [WEBP, AVIF])
             }
           }
         }
@@ -44,10 +49,14 @@ export const CustomerCard = ({ customer }: props) => {
     }
   `);
 
-  const optImage = findImages(images, customer.customerImage)[0];
+  const gatsbyImage = images.find(
+    ({ node }: { node: FileNode }) =>
+      node?.relativePath === customer.customerImage
+  );
 
+  const image = getImage(gatsbyImage.node);
   return (
-    <Card tw="flex flex-1 flex-col mb-8 p-5 md:p-10 md:mx-5">
+    <Card tw="flex flex-1 flex-col p-5 md:p-10 ">
       <div tw="flex mb-8">
         <StarRatings
           rating={customer.rating}
@@ -68,11 +77,13 @@ export const CustomerCard = ({ customer }: props) => {
         <small>Zdroj:{customer.source}</small>
       </div>
       <div tw="flex items-center mt-8">
-        <Img
-          fluid={optImage.node.childImageSharp.fluid}
-          alt={customer.customerName}
-          tw="w-12 h-12 mr-4 rounded-full"
-        />
+        {image && (
+          <GatsbyImage
+            image={image}
+            alt={customer.customerName}
+            tw="w-12 h-12 mr-4 rounded-full"
+          />
+        )}
         <div>
           <p>{customer.customerName}</p>
           <p tw="text-sm">{formatDate(customer.date)}</p>

@@ -13,7 +13,7 @@ const LabelText = styled.div`
 export const Testimonials = () => (
   <Container isCentered id="testimonials" tw="pt-20" as={"section"}>
     <LabelText className="alt-font">{data.title}</LabelText>
-    <div tw="mt-10 flex flex-col lg:flex-row">
+    <div tw="mt-10 flex flex-col lg:flex-row gap-10">
       {data.reviews.slice(0, 3).map((customer: Customer, i: number) => (
         <CustomerCard key={i} customer={customer} />
       ))}

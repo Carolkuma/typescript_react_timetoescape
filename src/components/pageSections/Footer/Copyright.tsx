@@ -1,11 +1,9 @@
 import "twin.macro";
 
-const getSymbolAndYear = (startYear: number) => {
-  const toYear = new Date().getFullYear();
-  const copyrightDate =
-    startYear === toYear ? `${startYear}` : `${startYear} - ${toYear}`;
-  return `© ${copyrightDate}`;
-};
+const getSymbolAndYear = (
+  startYear: number,
+  toYear = new Date().getFullYear()
+) => `© ${startYear === toYear ? `${startYear}` : `${startYear} - ${toYear}`}`;
 
 export const Copyright = () => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import Button, { ButtonElement } from "../../shared/Button";
-import { isMobile } from "react-device-detect";
+import { isDesktop } from "react-device-detect";
 import "twin.macro";
 import styled from "styled-components";
 import tw from "twin.macro";
@@ -28,7 +28,7 @@ const OverlayWrapper = styled.div`
 export const Overlay = ({ children, link, label }: props) => (
   <a href={link} target="_blank" rel="noopener noreferrer" tw="cursor-pointer">
     <div tw="flex relative">
-      {isMobile === false ? (
+      {isDesktop === true ? (
         <>
           <OverlayWrapper>
             <Button element={ButtonElement.DIV}>{label}</Button>

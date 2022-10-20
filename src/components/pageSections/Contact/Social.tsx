@@ -9,11 +9,11 @@ const { sites } = social;
 
 const SocialLink = styled.a`
   margin-left: -8px;
-  ${tw`text-4xl mr-5`}
+  ${tw`text-4xl`}
 `;
 
 export const Social = () => (
-  <>
+  <div tw="flex justify-center gap-5 text-center md:justify-start">
     {sites.map(({ link, icon, alt }, key) => (
       <SocialLink
         href={link}
@@ -26,5 +26,5 @@ export const Social = () => (
         <FontAwesomeIcon icon={getIcon(icon)} fixedWidth />
       </SocialLink>
     ))}
-  </>
+  </div>
 );

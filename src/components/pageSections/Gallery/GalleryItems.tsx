@@ -1,15 +1,13 @@
-import React, { useCallback, useEffect, useState } from "react";
-import Img from "gatsby-image";
-import { findImages } from "../../shared/SectionBackground";
+import { useCallback, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import { Card } from "../../shared/Card";
-import "twin.macro";
 import {
-  getImage,
   GatsbyImage,
-  ImageDataLike,
+  getImage,
   IGatsbyImageData,
+  ImageDataLike,
 } from "gatsby-plugin-image";
+import "twin.macro";
+import { Card } from "../../shared/Card";
 
 import loadable from "@loadable/component";
 const LightBoxGallery = loadable(() => import("./LightBoxGallery"));
@@ -20,9 +18,6 @@ interface Props {
 
 const getImagesFromQueryToLightBox = (sources: IGatsbyImageData[]) =>
   sources.map(({ images: { fallback } }) => fallback?.src ?? "");
-
-const getKeyCode = (e: KeyboardEvent) =>
-  e.key ? e.key : e.keyCode ? e.keyCode : undefined;
 
 export const GalleryItems = (props: Props) => {
   const {
@@ -67,18 +62,16 @@ export const GalleryItems = (props: Props) => {
   );
 
   return (
-    <>
-      <div tw="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
-        {gatsbyImages.map((image, i: number) => (
-          <Card
-            key={images[i].id}
-            tw="flex flex-auto w-full flex-col cursor-pointer"
-            onClick={() => openLightBox(i)}
-          >
-            <GatsbyImage image={image} alt={images[i].name} />
-          </Card>
-        ))}
-      </div>
+    <div tw="mt-10 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-10">
+      {gatsbyImages.map((image, i: number) => (
+        <Card
+          key={images[i].id}
+          tw="flex flex-auto w-full flex-col cursor-pointer"
+          onClick={() => openLightBox(i)}
+        >
+          <GatsbyImage image={image} alt={images[i].name} />
+        </Card>
+      ))}
       {isLighBoxOpen && (
         <LightBoxGallery
           mainSrc={lightBoxImages[lightBoxIndex]}
@@ -100,6 +93,6 @@ export const GalleryItems = (props: Props) => {
           }
         />
       )}
-    </>
+    </div>
   );
 };

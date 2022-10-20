@@ -4,10 +4,10 @@ import { withPrefix } from "gatsby";
 import handleViewport from "react-in-viewport";
 import L from "leaflet";
 import { isMobile } from "react-device-detect";
-import { Helmet } from "react-helmet";
 import { ErrorBoundary } from "../../ErrorBoundary";
 import styled from "styled-components";
 import tw from "twin.macro";
+import "leaflet/dist/leaflet.css";
 
 const MapWrapper = styled.div`
   height: 15.35rem;
@@ -59,14 +59,6 @@ export class LeafletMap extends Component<Props> {
               <TileLayer attribution={attribution} url={url} />
               <Marker position={position} icon={icon} />
             </MapContainer>
-            <Helmet>
-              <link
-                rel="stylesheet"
-                href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-                integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-                crossOrigin=""
-              />
-            </Helmet>
           </ErrorBoundary>
         ) : null}
       </MapWrapper>

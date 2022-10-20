@@ -13,15 +13,15 @@ interface Props {
 
 const RoomWrapper = styled.div`
   flex-direction: row-reverse;
-  ${tw`text-center md:text-left md:flex`}
+  ${tw`text-center md:text-left md:flex gap-10`}
 `;
 
 const RoomImageWrapper = styled.div`
-  ${tw`w-full lg:w-1/3 self-center p-5`}
+  ${tw`w-full lg:w-1/3 self-center`}
 `;
 
 const RoomTextWrapper = styled.div`
-  ${tw`w-full lg:w-2/3 self-center p-5`}
+  ${tw`w-full lg:w-2/3 self-center`}
 `;
 
 export const Room = ({ optImage, title, description }: Props) => {

@@ -7,7 +7,7 @@ interface Props {
     lat: number;
     lng: number;
   };
-  zoom: number;
+  zoom?: number;
   link: string;
   label: string;
 }

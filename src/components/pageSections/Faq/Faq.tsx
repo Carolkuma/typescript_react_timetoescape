@@ -15,7 +15,7 @@ export const Faq = () => {
       <H2 tw="uppercase text-xl tracking-wider text-center" altFont>
         {title}
       </H2>
-      <Card tw="mt-10 lg:w-2/3 mx-auto">
+      <Card tw="mt-10 max-w-4xl mx-auto">
         {questions.map((props, index) => (
           <Accordion
             key={index}
