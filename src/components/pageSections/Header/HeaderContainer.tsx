@@ -14,7 +14,9 @@ export const HeaderContainer = styled.header<{
   z-index: 30;
   top: 0;
   color: var(--color-bg);
-  ${tw`bg-dark bg-opacity-70 shadow border-gray-800 print:bg-white backdrop-blur-md`}
+  ${tw`bg-dark bg-opacity-70 shadow border-gray-800 print:bg-white`}
   ${({ isOpen, isScrolled, changeBgOpacity }) =>
-    isScrolled || !changeBgOpacity || isOpen ? tw`border-b` : tw`bg-opacity-0`};
+    isScrolled || !changeBgOpacity || isOpen
+      ? tw`border-b backdrop-blur-md`
+      : tw`bg-opacity-0`};
 `;

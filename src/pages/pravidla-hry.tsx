@@ -2,6 +2,7 @@ import { ArticleHeadline } from "../components/shared/ArticleHeadline";
 import Layout from "../components/layout/Layout";
 import "twin.macro";
 import { Container } from "../components/shared/Container";
+import { Seo } from "../components/layout/Seo";
 
 const GAME_RULES = {
   title: `Pravidlá escape room`,
@@ -52,3 +53,5 @@ export default () => (
     </section>
   </Layout>
 );
+
+export const Head = Seo;

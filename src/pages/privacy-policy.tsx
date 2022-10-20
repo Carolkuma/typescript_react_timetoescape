@@ -1,4 +1,5 @@
 import Layout from "../components/layout/Layout";
+import { Seo } from "../components/layout/Seo";
 import { Container } from "../components/shared/Container";
 
 export default () => (
@@ -388,3 +389,5 @@ export default () => (
     </section>
   </Layout>
 );
+
+export const Head = Seo;

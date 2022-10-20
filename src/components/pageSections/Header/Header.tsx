@@ -36,7 +36,7 @@ const CenterPart = styled.div`
   ${tw`mt-5  flex-col lg:flex-row lg:mt-0 lg:w-auto`}
 `;
 
-const NavigationLink = styled.a`
+const NavigationLink = styled.div`
   ${tw`border-solid lg:border-none border-b py-4 lg:py-0 px-3 w-full lg:w-auto`}
   border-color: "rgb(189 189 189)";
   @media (prefers-color-scheme: dark) {
@@ -118,15 +118,16 @@ const Header = ({ showNav = true, isHome, changeBgOpacity = false }: Props) => {
             header.length !== 0 &&
             header.map((link, key) =>
               isHome ? (
-                <AnchorLink
+                <NavigationLink
                   offset={offset}
                   key={key}
                   className="anchor"
                   href={link.href}
                   onClick={() => setIsOpen(false)}
+                  as={AnchorLink}
                 >
                   {link.label}
-                </AnchorLink>
+                </NavigationLink>
               ) : (
                 <NavigationLink
                   as={Link}

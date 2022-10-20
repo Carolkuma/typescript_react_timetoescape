@@ -1,6 +1,11 @@
 const path = require(`path`);
 
 module.exports = {
+  flags: {
+    PARTIAL_HYDRATION: true,
+  },
+  graphqlTypegen: true,
+  polyfill: false,
   siteMetadata: {
     title:
       "Escape room - Spišská Nová Ves | Mission Imposible | timetoescape.sk",
@@ -9,7 +14,6 @@ module.exports = {
   plugins: [
     "gatsby-plugin-styled-components",
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-react-helmet`,
     "gatsby-plugin-typescript",
     `gatsby-plugin-offline`,
     "gatsby-plugin-sitemap",
@@ -74,6 +78,22 @@ module.exports = {
       options: {
         key: "portal",
         id: "portal",
+      },
+    },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Fonts`,
+            file: `https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Teko:wght@500&display=swap`,
+          },
+        ],
       },
     },
     {

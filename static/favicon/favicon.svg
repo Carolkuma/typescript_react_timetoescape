@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="50" height="50"><svg id="SvgjsSvg1010" width="50" height="50" version="1.1" viewBox="0 0 13.22925 13.229" sodipodi:docname="logo-icon.svg" inkscape:version="1.2 (dc2aeda, 2022-05-15)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="SvgjsDefs1009"></defs>
+  <sodipodi:namedview id="SvgjsSodipodi:namedview1008" pagecolor="#505050" bordercolor="#ffffff" borderopacity="1" inkscape:showpageshadow="0" inkscape:pageopacity="0" inkscape:pagecheckerboard="1" inkscape:deskcolor="#505050" showgrid="false" inkscape:zoom="4.72" inkscape:cx="100" inkscape:cy="14.830508" inkscape:window-width="1920" inkscape:window-height="1052" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="0" inkscape:current-layer="g2510" showguides="true">
+    <sodipodi:guide position="10.818836,6.2221144" orientation="1,0" id="SvgjsSodipodi:guide1007" inkscape:locked="false"></sodipodi:guide>
+  </sodipodi:namedview>
+  <g id="SvgjsG1006" transform="translate(0,-283.77)">
+    <g id="SvgjsG1005" transform="matrix(1.6032,0,0,1.5895,-16.646,-136.95)" fill="#f6ad55">
+      <g id="SvgjsG1004" transform="matrix(0.32436,0,0,0.32436,-8.7713,248.19)" stroke-miterlimit="22.926">
+        <rect id="SvgjsRect1003" x="59.053001" y="50.846001" width="20.786909" height="3" stroke-width="0.416778"></rect>
+        <rect id="SvgjsRect1002" x="59.053001" y="73.504997" width="20.894707" height="3" stroke-width="0.417857"></rect>
+        <rect id="SvgjsRect1001" x="59.053001" y="50.846001" width="3" height="25.659" stroke-width="0.47276"></rect>
+      </g>
+      <path id="SvgjsPath1000" d="m 18.555304,268.85312 c 0.0024,1.33727 -1.088083,2.43073 -2.425312,2.43167 -0.577563,4.7e-4 -1.108082,-0.20093 -1.524997,-0.5374 -0.108412,-0.0874 -0.116521,-0.24997 -0.01794,-0.3485 l 0.110274,-0.11022 c 0.08425,-0.0844 0.218758,-0.0935 0.3121,-0.0194 0.307144,0.24376 0.695874,0.38925 1.118847,0.38925 0.995356,0 1.800759,-0.80557 1.800759,-1.80077 0,-0.99536 -0.805553,-1.80077 -1.800759,-1.80077 -0.477737,0 -0.911623,0.18559 -1.233797,0.48866 l 0.496725,0.49674 c 0.09864,0.0987 0.02875,0.26731 -0.110729,0.26731 h -1.42272 c -0.08648,0 -0.15659,-0.0702 -0.15659,-0.15663 v -1.42273 c 0,-0.13943 0.168665,-0.20938 0.267314,-0.11059 l 0.483193,0.48317 c 0.435738,-0.41641 1.026291,-0.67219 1.676599,-0.67219 1.338929,0 2.424564,1.08417 2.42718,2.42251 z m -1.770537,0.77106 0.09612,-0.12353 c 0.07964,-0.10252 0.06119,-0.24998 -0.04115,-0.32961 L 16.4414,268.86122 v -1.02124 c 0,-0.12968 -0.105143,-0.23488 -0.234887,-0.23488 h -0.15659 c -0.12973,0 -0.234888,0.10529 -0.234888,0.23488 v 1.32759 l 0.640139,0.49788 c 0.102379,0.0797 0.249952,0.0612 0.329612,-0.0412 z" stroke-width="0.00978684"></path>
+    </g>
+  </g>
+</svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+</style></svg>
