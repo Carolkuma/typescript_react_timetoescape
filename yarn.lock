@@ -9738,7 +9738,7 @@ gatsby-link@^4.24.1:
     gatsby-page-utils "^2.24.1"
     prop-types "^15.8.1"
 
-gatsby-omni-font-loader@^2.0.2:
+gatsby-omni-font-loader@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/gatsby-omni-font-loader/-/gatsby-omni-font-loader-2.0.2.tgz#821961da51fd163ea6f93ad5fecd174f7612715d"
   integrity sha512-Bp6truuUwbDRHWtL+u/lUvMsAT5ipO45LNJgqNdOzTUGw3GB7dw8k4RHDtpxwFTgacdk25kH8aOYfh460jJYCQ==
@@ -10229,7 +10229,7 @@ gauge@^3.0.0:
     strip-ansi "^6.0.1"
     wide-align "^1.1.2"
 
-gbimage-bridge@^0.2.2:
+gbimage-bridge@0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/gbimage-bridge/-/gbimage-bridge-0.2.2.tgz#19d346b21051f35d093911477958656dea6bf518"
   integrity sha512-ROieMnsqN9aHr55oUJd7crfJadZGjGcF59ooHmMbD4KYM/ut0AbafsnJvJaWt3nYAujG+dq/m1eEleRYnTjm4Q==
@@ -15469,15 +15469,15 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
+prettier@2.7.1, prettier@^2.1.2:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
+  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
+
 "prettier@>=2.2.1 <=2.3.0":
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
   integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
-
-prettier@^2.1.2, prettier@^2.7.1:
-  version "2.7.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.7.1.tgz#e235806850d057f97bb08368a4f7d899f7760c64"
-  integrity sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==
 
 pretty-bytes@^4.0.2:
   version "4.0.2"
