@@ -1,9 +1,9 @@
-import React, { memo, PropsWithChildren, useState } from "react";
-import styled from "styled-components";
-import { Portal } from "../../Portal";
+import React, { memo, PropsWithChildren, useState } from 'react'
+import styled from 'styled-components'
+import { Portal } from '../../Portal'
 
 interface Props {
-  isTop?: boolean;
+  isTop?: boolean
 }
 
 const StyledSvg = styled.svg<Props>`
@@ -15,18 +15,18 @@ const StyledSvg = styled.svg<Props>`
          
          transform: scaleY(-1) scaleX(-1) translateY(1px);`
       : `bottom: 0;`}
-`;
+`
 
-let isFirstCall = true;
+let isFirstCall = true
 function SectionDivider({ isTop = false }: Props) {
-  const [first] = useState(isFirstCall);
-  const Sprite = ({ children }: PropsWithChildren) => <>{first && children}</>;
-  isFirstCall = false;
+  const [first] = useState(isFirstCall)
+  const Sprite = ({ children }: PropsWithChildren) => <>{first && children}</>
+  isFirstCall = false
   return (
     <>
       <Portal>
         <Sprite>
-          <svg style={{ display: "none" }}>
+          <svg style={{ display: 'none' }}>
             <symbol id="divider">
               <path
                 fill="var(--color-bg)"
@@ -40,7 +40,7 @@ function SectionDivider({ isTop = false }: Props) {
         <use xlinkHref="#divider" />
       </StyledSvg>
     </>
-  );
+  )
 }
 
-export default memo(SectionDivider);
+export default memo(SectionDivider)

@@ -14,7 +14,8 @@
     "deploy": "gh-pages -d public",
     "storybook": "start-storybook -p 6006",
     "undraw": "node ./node_modules/.bin/react-undraw-cli",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "format": "npx prettier --write ."
   },
   "broserlist": [
     ">0.25%, not dead and supports es6-module"

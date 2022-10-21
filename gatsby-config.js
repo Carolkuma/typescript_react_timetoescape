@@ -1,4 +1,4 @@
-const path = require(`path`);
+const path = require(`path`)
 
 module.exports = {
   flags: {
@@ -7,16 +7,15 @@ module.exports = {
   graphqlTypegen: true,
   polyfill: false,
   siteMetadata: {
-    title:
-      "Escape room - Spišská Nová Ves | Mission Imposible | timetoescape.sk",
-    siteUrl: "https://timetoescape.sk",
+    title: 'Escape room - Spišská Nová Ves | Mission Imposible | timetoescape.sk',
+    siteUrl: 'https://timetoescape.sk',
   },
   plugins: [
-    "gatsby-plugin-styled-components",
+    'gatsby-plugin-styled-components',
     `gatsby-plugin-emotion`,
-    "gatsby-plugin-typescript",
+    'gatsby-plugin-typescript',
     `gatsby-plugin-offline`,
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-sitemap',
     // {
     //   resolve: `gatsby-plugin-hotjar-tracking`,
     //   options: {
@@ -29,7 +28,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: "UA-173979954-1",
+        trackingId: 'UA-173979954-1',
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: false,
         // Setting this parameter is optional
@@ -76,18 +75,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-portal`,
       options: {
-        key: "portal",
-        id: "portal",
+        key: 'portal',
+        id: 'portal',
       },
     },
     {
       resolve: `gatsby-omni-font-loader`,
       options: {
         enableListener: true,
-        preconnect: [
-          `https://fonts.googleapis.com`,
-          `https://fonts.gstatic.com`,
-        ],
+        preconnect: [`https://fonts.googleapis.com`, `https://fonts.gstatic.com`],
         web: [
           {
             name: `Fonts`,
@@ -102,7 +98,7 @@ module.exports = {
         printRejected: true, // Print removed selectors and processed file names
         // develop: true, // Enable while using `gatsby develop`
         tailwind: true, // Enable tailwindcss support
-        ignore: ["react-image-lightbox/style.css", "leaflet/dist/leaflet.css"], // Ignore files/folders
+        ignore: ['react-image-lightbox/style.css', 'leaflet/dist/leaflet.css'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
         purgeCSSOptions: {
           // https://purgecss.com/configuration.html#options
@@ -112,4 +108,4 @@ module.exports = {
       },
     },
   ],
-};
+}

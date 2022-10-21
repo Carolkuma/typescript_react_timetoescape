@@ -1,3 +1,3 @@
 exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: "sk-SK" });
-};
+  setHtmlAttributes({ lang: 'sk-SK' })
+}

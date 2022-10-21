@@ -1,1 +1,3 @@
-./public
+.cache
+public
+node_modules

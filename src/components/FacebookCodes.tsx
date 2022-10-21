@@ -1,6 +1,6 @@
-import React from "react";
-import CustomerChat from "./CustomerChat";
-import FacebookPixel from "./FacebookPixel";
+import React from 'react'
+import CustomerChat from './CustomerChat'
+import FacebookPixel from './FacebookPixel'
 
 const FaceBookCodes = () => {
   return (
@@ -8,7 +8,7 @@ const FaceBookCodes = () => {
       <FacebookPixel />
       <CustomerChat />
     </>
-  );
-};
+  )
+}
 
-export default FaceBookCodes;
+export default FaceBookCodes

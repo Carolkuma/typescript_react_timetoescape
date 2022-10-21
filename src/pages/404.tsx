@@ -1,12 +1,11 @@
-import React from "react";
-import Layout from "../components/layout/Layout";
-import { Seo } from "../components/layout/Seo";
-import { NotFound } from "../components/NotFound";
+import React from 'react'
+import { Layout, Seo } from '../components/layout'
+import { NotFound } from '../components/NotFound'
 
 export default () => (
   <Layout isHome={false}>
     <NotFound />
   </Layout>
-);
+)
 
-export const Head = Seo;
+export const Head = Seo

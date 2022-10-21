@@ -1,51 +1,41 @@
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from 'gatsby'
 
-import BackgroundImage from "gatsby-background-image";
+import BackgroundImage from 'gatsby-background-image'
 
 interface Props {
-  className?: string | undefined;
-  children?: JSX.Element | JSX.Element[];
-  imageSrc: string;
-  tag: JSX.IntrinsicElements["div"];
-  id: string;
+  className?: string | undefined
+  children?: JSX.Element | JSX.Element[]
+  imageSrc: string
+  tag: JSX.IntrinsicElements['div']
+  id: string
 }
 
 interface Node {
-  relativePath: string;
+  relativePath: string
 }
 
 interface ImageQueryResult {
-  node: Node;
+  node: Node
 }
 
 interface QueryResult {
-  edges: ImageQueryResult[];
+  edges: ImageQueryResult[]
 }
 
 export const findImages = ({ edges }: QueryResult, relativePath: string) => {
-  const images = edges.filter(({ node }: ImageQueryResult) =>
-    node.relativePath.includes(relativePath)
-  );
+  const images = edges.filter(({ node }: ImageQueryResult) => node.relativePath.includes(relativePath))
 
   if (images.length <= 0) {
-    throw new Error(`Cannot find image ${relativePath}`);
+    throw new Error(`Cannot find image ${relativePath}`)
   }
-  return images;
-};
+  return images
+}
 
-const SectionBackground = ({
-  className,
-  children,
-  imageSrc,
-  tag = "div",
-  id = "",
-}: Props) => {
+const SectionBackground = ({ className, children, imageSrc, tag = 'div', id = '' }: Props) => {
   const { mobileImages, desktopImages } = useStaticQuery(
     graphql`
       query {
-        mobileImages: allFile(
-          filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }
-        ) {
+        mobileImages: allFile(filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }) {
           edges {
             node {
               extension
@@ -58,9 +48,7 @@ const SectionBackground = ({
             }
           }
         }
-        desktopImages: allFile(
-          filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }
-        ) {
+        desktopImages: allFile(filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }) {
           edges {
             node {
               extension
@@ -75,11 +63,11 @@ const SectionBackground = ({
         }
       }
     `
-  );
+  )
   // Set up the array of image data and `media` keys.
   // You can have as many entries as you'd like.
-  const mobileImage = findImages(mobileImages, imageSrc)[0];
-  const desctopImage = findImages(desktopImages, imageSrc)[0];
+  const mobileImage = findImages(mobileImages, imageSrc)[0]
+  const desctopImage = findImages(desktopImages, imageSrc)[0]
 
   const sources = [
     mobileImage.node.childImageSharp.fluid,
@@ -87,13 +75,13 @@ const SectionBackground = ({
       ...desctopImage.node.childImageSharp.fluid,
       media: `(min-width: 491px)`,
     },
-  ];
+  ]
 
   return (
     <BackgroundImage Tag={tag} id={id} className={className} fluid={sources}>
       {children}
     </BackgroundImage>
-  );
-};
+  )
+}
 
-export default SectionBackground;
+export default SectionBackground

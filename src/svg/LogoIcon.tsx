@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 const LogoIcon = () => (
   <svg
@@ -10,61 +10,15 @@ const LogoIcon = () => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <g id="layer1" transform="translate(0 -283.77)">
-      <g
-        id="g2510"
-        transform="matrix(1.6032 0 0 1.5895 -16.646 -136.95)"
-        fill="#f6ad55"
-      >
-        <g
-          id="g1020"
-          transform="matrix(.32436 0 0 .32436 -8.7713 248.19)"
-          strokeMiterlimit="22.926"
-        >
-          <rect
-            id="rect827-35"
-            x="59.053"
-            y="50.846"
-            width="50"
-            height="3"
-            strokeWidth=".64639"
-          />
-          <rect
-            id="rect827-3-6"
-            x="59.053"
-            y="73.505"
-            width="50"
-            height="3"
-            strokeWidth=".64639"
-          />
-          <rect
-            id="rect850-2"
-            x="59.053"
-            y="50.846"
-            width="3"
-            height="25.659"
-            strokeWidth=".47276"
-          />
-          <rect
-            id="rect850-2-9"
-            x="106.05"
-            y="70.505"
-            width="3"
-            height="6"
-            strokeWidth=".22861"
-          />
-          <rect
-            id="rect850-2-9-1"
-            x="106.05"
-            y="50.846"
-            width="3"
-            height="6"
-            strokeWidth=".22861"
-          />
+      <g id="g2510" transform="matrix(1.6032 0 0 1.5895 -16.646 -136.95)" fill="#f6ad55">
+        <g id="g1020" transform="matrix(.32436 0 0 .32436 -8.7713 248.19)" strokeMiterlimit="22.926">
+          <rect id="rect827-35" x="59.053" y="50.846" width="50" height="3" strokeWidth=".64639" />
+          <rect id="rect827-3-6" x="59.053" y="73.505" width="50" height="3" strokeWidth=".64639" />
+          <rect id="rect850-2" x="59.053" y="50.846" width="3" height="25.659" strokeWidth=".47276" />
+          <rect id="rect850-2-9" x="106.05" y="70.505" width="3" height="6" strokeWidth=".22861" />
+          <rect id="rect850-2-9-1" x="106.05" y="50.846" width="3" height="6" strokeWidth=".22861" />
         </g>
-        <path
-          id="path2422"
-          d="m12.302 267.52h2.3064v.48777h-.82971v2.0148h-.64533v-2.0148h-.83138z"
-        />
+        <path id="path2422" d="m12.302 267.52h2.3064v.48777h-.82971v2.0148h-.64533v-2.0148h-.83138z" />
         <path id="path2424" d="m14.941 267.52h.64533v2.5025h-.64533z" />
         <path
           id="path2426"
@@ -74,10 +28,7 @@ const LogoIcon = () => (
           id="path2428"
           d="m19.641 267.52h1.7416v.48777h-1.0962v.46598h1.0308v.48776h-1.0308v.57326h1.1331v.48777h-1.7784z"
         />
-        <path
-          id="path2430"
-          d="m22.883 267.52h2.3064v.48777h-.82971v2.0148h-.64533v-2.0148h-.83138z"
-        />
+        <path id="path2430" d="m22.883 267.52h2.3064v.48777h-.82971v2.0148h-.64533v-2.0148h-.83138z" />
         <path
           id="path2432"
           d="m29.101 267.52h1.7416v.48777h-1.0962v.46598h1.0308v.48776h-1.0308v.57326h1.1331v.48777h-1.7784z"
@@ -110,7 +61,6 @@ const LogoIcon = () => (
       </g>
     </g>
   </svg>
-);
+)
 
-
-export default LogoIcon;
+export default LogoIcon

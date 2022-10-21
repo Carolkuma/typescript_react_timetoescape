@@ -19,9 +19,9 @@ src="https://www.facebook.com/tr?id=1676263582538529&ev=PageView
 &noscript=1"/>
 </noscript>
 <!-- End Facebook Pixel Code -->`,
-  };
-};
+  }
+}
 
-const FacebookPixel = () => <div dangerouslySetInnerHTML={createMarkup()} />;
+const FacebookPixel = () => <div dangerouslySetInnerHTML={createMarkup()} />
 
-export default FacebookPixel;
+export default FacebookPixel

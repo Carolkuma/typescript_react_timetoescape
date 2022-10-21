@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 interface State {
-  error: null | Error;
-  errorInfo: null | React.ErrorInfo;
+  error: null | Error
+  errorInfo: null | React.ErrorInfo
 }
 
 export class ErrorBoundary extends Component<any, State> {
   constructor(props: unknown) {
-    super(props);
-    this.state = { error: null, errorInfo: null };
+    super(props)
+    this.state = { error: null, errorInfo: null }
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
@@ -16,7 +16,7 @@ export class ErrorBoundary extends Component<any, State> {
     this.setState({
       error: error,
       errorInfo: errorInfo,
-    });
+    })
     // You can also log error messages to an error reporting service here
   }
 
@@ -26,15 +26,15 @@ export class ErrorBoundary extends Component<any, State> {
       return (
         <div>
           <h2>Something went wrong.</h2>
-          <details style={{ whiteSpace: "pre-wrap" }}>
+          <details style={{ whiteSpace: 'pre-wrap' }}>
             {this.state.error && this.state.error.toString()}
             <br />
             {this.state.errorInfo.componentStack}
           </details>
         </div>
-      );
+      )
     }
     // Normally, just render children
-    return this.props.children;
+    return this.props.children
   }
 }

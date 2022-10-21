@@ -1,6 +1,6 @@
-import React from "react";
-import { GlobalStyles as GlobalStylesMacro } from "twin.macro";
-import { createGlobalStyle } from "styled-components";
+import React from 'react'
+import { GlobalStyles as GlobalStylesMacro } from 'twin.macro'
+import { createGlobalStyle } from 'styled-components'
 
 const StyledGlobalStyles = createGlobalStyle`
 :root {
@@ -100,11 +100,11 @@ button:focus {
 }
 /* purgecss end ignore */
 
-`;
+`
 
 export const GlobalStyles = () => (
   <>
     <GlobalStylesMacro />
     <StyledGlobalStyles />
   </>
-);
+)

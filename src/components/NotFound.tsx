@@ -1,12 +1,12 @@
-import Button from "./shared/Button";
-import { Link } from "gatsby";
-import notfound from "../../content/home/common/notfound.json";
-import { Container } from "./shared/Container";
-import { UndrawUndrawPageNotFound } from "react-undraw";
-import { H1 } from "./shared/typography/Headline";
-import "twin.macro";
+import Button from './shared/Button'
+import { Link } from 'gatsby'
+import notfound from '../../content/home/common/notfound.json'
+import { Container } from './shared/Container'
+import { UndrawUndrawPageNotFound } from 'react-undraw'
+import { H1 } from './shared/typography/Headline'
+import 'twin.macro'
 
-const { title, description, button } = notfound;
+const { title, description, button } = notfound
 
 export const NotFound = () => (
   <section tw="py-20 flex items-center">
@@ -25,4 +25,4 @@ export const NotFound = () => (
       </div>
     </Container>
   </section>
-);
+)

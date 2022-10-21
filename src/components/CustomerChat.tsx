@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 
-const facebookAppId = "112481290497040"
-
+const facebookAppId = '112481290497040'
 
 export interface CustomWindow extends Window {
-    fbAsyncInit: any
-    FB: any
+  fbAsyncInit: any
+  FB: any
 }
 
-declare let window: CustomWindow;
+declare let window: CustomWindow
 
 const createMarkup = () => {
   return {
@@ -38,11 +37,13 @@ const createMarkup = () => {
   logged_in_greeting=" Ako vám môžeme pomôcť?"
   logged_out_greeting=" Ako vám môžeme pomôcť?">
       </div>`,
-  };
-};
+  }
+}
 
+const CustomerChat = () => (
+  <>
+    <div dangerouslySetInnerHTML={createMarkup()} />
+  </>
+)
 
-const CustomerChat = () => <><div dangerouslySetInnerHTML={createMarkup()} /></>
-
-
-export default CustomerChat;
+export default CustomerChat

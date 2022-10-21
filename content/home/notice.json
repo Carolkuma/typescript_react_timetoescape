@@ -1,9 +1,5 @@
 {
-    "title": "Opatrenia prijaté v súlade s aktuálnymi nariadeniami v boji proti šíreniu koronavírusu",
-    "description": "Prevádzka je otvorená od 1.5. Rezervácia je opäť spustená. Neváhajte nás navštíviť. Priestory sú nonstop vetrane a pravidelne dezinfikujeme vsetky kontaktné povrchy. Žiadame o dodrživanie nasledovných opatrení:",
-    "rules": [ 
-        "Hru možu hrať maximálne 5 členné skupiny.",
-        "Správne nosenie respirátorov vo vnútorných priestoroch."
-    ]   
-    
+  "title": "Opatrenia prijaté v súlade s aktuálnymi nariadeniami v boji proti šíreniu koronavírusu",
+  "description": "Prevádzka je otvorená od 1.5. Rezervácia je opäť spustená. Neváhajte nás navštíviť. Priestory sú nonstop vetrane a pravidelne dezinfikujeme vsetky kontaktné povrchy. Žiadame o dodrživanie nasledovných opatrení:",
+  "rules": ["Hru možu hrať maximálne 5 členné skupiny.", "Správne nosenie respirátorov vo vnútorných priestoroch."]
 }
