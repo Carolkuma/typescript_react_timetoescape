@@ -34,7 +34,7 @@
     "@types/react-leaflet": "2.8.2",
     "@types/styled-components": "5.1.26",
     "awesome-typescript-loader": "5.2.1",
-    "babel-loader": "8.2.5",
+    "babel-loader": "9.0.0",
     "date-fns": "2.29.3",
     "gatsby": "4.24.5",
     "gatsby-background-image": "1.6.0",
