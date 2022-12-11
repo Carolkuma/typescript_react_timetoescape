@@ -2,7 +2,6 @@ import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 import 'twin.macro'
 import tw from 'twin.macro'
-import { BookingButton } from '../../shared/BookingButton'
 import { Card } from '../../shared/Card'
 import { H3 } from '../../shared/typography/Headline'
 
@@ -35,7 +34,6 @@ export const Room = ({ image, title, description }: Props) => (
     <RoomTextWrapper>
       <H3 altFont>{title}</H3>
       <p tw="mt-6 mb-10 md:text-lg">{description}</p>
-      <BookingButton />
     </RoomTextWrapper>
   </RoomWrapper>
 )

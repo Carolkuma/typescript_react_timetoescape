@@ -1,16 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby'
-
 import BackgroundImage from 'gatsby-background-image'
+import { PropsWithChildren } from 'react'
 
-interface Props {
+interface Props extends PropsWithChildren {
   className?: string | undefined
-  children?: JSX.Element | JSX.Element[]
   imageSrc: string
-  tag: JSX.IntrinsicElements['div']
-  id: string
+  id?: string
 }
 
 interface Node {
+  childImageSharp: any
   relativePath: string
 }
 
@@ -31,7 +30,7 @@ export const findImages = ({ edges }: QueryResult, relativePath: string) => {
   return images
 }
 
-const SectionBackground = ({ className, children, imageSrc, tag = 'div', id = '' }: Props) => {
+const SectionBackground = ({ className, children, imageSrc, id = '' }: Props) => {
   const { mobileImages, desktopImages } = useStaticQuery(
     graphql`
       query {
@@ -78,7 +77,7 @@ const SectionBackground = ({ className, children, imageSrc, tag = 'div', id = ''
   ]
 
   return (
-    <BackgroundImage Tag={tag} id={id} className={className} fluid={sources}>
+    <BackgroundImage id={id} className={className} fluid={sources}>
       {children}
     </BackgroundImage>
   )

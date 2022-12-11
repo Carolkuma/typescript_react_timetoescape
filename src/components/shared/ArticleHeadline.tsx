@@ -25,7 +25,7 @@ const ArticleBackground = styled.div`
 
 export const ArticleHeadline = ({ title, children }: Props) => {
   return (
-    <SectionBackground className="text-gray-100 bg-styles bg-dark" imageSrc={'bg/footer.jpg'} tag={'div'}>
+    <SectionBackground className="text-gray-100 bg-styles bg-dark" imageSrc={'bg/footer.jpg'}>
       <ArticleBackground>
         <Container tw="pt-32 pb-4 px-3">{children}</Container>
       </ArticleBackground>

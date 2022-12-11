@@ -1,5 +1,6 @@
 import tw from 'twin.macro'
 import styled from 'styled-components'
+import { IImageSizes } from 'gatsby-plugin-image/dist/src/image-utils'
 
 const sizes = {
   default: ``,
@@ -7,9 +8,9 @@ const sizes = {
   xl: `md:py-5 md:px-16 md:text-lg`,
 }
 
-interface props {
+interface Props {
   children?: JSX.Element | JSX.Element[] | string
-  size?: string
+  size?: keyof typeof sizes
   rel?: string
   href?: string
   target?: string
@@ -52,11 +53,11 @@ const StyledButton = styled.div`
   background: radial-gradient(ellipse at center, #f6ae56, #e5983c);
 `
 
-const Button = ({ children, rel, size, href, element = ButtonElement.LINK, target, onClick }: props) => {
+const Button = ({ children, rel, size = 'default', href, element = ButtonElement.LINK, target, onClick }: Props) => {
   const classNames: string = `
         bg-orange-400 
         hover:bg-orange-600
-        ${sizes[size] || sizes.default}
+        ${sizes[size]}
     `
 
   if (element === ButtonElement.BUTTON) {

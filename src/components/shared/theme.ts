@@ -3,7 +3,7 @@ import { DefaultTheme } from 'styled-components'
 // make them as a css variable
 const COLORS = {}
 
-export const defaultTheme: DefaultTheme = {
+export const defaultTheme = {
   mainColor: '#f6ad55',
   mainColorVar: 'var(--main-color)',
   palette: {

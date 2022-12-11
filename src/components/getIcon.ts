@@ -32,7 +32,9 @@ const availableIcons: AvaiableIcons = {
   faClock,
 }
 
-export const getIcon = (icon: ICONS): IconDefinition | never => {
+export type Icons = keyof typeof ICONS
+
+export const getIcon = (icon: Icons): IconDefinition | never => {
   if (availableIcons[icon]) {
     return availableIcons[icon]
   }

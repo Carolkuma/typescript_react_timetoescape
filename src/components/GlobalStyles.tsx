@@ -1,8 +1,9 @@
 import React from 'react'
 import { GlobalStyles as GlobalStylesMacro } from 'twin.macro'
 import { createGlobalStyle } from 'styled-components'
+import { defaultTheme } from './shared/theme'
 
-const StyledGlobalStyles = createGlobalStyle`
+const StyledGlobalStyles = createGlobalStyle<{ theme: typeof defaultTheme }>`
 :root {
   --color-fg: #2D3748;
   --color-bg: #F7FAFC;

@@ -48,10 +48,12 @@ export const MainPageSection = ({
 
   if (imageSrc !== '') {
     return (
-      <Background imageSrc={imageSrc} tag={'section'} id={id}>
-        {InsideContent}
-        <BackgroundVideo />
-      </Background>
+      <section>
+        <Background imageSrc={imageSrc} id={id}>
+          {InsideContent}
+          <BackgroundVideo />
+        </Background>
+      </section>
     )
   }
 

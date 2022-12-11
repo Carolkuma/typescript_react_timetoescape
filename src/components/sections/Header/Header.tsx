@@ -7,11 +7,14 @@ import styled from 'styled-components'
 import 'twin.macro'
 import tw from 'twin.macro'
 import nav from '../../../../content/home/common/navigation.json'
+import { phoneNumber } from '../../../../content/home/contact.json'
+
 import LogoIcon from '../../../svg/LogoIcon'
 import { HeaderContainer } from './HeaderContainer'
 import { NavContainer } from './NavContainer'
 import { NavigationButton } from './NavigationButton'
 import ScrollIndicator from './ScrollIndicator'
+import { formatPhoneNumber } from './utils'
 
 const { header } = nav
 
@@ -101,15 +104,10 @@ const Header = ({ showNav = true, isHome, changeBgOpacity = false }: Props) => {
             header.length !== 0 &&
             header.map((link, key) =>
               isHome ? (
-                <NavigationLink
-                  offset={offset}
-                  key={key}
-                  className="anchor"
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  as={AnchorLink}
-                >
-                  {link.label}
+                <NavigationLink key={key}>
+                  <AnchorLink offset={offset} className="anchor" href={link.href} onClick={() => setIsOpen(false)}>
+                    {link.label}
+                  </AnchorLink>
                 </NavigationLink>
               ) : (
                 <NavigationLink as={Link} to={`/${link.href}`} key={key} onClick={() => setIsOpen(false)}>
@@ -118,8 +116,8 @@ const Header = ({ showNav = true, isHome, changeBgOpacity = false }: Props) => {
               )
             )}
         </CenterPart>
-        <SidePart href="tel:+421951406635" as={PhoneLink}>
-          +421 951 406 635
+        <SidePart href={`tel:${phoneNumber}`} as={PhoneLink}>
+          {formatPhoneNumber(phoneNumber)}
         </SidePart>
       </NavContainer>
       <ScrollIndicator scrollTopPercentage={scrollTopPercentage} />

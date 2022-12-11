@@ -1,8 +1,6 @@
-import React from 'react'
-import { BookingButton } from '../shared/BookingButton'
-import { MainPageSection } from '../shared/MainPageSection'
-import outro from '../../../content/home/outro.json'
 import 'twin.macro'
+import outro from '../../../content/home/outro.json'
+import { MainPageSection } from '../shared/MainPageSection'
 import { H2 } from '../shared/typography/Headline'
 const { title, description, backgroundImage } = outro
 

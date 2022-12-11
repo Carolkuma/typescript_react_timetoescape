@@ -6,7 +6,7 @@ import { Room } from './Room'
 import { getImage } from 'gatsby-plugin-image'
 import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks'
 
-export const findImage = (images, relativePath) =>
+export const findImage = (images: { node: FileNode }[], relativePath: string) =>
   images.find(({ node }: { node: FileNode }) => node?.relativePath === relativePath)
 
 export const Rooms = () => {
@@ -33,7 +33,7 @@ export const Rooms = () => {
     <MainPageSection id="rooms" tw="py-10 text-center">
       {rooms.rooms.map(({ image: { src }, ...props }, index) => {
         const optImage = findImage(images, src)
-        const image = getImage(optImage.node)
+        const image = getImage(optImage?.node ?? null)
         return <Room key={index} {...props} image={image} />
       })}
     </MainPageSection>
